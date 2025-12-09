@@ -38,7 +38,7 @@ const threadsData = [
     likes: 96,
     comments: 26,
     bookmarks: 16,
-    hook: "As a developer, I keep wondering why I contribute to open-source projects without getting recognized or a dime aside from my career development.",
+    hook: "Open Source Developers Deserve Recognition",
     firstTweet: "As a developer, I keep wondering why I contribute to open-source projects without getting recognized or a dime aside from my career development.\n\nBut thoughts are mostly problems with a solution we haven't found yet.\n\nFortunately, @DeTAProtocol is presenting me with a solution.",
   },
   {
@@ -49,7 +49,7 @@ const threadsData = [
     likes: 82,
     comments: 16,
     bookmarks: 2,
-    hook: "AI models trained on poor data are destined for failure!",
+    hook: "AI Models Trained on Poor Data Are Destined for Failure",
     firstTweet: "AI models trained on poor data are destined for failure!\n\nI struggled with AI models, which sometimes failed to deliver results, until I learned about the significance of high-quality data.\n\nThis may be why your AI assistant is underperforming without you even realizing it!\n\nThe issue isn't with the model, whether it's ChatGPT, Grok, or Deepseek; it's all about the data.\n\nHere's how everything is changing:",
   },
   {
@@ -60,7 +60,7 @@ const threadsData = [
     likes: 66,
     comments: 15,
     bookmarks: 3,
-    hook: "You won't believe that placing bets on the blockchain is now much more straightforward.",
+    hook: "Blockchain Betting Just Got Easier",
     firstTweet: "You won't believe that placing bets on the blockchain is now much more straightforward.\n\nA massive combination of sports, NFTs, and crypto makes it interesting at this point where the March Madness is about to begin, and you have the chance to win huge prices on @DivvyBet.\n\nBut let me walk you through the \"March Madness\"",
   },
   {
@@ -71,7 +71,7 @@ const threadsData = [
     likes: 170,
     comments: 81,
     bookmarks: 11,
-    hook: "I start building apps and stop halfway!",
+    hook: "I Start Building Apps And Stop Halfway",
     firstTweet: "I start building apps and stop halfway!\n\nI don't have a problem starting them!\n\nMy problem is just trying to get real-world or real-time data into this \"thing\" and make it work.\n\nThis has been a big issue for me until I found @switchboardxyz,\n\nHere is the real gist",
   },
   {
@@ -82,7 +82,7 @@ const threadsData = [
     likes: 112,
     comments: 50,
     bookmarks: 4,
-    hook: "Have you tried sending your girl $200 that stays in Nairobi?",
+    hook: "Sending $200 to Nairobi Just Got Easier",
     firstTweet: "Have you tried sending your girl $200 that stays in Nairobi?\n\nUSDT on Ethereum may cost you around $15 in fees and slow processing. Probably her local exchange doesn't even support it.\n\nUSDC may work, but you've seen accounts frozen without warning.\n\nSending stablecoins shouldn't be that hard!\n\nThat's where the $USDG from the @global_dollar network comes in. With low fees, no freeze riskand fully compliant for global use, let's see how it works",
   },
   {
@@ -137,7 +137,7 @@ const threadsData = [
     likes: 155,
     comments: 48,
     bookmarks: 38,
-    hook: "I nearly abandoned my Solana project last month due to constant node failures.",
+    hook: "I Nearly Abandoned My Solana Project",
     firstTweet: "I nearly abandoned my Solana project last month due to constant node failures.\n\nI began to doubt my development abilities entirely.\n\nThen I discovered this tool that changed everything and saved my project.\n\nHere's my complete experience",
   },
   {
@@ -159,7 +159,7 @@ const threadsData = [
     likes: 85,
     comments: 54,
     bookmarks: 7,
-    hook: "Did you know that 89% of Bitcoin is sitting idle, while the $150B stablecoin market ignores it?",
+    hook: "89% of Bitcoin is Sitting Idle",
     firstTweet: "Did you know that 89% of Bitcoin is sitting idle, while the $150B stablecoin market ignores it?\n\n$1.2T Bitcoin is also locked because holders won't trust custodians or bridges\n\nStablecoins keep dominating DeFi with zero Bitcoin backing\n\nHere's how @Ducatstable is changing that",
   },
   {
@@ -225,7 +225,7 @@ const threadsData = [
     likes: 0,
     comments: 0,
     bookmarks: 0,
-    hook: "You can now earn up to 70% APR on Solana without setting up wallets, buying gas, and signing transactions.",
+    hook: "Earn 70% APR on Solana Without Wallets or Gas",
     firstTweet: "You can now earn up to 70% APR on Solana without setting up wallets, buying gas, and signing transactions.\n\nBybit just removed all of that now with the yield system where you stake once and everything is handled on-chain and you collect the yields.\n\nHere's how it works.",
   },
   {
@@ -269,7 +269,7 @@ const threadsData = [
     likes: 28,
     comments: 2,
     bookmarks: 0,
-    hook: "Every time you use ChatGPT, it's speaking with stolen words?",
+    hook: "ChatGPT is Speaking With Stolen Words",
     firstTweet: "Every time you use ChatGPT, it's speaking with stolen words?\n\nAI models rely on unpaid creativity, while companies report record profits without compensating these creators.\n\nBut pay attention to @campnetworkxyz and what they're doing to change this.",
   },
   {
@@ -302,7 +302,7 @@ const threadsData = [
     likes: 89,
     comments: 17,
     bookmarks: 4,
-    hook: "I spent quite a number of days researching and analyzing transactions on the Solana Chain.",
+    hook: "Solana Chain Analysis Dashboard",
     firstTweet: "I spent quite a number of days researching and analyzing transactions on the Solana Chain.\n\nSo, to simplify which sectors are driving the most real economic value and what this signals for Solana's future, I hard-coded these dashboards using on-chain data as of April 2025.",
   },
   {
@@ -324,7 +324,7 @@ const threadsData = [
     likes: 13,
     comments: 3,
     bookmarks: 1,
-    hook: "This interesting project is opening up the possibilities of how physical assets could be made part of the blockchain.",
+    hook: "Physical Assets on the Blockchain",
     firstTweet: "This interesting project is opening up the possibilities of how physical assets could be made part of the blockchain.\n\nWhat about acquiring just a piece of the Eiffel Tower, or swapping a Picasso on stock through an Smartphone?\n\n@sailingprotocol is here for you\n\nLike & Retweet",
   },
 ];
@@ -513,7 +513,7 @@ export default function ContentPage() {
         >
           {[
             { label: "threads written", value: "27" },
-            { label: "total engagement", value: "50k+" },
+            { label: "total engagement", value: "100k+" },
             { label: "bounties won", value: "13x" },
           ].map((stat) => (
             <div key={stat.label}>

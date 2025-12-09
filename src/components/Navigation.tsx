@@ -7,6 +7,7 @@ import Contact from "./Contact";
 
 const navLinks = [
   { name: "work", href: "#work" },
+  { name: "projects", href: "/projects" },
   { name: "content", href: "/content" },
   { name: "contact", href: "#contact" },
 ];
