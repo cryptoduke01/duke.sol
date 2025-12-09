@@ -8,26 +8,26 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "superteam nigeria",
-    role: "core member & community manager",
-    description: "driving growth of the solana ecosystem in nigeria. organizing workshops, creating educational content, and driving adoption.",
-    tags: ["community", "solana", "education"],
+    title: "Superteam Nigeria",
+    role: "Core Member & Community Manager",
+    description: "Driving growth of the Solana ecosystem in Nigeria. Organizing workshops, creating educational content, and driving adoption.",
+    tags: ["Community", "Solana", "Education"],
     link: "https://x.com/SuperteamNG",
     image: "/superteam.png",
   },
   {
-    title: "arcium",
-    role: "contributor",
-    description: "contributing to privacy infrastructure for web3. creating content explaining confidential computing on solana.",
-    tags: ["privacy", "infrastructure"],
+    title: "Arcium",
+    role: "Contributor",
+    description: "Contributing to privacy infrastructure for Web3. Creating content explaining confidential computing on Solana.",
+    tags: ["Privacy", "Infrastructure"],
     link: "https://x.com/Arcium",
     image: "/arcium.png",
   },
   {
-    title: "frontend development",
-    role: "freelance",
-    description: "building responsive web applications using next.js, and typescript. focused on solana web3 integrations and wallet connectivity.",
-    tags: ["solana", "next.js", "web3"],
+    title: "Frontend Development",
+    role: "Freelance",
+    description: "Building responsive web applications using Next.js and TypeScript. Focused on Solana Web3 integrations and wallet connectivity.",
+    tags: ["Solana", "Next.js", "Web3"],
     link: "https://github.com/cryptoduke01",
     image: "/github-dev.png",
   },
@@ -84,12 +84,12 @@ export default function Work() {
         >
           <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-3">
             <div className="h-[1px] w-6 md:w-8 bg-[#00FFD1]" />
-            <span className="text-[10px] md:text-xs text-[#00FFD1] tracking-[0.2em] lowercase font-[family-name:var(--font-display)]">
-              work
+            <span className="text-xs md:text-sm text-[#00FFD1] tracking-[0.2em] font-[family-name:var(--font-display)]">
+              Work
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white font-[family-name:var(--font-display)] lowercase">
-            selected projects
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white font-[family-name:var(--font-display)]">
+            Selected Projects
           </h2>
         </motion.div>
 
@@ -128,15 +128,15 @@ export default function Work() {
 
                 {/* Project Content */}
                 <div className="flex-1 min-w-0">
-                  <span className="text-[9px] md:text-[10px] text-[#666] tracking-[0.15em] lowercase font-[family-name:var(--font-display)] mb-1 md:mb-2 block">
+                  <span className="text-xs md:text-sm text-[#666] tracking-[0.15em] font-[family-name:var(--font-display)] mb-1 md:mb-2 block">
                     {project.role}
                   </span>
-                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors lowercase mb-2 md:mb-3">
+                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors mb-2 md:mb-3">
                     {project.title}
                   </h3>
                   
                   {/* Description - now visible */}
-                  <p className="text-xs sm:text-sm text-[#666] font-[family-name:var(--font-display)] leading-relaxed lowercase mb-3 md:mb-4">
+                  <p className="text-xs sm:text-sm text-[#666] font-[family-name:var(--font-display)] leading-relaxed mb-3 md:mb-4">
                     {project.description}
                   </p>
 
@@ -145,7 +145,7 @@ export default function Work() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 md:px-3 py-1 text-[9px] md:text-[10px] text-[#666] glass border border-[#1a1a1a] font-[family-name:var(--font-display)] lowercase group-hover:border-[#00FFD1]/30 transition-colors"
+                        className="px-2 md:px-3 py-1 text-xs md:text-sm text-[#666] glass border border-[#1a1a1a] font-[family-name:var(--font-display)] group-hover:border-[#00FFD1]/30 transition-colors"
                       >
                         {tag}
                       </span>
@@ -174,9 +174,9 @@ export default function Work() {
         >
           <Link
             href="/content"
-            className="inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 glass border border-[#00FFD1]/30 text-[#00FFD1] font-[family-name:var(--font-display)] text-xs md:text-sm hover:bg-[#00FFD1]/10 transition-all lowercase group"
+            className="inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 glass border border-[#00FFD1]/30 text-[#00FFD1] font-[family-name:var(--font-display)] text-xs md:text-sm hover:bg-[#00FFD1]/10 transition-all group"
           >
-            view threads & articles
+            View Threads & Articles
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </motion.div>
@@ -190,8 +190,8 @@ export default function Work() {
         >
           <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
             <div className="h-[1px] w-6 md:w-8 bg-[#1a1a1a]" />
-            <span className="text-[10px] md:text-xs text-[#666] tracking-[0.2em] lowercase font-[family-name:var(--font-display)]">
-              collaborations
+            <span className="text-xs md:text-sm text-[#666] tracking-[0.2em] font-[family-name:var(--font-display)]">
+              Collaborations
             </span>
           </div>
 
@@ -211,10 +211,10 @@ export default function Work() {
                     <div className="relative w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 rounded border border-dashed border-[#1a1a1a] flex items-center justify-center">
                       <div className="w-4 h-4 border-2 border-[#333] rounded" />
                     </div>
-                    <span className="text-[10px] md:text-xs text-[#333] font-[family-name:var(--font-display)] lowercase">
+                    <span className="text-xs md:text-sm text-[#333] font-[family-name:var(--font-display)] capitalize">
                       {collab.name}
                     </span>
-                    <span className="text-[8px] md:text-[9px] text-[#1a1a1a] font-[family-name:var(--font-display)] lowercase">
+                    <span className="text-[10px] md:text-xs text-[#1a1a1a] font-[family-name:var(--font-display)] capitalize">
                       {collab.role}
                     </span>
                   </>
@@ -234,17 +234,17 @@ export default function Work() {
                       </div>
                     )}
                     
-                    <span className="text-[10px] md:text-xs text-white font-[family-name:var(--font-display)] lowercase group-hover:text-[#00FFD1] transition-colors">
+                    <span className="text-xs md:text-sm text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors capitalize">
                       {collab.name}
                     </span>
-                    <span className="text-[8px] md:text-[9px] text-[#666] font-[family-name:var(--font-display)] lowercase">
+                    <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] capitalize">
                       {collab.role}
                     </span>
                     
                     {/* Former badge */}
                     {collab.isFormer && (
-                      <span className="absolute top-1 right-1 px-1 py-0.5 text-[6px] md:text-[7px] text-[#666] border border-[#1a1a1a] bg-black/80 font-[family-name:var(--font-display)] lowercase">
-                        former
+                      <span className="absolute top-1 right-1 px-1 py-0.5 text-[8px] md:text-[9px] text-[#666] border border-[#1a1a1a] bg-black/80 font-[family-name:var(--font-display)]">
+                        Former
                       </span>
                     )}
                   </>
@@ -262,8 +262,8 @@ export default function Work() {
         >
           <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
             <div className="h-[1px] w-6 md:w-8 bg-[#1a1a1a]" />
-            <span className="text-[10px] md:text-xs text-[#666] tracking-[0.2em] lowercase font-[family-name:var(--font-display)]">
-              tech stack
+            <span className="text-xs md:text-sm text-[#666] tracking-[0.2em] font-[family-name:var(--font-display)]">
+              Tech Stack
             </span>
           </div>
 
@@ -288,7 +288,7 @@ export default function Work() {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#00FFD1]/20 via-[#00FFD1]/5 to-[#00FFD1]/10 mix-blend-overlay" />
                   <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent_0px,transparent_2px,rgba(0,255,209,0.06)_2px,rgba(0,255,209,0.06)_4px)] pointer-events-none" />
                 </div>
-                <span className="text-[9px] md:text-[10px] text-[#666] group-hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase">
+                <span className="text-xs md:text-sm text-[#666] group-hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] capitalize">
                   {tech.name}
                 </span>
               </motion.div>

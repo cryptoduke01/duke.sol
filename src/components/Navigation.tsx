@@ -67,7 +67,7 @@ export default function Navigation() {
                   >
                     <Component
                       href={link.href}
-                      className="relative text-xs md:text-sm font-medium text-[#666] hover:text-white transition-colors duration-300 font-[family-name:var(--font-display)] tracking-wide link-line lowercase"
+                      className="relative text-xs md:text-sm font-medium text-[#666] hover:text-white transition-colors duration-300 font-[family-name:var(--font-display)] tracking-wide link-line capitalize"
                     >
                       {link.name}
                     </Component>
@@ -84,9 +84,9 @@ export default function Navigation() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 md:px-5 py-2 md:py-2.5 glass border border-[#00FFD1]/30 text-[#00FFD1] text-xs md:text-sm font-medium font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 hover:border-[#00FFD1]/50 transition-all duration-300 lowercase"
+                className="px-4 md:px-5 py-2 md:py-2.5 glass border border-[#00FFD1]/30 text-[#00FFD1] text-xs md:text-sm font-medium font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 hover:border-[#00FFD1]/50 transition-all duration-300"
               >
-                socials
+                Socials
               </motion.a>
             </div>
 
@@ -160,7 +160,7 @@ export default function Navigation() {
                       <Component
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-2xl sm:text-3xl font-semibold text-white hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase block"
+                        className="text-2xl sm:text-3xl font-semibold text-white hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] capitalize block"
                       >
                         {link.name}
                       </Component>
@@ -175,9 +175,9 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-4 sm:mt-8 inline-block px-6 py-3 glass border border-[#00FFD1]/30 text-[#00FFD1] text-center font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 transition-all lowercase"
+                  className="mt-4 sm:mt-8 inline-block px-6 py-3 glass border border-[#00FFD1]/30 text-[#00FFD1] text-center font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 transition-all"
                 >
-                  socials
+                  Socials
                 </motion.a>
               </div>
             </motion.div>

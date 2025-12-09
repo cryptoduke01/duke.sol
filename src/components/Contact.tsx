@@ -71,20 +71,20 @@ export default function Contact() {
         >
           <div className="flex items-center justify-center gap-3 md:gap-4 mb-6 md:mb-8">
             <div className="h-[1px] w-8 md:w-12 bg-[#00FFD1]" />
-            <span className="text-[10px] md:text-xs font-medium text-[#00FFD1] tracking-[0.3em] lowercase font-[family-name:var(--font-display)]">
-              contact
+            <span className="text-xs md:text-sm font-medium text-[#00FFD1] tracking-[0.3em] font-[family-name:var(--font-display)]">
+              Contact
             </span>
             <div className="h-[1px] w-8 md:w-12 bg-[#00FFD1]" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white mb-4 md:mb-6 font-[family-name:var(--font-display)] lowercase">
-            let&apos;s build
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white mb-4 md:mb-6 font-[family-name:var(--font-display)]">
+            Let&apos;s Build
             <br />
-            <span className="text-[#00FFD1]">together</span>
+            <span className="text-[#00FFD1]">Together</span>
           </h2>
 
-          <p className="text-xs sm:text-sm text-[#666] max-w-md mx-auto mb-8 md:mb-12 font-[family-name:var(--font-display)] lowercase">
-            available for freelance projects, collaborations, and community roles in the web3 space.
+          <p className="text-xs sm:text-sm text-[#666] max-w-md mx-auto mb-8 md:mb-12 font-[family-name:var(--font-display)]">
+            Available for freelance projects, collaborations, and community roles in the Web3 space.
           </p>
 
           {/* Email */}
@@ -94,7 +94,7 @@ export default function Contact() {
             whileTap={{ scale: 0.98 }}
             className="group inline-flex items-center gap-3 md:gap-4 px-6 md:px-8 py-3 md:py-4 glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300"
           >
-            <span className="text-base sm:text-lg md:text-xl text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors lowercase">
+            <span className="text-base sm:text-lg md:text-xl text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors">
               {email}
             </span>
             {copied ? (
@@ -108,9 +108,9 @@ export default function Contact() {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-[#00FFD1] text-[10px] md:text-xs mt-3 md:mt-4 font-[family-name:var(--font-display)] lowercase"
+              className="text-[#00FFD1] text-xs md:text-sm mt-3 md:mt-4 font-[family-name:var(--font-display)]"
             >
-              copied to clipboard
+              Copied to Clipboard
             </motion.p>
           )}
         </motion.div>
@@ -137,10 +137,10 @@ export default function Contact() {
                 className="group flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2.5 md:py-3 glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300"
               >
                 <IconComponent size={14} className="md:w-4 md:h-4 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
-                <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
+                <span className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] capitalize">
                   {social.name}
                 </span>
-                <span className="text-sm md:text-base text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors lowercase">
+                <span className="text-sm md:text-base text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors">
                   {social.handle}
                 </span>
                 <ArrowUpRight size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
@@ -156,8 +156,8 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mb-12 md:mb-16"
         >
-          <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
-            languages: <span className="text-[#00FFD1]">english</span> (native)
+          <span className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)]">
+            Languages: <span className="text-[#00FFD1]">English</span> (Native)
           </span>
         </motion.div>
 
@@ -176,15 +176,15 @@ export default function Contact() {
                 <span className="text-[#00FFD1]">.sol</span>
               </span>
             </Link>
-            <p className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] leading-relaxed lowercase">
-              frontend developer & web3 builder based in nigeria and remote.
+            <p className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] leading-relaxed">
+              Frontend Developer & Web3 Builder based in Nigeria and Remote.
             </p>
           </div>
 
           {/* Link columns */}
           {footerLinks.map((column) => (
             <div key={column.title}>
-              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+              <h4 className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 capitalize">
                 {column.title}
               </h4>
               <ul className="space-y-2 md:space-y-3">
@@ -200,7 +200,7 @@ export default function Contact() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                          className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] capitalize link-line group"
                         >
                           {IconComponent && <IconComponent size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />}
                           <span>{link.name}</span>
@@ -214,7 +214,7 @@ export default function Contact() {
                       <li key={link.name}>
                         <a
                           href={link.href}
-                          className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                          className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] capitalize link-line"
                         >
                           {link.name}
                         </a>
@@ -226,7 +226,7 @@ export default function Contact() {
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                        className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] capitalize link-line"
                       >
                         {link.name}
                       </Link>
@@ -245,12 +245,12 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4 pt-6 md:pt-8 border-t border-[#1a1a1a]"
         >
-          <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-left">
-            {new Date().getFullYear()} duke.sol. built with <span className="text-[#00FFD1]">❤️</span> by me
+          <span className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] text-center sm:text-left">
+            {new Date().getFullYear()} duke.sol. Built with <span className="text-[#00FFD1]">❤️</span> by me
           </span>
 
-          <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-right">
-            nigeria and remote / available worldwide
+          <span className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] text-center sm:text-right capitalize">
+            Nigeria and Remote / Available Worldwide
           </span>
         </motion.div>
       </div>

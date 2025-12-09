@@ -221,7 +221,7 @@ export default function ProjectsPage() {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
               />
-              <span className="text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">loading</span>
+              <span className="text-xs text-[#666] font-[family-name:var(--font-display)]">Loading</span>
             </div>
           </motion.div>
         )}
@@ -240,7 +240,7 @@ export default function ProjectsPage() {
               className="flex items-center gap-2 text-[#666] hover:text-white transition-colors"
             >
               <ArrowLeft size={16} />
-              <span className="text-sm font-[family-name:var(--font-display)] lowercase">back</span>
+              <span className="text-sm font-[family-name:var(--font-display)]">Back</span>
             </Link>
 
             <span className="text-xl font-semibold tracking-tight font-[family-name:var(--font-display)]">
@@ -252,9 +252,9 @@ export default function ProjectsPage() {
               href="https://x.com/cryptoduke01"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 glass border border-[#00FFD1]/30 text-[#00FFD1] text-sm font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 transition-all lowercase"
+              className="px-4 py-2 glass border border-[#00FFD1]/30 text-[#00FFD1] text-sm font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 transition-all"
             >
-              x
+              X
             </a>
           </div>
         </div>
@@ -270,15 +270,15 @@ export default function ProjectsPage() {
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="h-[1px] w-12 bg-[#00FFD1]" />
-            <span className="text-xs font-medium text-[#00FFD1] tracking-[0.3em] lowercase font-[family-name:var(--font-display)]">
-              projects
+            <span className="text-sm font-medium text-[#00FFD1] tracking-[0.3em] font-[family-name:var(--font-display)]">
+              Projects
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white font-[family-name:var(--font-display)] lowercase mb-4">
-            development projects
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white font-[family-name:var(--font-display)] mb-4">
+            Development Projects
           </h1>
-          <p className="text-[#666] max-w-lg font-[family-name:var(--font-display)] text-sm lowercase">
-            a collection of web3 projects built on solana. from dapps to defi interfaces.
+          <p className="text-[#666] max-w-lg font-[family-name:var(--font-display)] text-sm">
+            A collection of Web3 projects built on Solana. From dApps to DeFi interfaces.
           </p>
         </motion.div>
 
@@ -295,10 +295,10 @@ export default function ProjectsPage() {
             { label: "github stars", value: "500+" },
           ].map((stat) => (
             <div key={stat.label}>
-              <div className="text-2xl font-semibold text-[#00FFD1] font-[family-name:var(--font-display)] lowercase">
+              <div className="text-2xl font-semibold text-[#00FFD1] font-[family-name:var(--font-display)]">
                 {stat.value}
               </div>
-              <div className="text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
+              <div className="text-xs text-[#666] font-[family-name:var(--font-display)] capitalize">
                 {stat.label}
               </div>
             </div>
@@ -345,7 +345,7 @@ export default function ProjectsPage() {
                         {formatDate(project.date)}
                       </span>
                     </div>
-                    <span className="px-2 py-0.5 text-[9px] glass text-[#00FFD1] font-[family-name:var(--font-display)] lowercase">
+                    <span className="px-2 py-0.5 text-[9px] glass text-[#00FFD1] font-[family-name:var(--font-display)]">
                       {project.status}
                     </span>
                   </div>
@@ -367,7 +367,7 @@ export default function ProjectsPage() {
                   {project.tags.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 text-[9px] text-[#666] glass border border-[#1a1a1a] font-[family-name:var(--font-display)] lowercase"
+                      className="px-2 py-1 text-[9px] text-[#666] glass border border-[#1a1a1a] font-[family-name:var(--font-display)]"
                     >
                       {tag}
                     </span>
@@ -384,7 +384,7 @@ export default function ProjectsPage() {
                     className="flex items-center gap-1.5 text-[#00FFD1] hover:text-[#00e6bc] transition-colors"
                   >
                     <Github size={12} />
-                    <span className="text-xs font-[family-name:var(--font-display)] lowercase">github</span>
+                    <span className="text-xs font-[family-name:var(--font-display)]">github</span>
                   </a>
                   {project.demo && (
                     <a
@@ -395,7 +395,7 @@ export default function ProjectsPage() {
                       className="flex items-center gap-1.5 text-[#00FFD1] hover:text-[#00e6bc] transition-colors"
                     >
                       <ExternalLink size={12} />
-                      <span className="text-xs font-[family-name:var(--font-display)] lowercase">demo</span>
+                      <span className="text-xs font-[family-name:var(--font-display)]">demo</span>
                     </a>
                   )}
                 </div>
@@ -455,7 +455,7 @@ export default function ProjectsPage() {
                         {formatDate(selectedProject.date)}
                       </span>
                     </div>
-                    <span className="px-2 py-0.5 text-[9px] glass text-[#00FFD1] font-[family-name:var(--font-display)] lowercase">
+                    <span className="px-2 py-0.5 text-[9px] glass text-[#00FFD1] font-[family-name:var(--font-display)]">
                       {selectedProject.status}
                     </span>
                   </div>
@@ -482,7 +482,7 @@ export default function ProjectsPage() {
                   {selectedProject.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs text-[#666] glass border border-[#1a1a1a] font-[family-name:var(--font-display)] lowercase"
+                      className="px-3 py-1 text-xs text-[#666] glass border border-[#1a1a1a] font-[family-name:var(--font-display)]"
                     >
                       {tag}
                     </span>
@@ -497,9 +497,9 @@ export default function ProjectsPage() {
                   href={selectedProject.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#00FFD1] text-black font-semibold text-sm font-[family-name:var(--font-display)] hover:bg-[#00e6bc] transition-all lowercase"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#00FFD1] text-black font-semibold text-sm font-[family-name:var(--font-display)] hover:bg-[#00e6bc] transition-all"
                 >
-                  view on github
+                  View on GitHub
                   <Github size={14} />
                 </a>
                 )}
@@ -508,9 +508,9 @@ export default function ProjectsPage() {
                     href={selectedProject.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 glass border border-[#1a1a1a] text-white font-semibold text-sm font-[family-name:var(--font-display)] hover:border-[#00FFD1] hover:text-[#00FFD1] transition-all lowercase"
+                    className="inline-flex items-center gap-2 px-6 py-3 glass border border-[#1a1a1a] text-white font-semibold text-sm font-[family-name:var(--font-display)] hover:border-[#00FFD1] hover:text-[#00FFD1] transition-all"
                   >
-                    view demo
+                    View Demo
                     <ExternalLink size={14} />
                   </a>
                 )}
@@ -532,39 +532,39 @@ export default function ProjectsPage() {
                   <span className="text-[#00FFD1]">.sol</span>
                 </span>
               </Link>
-              <p className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] leading-relaxed lowercase">
-                frontend developer & web3 builder based in nigeria and remote.
+              <p className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] leading-relaxed">
+                Frontend Developer & Web3 Builder based in Nigeria and Remote.
               </p>
             </div>
 
             {/* Navigation */}
             <div>
-              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4">
                 navigation
               </h4>
               <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <Link href="/" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                  <Link href="/" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line">
                     home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#work" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                  <Link href="/#work" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line">
                     work
                   </Link>
                 </li>
                 <li>
-                  <Link href="/projects" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                  <Link href="/projects" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line">
                     projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="/content" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                  <Link href="/content" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line">
                     content
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                  <Link href="/#contact" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line">
                     contact
                   </Link>
                 </li>
@@ -573,7 +573,7 @@ export default function ProjectsPage() {
 
             {/* Socials */}
             <div>
-              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4">
                 socials
               </h4>
               <ul className="space-y-2 md:space-y-3">
@@ -582,7 +582,7 @@ export default function ProjectsPage() {
                     href="https://x.com/cryptoduke01"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line group"
                   >
                     <Twitter size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
                     <span>twitter / x</span>
@@ -593,7 +593,7 @@ export default function ProjectsPage() {
                     href="https://t.me/cryptoduke01"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line group"
                   >
                     <MessageCircle size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
                     <span>telegram</span>
@@ -604,7 +604,7 @@ export default function ProjectsPage() {
                     href="https://github.com/cryptoduke01"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line group"
                   >
                     <Github size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
                     <span>github</span>
@@ -615,7 +615,7 @@ export default function ProjectsPage() {
                     href="https://www.linkedin.com/in/akachukwuu?originalSubdomain=ng"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line group"
                   >
                     <Linkedin size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
                     <span>linkedin</span>
@@ -626,7 +626,7 @@ export default function ProjectsPage() {
 
             {/* Resources */}
             <div>
-              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4">
                 resources
               </h4>
               <ul className="space-y-2 md:space-y-3">
@@ -635,7 +635,7 @@ export default function ProjectsPage() {
                     href="/resume-dev.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line"
                   >
                     dev resume
                   </a>
@@ -645,7 +645,7 @@ export default function ProjectsPage() {
                     href="/resume-writing.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line"
                   >
                     writing resume
                   </a>
@@ -655,13 +655,13 @@ export default function ProjectsPage() {
                     href="https://superteam.ng"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line"
                   >
                     superteam ng
                   </a>
                 </li>
                 <li>
-                  <Link href="/content" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                  <Link href="/content" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line">
                     threads
                   </Link>
                 </li>
@@ -671,12 +671,12 @@ export default function ProjectsPage() {
 
           {/* Bottom Bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4 pt-6 md:pt-8 border-t border-[#1a1a1a]">
-            <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-left">
-              {new Date().getFullYear()} duke.sol. built with <span className="text-[#00FFD1]">❤️</span> by me
+            <span className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] text-center sm:text-left">
+              {new Date().getFullYear()} duke.sol. Built with <span className="text-[#00FFD1]">❤️</span> by me
             </span>
 
-            <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-right">
-              nigeria and remote / available worldwide
+            <span className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] text-center sm:text-right capitalize">
+              Nigeria and Remote / Available Worldwide
             </span>
           </div>
         </div>

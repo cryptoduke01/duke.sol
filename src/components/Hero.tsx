@@ -52,7 +52,7 @@ export default function Hero() {
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#FF006E]/5 rounded-full blur-[120px]" />
 
       {/* 13x Bounty Signpost */}
-      <motion.div
+          <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5, duration: 0.6 }}
@@ -65,12 +65,12 @@ export default function Hero() {
               <div className="text-base md:text-lg font-bold text-[#00FFD1] font-[family-name:var(--font-display)]">
                 13x
               </div>
-              <div className="text-[9px] md:text-[10px] text-white font-[family-name:var(--font-display)] lowercase tracking-wide">
-                bounty winner
+              <div className="text-xs md:text-sm text-white font-[family-name:var(--font-display)] tracking-wide">
+                Bounty Winner
               </div>
             </div>
           </div>
-        </div>
+      </div>
       </motion.div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,23 +88,23 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FFD1] opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00FFD1]" />
               </span>
-              <span className="text-[10px] md:text-xs text-[#666] tracking-[0.15em] lowercase font-[family-name:var(--font-display)]">
-                available for work
+              <span className="text-xs md:text-sm text-[#666] tracking-[0.15em] font-[family-name:var(--font-display)]">
+                Available for Work
               </span>
             </motion.div>
 
             {/* Main Statement */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}  
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight leading-[0.95] mb-4 md:mb-6 font-[family-name:var(--font-display)] lowercase"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight leading-[0.95] mb-4 md:mb-6 font-[family-name:var(--font-display)]"
             >
-              <span className="text-[#00FFD1]">solana</span>
+              <span className="text-[#00FFD1]">Solana</span>
               <br />
-              <span className="text-white">made me</span>
+              <span className="text-white">Made Me</span>
               <br />
-              <span className="text-white">like this</span>
+              <span className="text-white">Like This</span>
             </motion.h1>
 
             {/* Description */}
@@ -112,16 +112,16 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-xs sm:text-sm text-[#666] max-w-md mb-6 md:mb-8 font-[family-name:var(--font-display)] leading-relaxed lowercase"
+              className="text-xs sm:text-sm text-[#666] max-w-md mb-6 md:mb-8 font-[family-name:var(--font-display)] leading-relaxed"
             >
-              developer. creator. contributor. core member{" "}
+              Developer. Creator. Contributor. Core Member{" "}
               <a 
                 href="https://x.com/SuperteamNG" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#00FFD1] hover:underline"
               >
-                superteamNG 
+                SuperteamNG 
               </a>
             </motion.p>
 
@@ -133,20 +133,20 @@ export default function Hero() {
               className="flex items-center gap-4 md:gap-6 mb-6 md:mb-8"
             >
               <div>
-                <div className="text-xl sm:text-2xl font-semibold text-white font-[family-name:var(--font-display)] lowercase">
+                <div className="text-xl sm:text-2xl font-semibold text-white font-[family-name:var(--font-display)]">
                   2K+
                 </div>
-                <div className="text-[9px] md:text-[10px] text-[#666] font-[family-name:var(--font-display)] lowercase">
-                  followers
+                <div className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)]">
+                  Followers
                 </div>
               </div>
               <div className="w-[1px] h-6 md:h-8 bg-[#1a1a1a]" />
               <div>
-                <div className="text-xl sm:text-2xl font-semibold text-white font-[family-name:var(--font-display)] lowercase">
-                  top 1%
+                <div className="text-xl sm:text-2xl font-semibold text-white font-[family-name:var(--font-display)]">
+                  Top 1%
                 </div>
-                <div className="text-[9px] md:text-[10px] text-[#666] font-[family-name:var(--font-display)] lowercase">
-                  solana
+                <div className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)]">
+                  Solana
                 </div>
               </div>
             </motion.div>
@@ -162,17 +162,17 @@ export default function Hero() {
                 href="#contact"
                 whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(0,255,209,0.3)" }}
                 whileTap={{ scale: 0.98 }}
-                className="px-4 md:px-5 py-2 md:py-2.5 bg-[#00FFD1] text-black font-semibold text-xs md:text-sm font-[family-name:var(--font-display)] hover:bg-[#00e6bc] transition-all lowercase"
+                className="px-4 md:px-5 py-2 md:py-2.5 bg-[#00FFD1] text-black font-semibold text-xs md:text-sm font-[family-name:var(--font-display)] hover:bg-[#00e6bc] transition-all"
               >
-                socials
+                Socials
               </motion.a>
               <motion.a
                 href="#work"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-4 md:px-5 py-2 md:py-2.5 glass border border-[#1a1a1a] text-white font-semibold text-xs md:text-sm font-[family-name:var(--font-display)] hover:border-[#00FFD1] hover:text-[#00FFD1] transition-all lowercase"
+                className="px-4 md:px-5 py-2 md:py-2.5 glass border border-[#1a1a1a] text-white font-semibold text-xs md:text-sm font-[family-name:var(--font-display)] hover:border-[#00FFD1] hover:text-[#00FFD1] transition-all"
               >
-                works
+                Works
               </motion.a>
             </motion.div>
           </div>
@@ -208,10 +208,10 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.9 }}
-                className="absolute -right-1 md:-right-2 top-1/4 px-2 md:px-3 py-1 md:py-1.5 glass font-[family-name:var(--font-display)] text-[9px] md:text-[10px] lowercase"
+                className="absolute -right-1 md:-right-2 top-1/4 px-2 md:px-3 py-1 md:py-1.5 glass font-[family-name:var(--font-display)] text-xs md:text-sm"
               >
-                <span className="text-[#666]">status: </span>
-                <span className="text-[#00FFD1]">building</span>
+                <span className="text-[#666]">Status: </span>
+                <span className="text-[#00FFD1]">Building</span>
               </motion.div>
 
               {/* Location badge */}
@@ -219,7 +219,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.1 }}
-                className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 md:gap-1.5 px-2 md:px-3 py-1 md:py-1.5 glass font-[family-name:var(--font-display)] text-[9px] md:text-[10px] whitespace-nowrap lowercase"
+                className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 md:gap-1.5 px-2 md:px-3 py-1 md:py-1.5 glass font-[family-name:var(--font-display)] text-xs md:text-sm whitespace-nowrap capitalize"
               >
                 <span className="relative flex h-1.5 w-1.5">
                   {isLocating && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FFD1] opacity-75" />}
@@ -238,8 +238,8 @@ export default function Hero() {
           transition={{ delay: 1.2 }}
           className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[9px] md:text-[10px] text-[#666] tracking-[0.2em] lowercase font-[family-name:var(--font-display)]">
-            scroll
+          <span className="text-xs md:text-sm text-[#666] tracking-[0.2em] font-[family-name:var(--font-display)]">
+            Scroll
           </span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
