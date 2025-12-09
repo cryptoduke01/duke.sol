@@ -191,7 +191,7 @@ export default function Contact() {
                 {column.links.map((link) => {
                   const isExternal = link.href.startsWith("http");
                   const isAnchor = link.href.startsWith("#");
-                  const IconComponent = link.icon;
+                  const IconComponent = 'icon' in link ? link.icon : undefined;
                   
                   if (isExternal) {
                     return (
