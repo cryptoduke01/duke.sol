@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Contact from "./Contact";
 
 const navLinks = [
   { name: "work", href: "#work" },
@@ -74,8 +75,8 @@ export default function Navigation() {
               })}
               
               <motion.a
-                href="https://x.com/cryptoduke01"
-                target="_blank"
+                href="#contact"
+                // target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -84,7 +85,7 @@ export default function Navigation() {
                 whileTap={{ scale: 0.95 }}
                 className="px-4 md:px-5 py-2 md:py-2.5 glass border border-[#00FFD1]/30 text-[#00FFD1] text-xs md:text-sm font-medium font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 hover:border-[#00FFD1]/50 transition-all duration-300 lowercase"
               >
-                x
+                socials
               </motion.a>
             </div>
 
@@ -166,8 +167,8 @@ export default function Navigation() {
                   );
                 })}
                 <motion.a
-                  href="https://x.com/cryptoduke01"
-                  target="_blank"
+                  href="#contact"
+                  // target="_blank"
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -175,7 +176,7 @@ export default function Navigation() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="mt-4 sm:mt-8 inline-block px-6 py-3 glass border border-[#00FFD1]/30 text-[#00FFD1] text-center font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 transition-all lowercase"
                 >
-                  x
+                  socials
                 </motion.a>
               </div>
             </motion.div>

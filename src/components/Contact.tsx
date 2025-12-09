@@ -2,14 +2,14 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowUpRight, Copy, Check } from "lucide-react";
+import { ArrowUpRight, Copy, Check, Twitter, MessageCircle, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 const socials = [
-  { name: "twitter", handle: "duke.sol", href: "https://x.com/cryptoduke01" },
-  { name: "telegram", handle: "duke.sol", href: "https://t.me/cryptoduke01" },
-  { name: "github", handle: "duke.sol", href: "https://github.com/cryptoduke01" },
-  { name: "linkedin", handle: "duke.sol", href: "https://linkedin.com/in/duke-sol" },
+  { name: "twitter", handle: "duke.sol", href: "https://x.com/cryptoduke01", icon: Twitter },
+  { name: "telegram", handle: "duke.sol", href: "https://t.me/cryptoduke01", icon: MessageCircle },
+  { name: "github", handle: "duke.sol", href: "https://github.com/cryptoduke01", icon: Github },
+  { name: "linkedin", handle: "duke.sol", href: "https://www.linkedin.com/in/akachukwuu?originalSubdomain=ng", icon: Linkedin },
 ];
 
 const footerLinks = [
@@ -25,10 +25,10 @@ const footerLinks = [
   {
     title: "socials",
     links: [
-      { name: "twitter / x", href: "https://x.com/cryptoduke01" },
-      { name: "telegram", href: "https://t.me/cryptoduke01" },
-      { name: "github", href: "https://github.com/cryptoduke01" },
-      { name: "linkedin", href: "https://linkedin.com/in/duke-sol" },
+      { name: "twitter / x", href: "https://x.com/cryptoduke01", icon: Twitter },
+      { name: "telegram", href: "https://t.me/cryptoduke01", icon: MessageCircle },
+      { name: "github", href: "https://github.com/cryptoduke01", icon: Github },
+      { name: "linkedin", href: "https://www.linkedin.com/in/akachukwuu?originalSubdomain=ng", icon: Linkedin },
     ],
   },
   {
@@ -122,27 +122,43 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16 md:mb-24"
         >
-          {socials.map((social, i) => (
-            <motion.a
-              key={social.name}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className="group flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2.5 md:py-3 glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300"
-            >
-              <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
-                {social.name}
-              </span>
-              <span className="text-sm md:text-base text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors lowercase">
-                {social.handle}
-              </span>
-              <ArrowUpRight size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
-            </motion.a>
-          ))}
+          {socials.map((social, i) => {
+            const IconComponent = social.icon;
+            return (
+              <motion.a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                className="group flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2.5 md:py-3 glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300"
+              >
+                <IconComponent size={14} className="md:w-4 md:h-4 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+                <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
+                  {social.name}
+                </span>
+                <span className="text-sm md:text-base text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors lowercase">
+                  {social.handle}
+                </span>
+                <ArrowUpRight size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+              </motion.a>
+            );
+          })}
+        </motion.div>
+
+        {/* Languages */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
+            languages: <span className="text-[#00FFD1]">english</span> (native)
+          </span>
         </motion.div>
 
         {/* Footer Links */}
@@ -161,7 +177,7 @@ export default function Contact() {
               </span>
             </Link>
             <p className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] leading-relaxed lowercase">
-              frontend developer & web3 builder based in jos, nigeria.
+              frontend developer & web3 builder based in nigeria and remote.
             </p>
           </div>
 
@@ -175,6 +191,7 @@ export default function Contact() {
                 {column.links.map((link) => {
                   const isExternal = link.href.startsWith("http");
                   const isAnchor = link.href.startsWith("#");
+                  const IconComponent = link.icon;
                   
                   if (isExternal) {
                     return (
@@ -183,9 +200,10 @@ export default function Contact() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                          className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
                         >
-                          {link.name}
+                          {IconComponent && <IconComponent size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />}
+                          <span>{link.name}</span>
                         </a>
                       </li>
                     );
@@ -228,11 +246,11 @@ export default function Contact() {
           className="flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4 pt-6 md:pt-8 border-t border-[#1a1a1a]"
         >
           <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-left">
-            {new Date().getFullYear()} duke.sol. built with next.js
+            {new Date().getFullYear()} duke.sol. built with <span className="text-[#00FFD1]">❤️</span> by me
           </span>
 
           <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-right">
-            jos, nigeria / available worldwide
+            nigeria and remote / available worldwide
           </span>
         </motion.div>
       </div>

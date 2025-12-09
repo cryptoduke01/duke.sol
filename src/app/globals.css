@@ -42,6 +42,10 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  background: var(--bg);
+  /* Cover browser chrome area */
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -49,6 +53,10 @@ body {
   color: var(--text);
   font-family: var(--font-display), system-ui, sans-serif;
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  /* Ensure full coverage including browser chrome */
+  position: relative;
 }
 
 /* Selection */

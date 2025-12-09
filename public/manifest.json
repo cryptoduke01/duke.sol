@@ -1,0 +1,17 @@
+{
+  "name": "duke.sol - Frontend & Web3 Developer",
+  "short_name": "duke.sol",
+  "description": "Frontend developer crafting interfaces for Web3 products. Core member at Superteam Nigeria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

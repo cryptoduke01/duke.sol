@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [location, setLocation] = useState("jos, nigeria");
+  const [location, setLocation] = useState("nigeria and remote");
   const [isLocating, setIsLocating] = useState(false);
 
   useEffect(() => {
@@ -22,10 +22,9 @@ export default function Hero() {
               `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
             );
             const data = await response.json();
-            const city = data.address?.city || data.address?.town || data.address?.village || data.address?.state;
             const country = data.address?.country;
-            if (city && country) {
-              setLocation(`${city.toLowerCase()}, ${country.toLowerCase()}`);
+            if (country) {
+              setLocation(`${country.toLowerCase()} and remote`);
             }
           } catch (error) {
             console.log("Geocoding failed, using default location");
@@ -97,7 +96,7 @@ export default function Hero() {
             {/* Main Statement */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}  
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight leading-[0.95] mb-4 md:mb-6 font-[family-name:var(--font-display)] lowercase"
             >
@@ -115,14 +114,14 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-xs sm:text-sm text-[#666] max-w-md mb-6 md:mb-8 font-[family-name:var(--font-display)] leading-relaxed lowercase"
             >
-              frontend developer crafting interfaces for web3 products. core member{" "}
+              developer. creator. contributor. core member{" "}
               <a 
-                href="https://superteam.ng" 
+                href="https://x.com/SuperteamNG" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#00FFD1] hover:underline"
               >
-                @superteamng
+                superteamNG 
               </a>
             </motion.p>
 
@@ -135,7 +134,7 @@ export default function Hero() {
             >
               <div>
                 <div className="text-xl sm:text-2xl font-semibold text-white font-[family-name:var(--font-display)] lowercase">
-                  2k+
+                  2K+
                 </div>
                 <div className="text-[9px] md:text-[10px] text-[#666] font-[family-name:var(--font-display)] lowercase">
                   followers
@@ -165,7 +164,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.98 }}
                 className="px-4 md:px-5 py-2 md:py-2.5 bg-[#00FFD1] text-black font-semibold text-xs md:text-sm font-[family-name:var(--font-display)] hover:bg-[#00e6bc] transition-all lowercase"
               >
-                get in touch
+                socials
               </motion.a>
               <motion.a
                 href="#work"
@@ -173,7 +172,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.98 }}
                 className="px-4 md:px-5 py-2 md:py-2.5 glass border border-[#1a1a1a] text-white font-semibold text-xs md:text-sm font-[family-name:var(--font-display)] hover:border-[#00FFD1] hover:text-[#00FFD1] transition-all lowercase"
               >
-                view work
+                works
               </motion.a>
             </motion.div>
           </div>

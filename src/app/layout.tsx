@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
@@ -10,33 +10,98 @@ const outfit = Outfit({
   weight: ["400", "500", "600", "700"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
-  title: "duke.sol",
+  metadataBase: new URL("https://duke.sol"),
+  title: {
+    default: "duke.sol | Frontend & Web3 Developer",
+    template: "%s | duke.sol",
+  },
   description:
-    "frontend developer. web3 builder. core member at superteam nigeria.",
+    "Frontend developer crafting interfaces for Web3 products. Core member at Superteam Nigeria. Building the future of Web3 on Solana.",
   keywords: [
-    "Web3",
+    "duke.sol",
+    "Web3 Developer",
     "Frontend Developer",
+    "Blockchain Developer",
+    "Solana Developer",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript",
+    "Web3",
     "Blockchain",
     "Solana",
-    "React",
-    "Next.js",
     "Superteam Nigeria",
+    "13x Bounty Winner",
+    "Top 1% Solana",
   ],
   authors: [{ name: "duke.sol", url: "https://x.com/cryptoduke01" }],
+  creator: "duke.sol",
+  publisher: "duke.sol",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "duke.sol",
-    description:
-      "frontend developer. web3 builder. core member at superteam nigeria.",
     type: "website",
     locale: "en_US",
+    url: "https://duke.sol",
+    siteName: "duke.sol",
+    title: "duke.sol | Frontend & Web3 Developer",
+    description:
+      "Frontend developer crafting interfaces for Web3 products. Core member at Superteam Nigeria. Building the future of Web3 on Solana.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "duke.sol - Frontend & Web3 Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "duke.sol",
+    title: "duke.sol | Frontend & Web3 Developer",
     description:
-      "frontend developer. web3 builder. core member at superteam nigeria.",
+      "Frontend developer crafting interfaces for Web3 products. Core member at Superteam Nigeria.",
     creator: "@cryptoduke01",
+    site: "@cryptoduke01",
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/favicon.svg", sizes: "180x180", type: "image/svg+xml" },
+    ],
+  },
+  manifest: "/manifest.json",
+  alternates: {
+    canonical: "https://duke.sol",
+  },
+  category: "technology",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "duke.sol",
+  },
+  other: {
+    "msapplication-TileColor": "#000000",
   },
 };
 
