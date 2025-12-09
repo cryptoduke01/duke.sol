@@ -2,13 +2,17 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowUpRight, X, ArrowLeft, Github, ExternalLink, Calendar } from "lucide-react";
+import { ArrowUpRight, X, ArrowLeft, Github, ExternalLink, Calendar, Twitter, MessageCircle, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 // Helper function to format date
 const formatDate = (dateString: string): string => {
   if (!dateString) return "date unknown";
+  // If it's just a year like "2025", return it as is
+  if (/^\d{4}$/.test(dateString)) {
+    return dateString;
+  }
   try {
     const date = new Date(dateString);
     const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
@@ -18,78 +22,162 @@ const formatDate = (dateString: string): string => {
   }
 };
 
-// Dummy project data
+// Project data
 const projects = [
   {
     id: 1,
-    title: "Solana Wallet Integration",
-    description: "A comprehensive wallet adapter implementation for Solana dApps with multi-wallet support including Phantom, Backpack, and Solflare.",
-    longDescription: "Built a robust wallet integration system that supports multiple Solana wallets. The implementation includes automatic wallet detection, connection handling, transaction signing, and error management. Features include:\n\n- Multi-wallet support (Phantom, Backpack, Solflare)\n- Automatic wallet detection\n- Transaction simulation before signing\n- Error handling and user feedback\n- Session persistence\n\nBuilt with React, TypeScript, and @solana/wallet-adapter.",
-    image: "/github-dev.png",
-    github: "https://github.com/cryptoduke01",
-    demo: "https://example.com",
-    tags: ["React", "TypeScript", "Solana", "Web3"],
-    date: "2024-12-01",
+    title: "Artvault",
+    description: "Discover, Share, And Sell Digital Art. A secure marketplace for digital artists to showcase and sell their creations directly to art enthusiasts.",
+    longDescription: "A secure marketplace for digital artists to showcase and sell their creations directly to art enthusiasts. Powered by secure authentication and hassle-free crypto payments.",
+    image: "/site-images/Macbook-Air-theartvault.vercel.app.png",
+    github: "",
+    demo: "https://theartvault.vercel.app/",
+    tags: ["Next.js", "NFT", "Marketplace", "Web3"],
+    date: "2025",
     status: "completed",
   },
   {
     id: 2,
-    title: "NFT Marketplace Frontend",
-    description: "A modern NFT marketplace interface built on Solana with real-time updates, filtering, and seamless wallet integration.",
-    longDescription: "Developed a full-featured NFT marketplace frontend with real-time data updates, advanced filtering options, and smooth wallet integration. Key features:\n\n- Real-time NFT listings and updates\n- Advanced filtering (price, collection, traits)\n- Wallet integration for purchases\n- Responsive design for all devices\n- Optimistic UI updates\n\nTechnologies: Next.js, TypeScript, Tailwind CSS, Solana Web3.js",
-    image: "/github-dev.png",
-    github: "https://github.com/cryptoduke01",
-    demo: "https://example.com",
-    tags: ["Next.js", "TypeScript", "Solana", "NFT"],
-    date: "2024-11-15",
+    title: "Regenerates",
+    description: "Establishing God's Kingdom in Web3. A community of believers with the mandate to establish God's Kingdom in the web3 space.",
+    longDescription: "About the Regenerates\n\nThe Regenerates are a budding community of believers with a mandate to establish the kingdom of GOD in the web3 space.\n\nThe vision of the Regenerates as given by GOD is to provide a conclave for believers in the web3 space, like a goshen in Egypt, a safe space for believers who are already in the space to learn and continue to grow with other like-minded christians.\n\nWe, the Regenerates, believe that financial security allows us to better serve GOD, and our primary mission is to empower christians in this space to fulfill this mission:\n\n• To bring as many believers into wealth in the web3 space.\n• To provide a safe space for believers to learn and grow.\n• To equip newbies in the space with the requisite knowledge to navigate the web3 space.\n\nWe are the Regenerates, in web3 for HIS glory!",
+    image: "/site-images/Macbook-Air-www.regener8s.com (1).png",
+    github: "https://github.com/cryptoduke01/devbuddies_buildspace",
+    demo: "https://www.regener8s.com/",
+    tags: ["Next.js", "Web3", "Community", "Solana"],
+    date: "2025",
     status: "completed",
   },
   {
     id: 3,
-    title: "DeFi Dashboard",
-    description: "A comprehensive DeFi dashboard displaying portfolio analytics, yield farming opportunities, and protocol interactions on Solana.",
-    longDescription: "Created an advanced DeFi dashboard that aggregates data from multiple Solana protocols. Features include:\n\n- Portfolio value tracking\n- Yield farming opportunities\n- Protocol interaction history\n- Real-time price updates\n- Transaction history\n\nBuilt with React, TypeScript, and various Solana DeFi APIs.",
-    image: "/github-dev.png",
-    github: "https://github.com/cryptoduke01",
-    demo: "https://example.com",
-    tags: ["React", "DeFi", "Solana", "Analytics"],
-    date: "2024-10-20",
-    status: "completed",
+    title: "stable.fun",
+    description: "Transform your wealth by creating your own stablecoins backed by yield-bearing stablebonds and start earning.",
+    longDescription: "Transform your wealth by creating your own stablecoins backed by yield-bearing stablebonds and start earning.",
+    image: "/site-images/Macbook-Air-stablefun.vercel.app.png",
+    github: "https://github.com/cryptoduke01/stable.fun",
+    demo: "https://stablefun.vercel.app/",
+    tags: ["Next.js", "DeFi", "Stablecoins", "Solana"],
+    date: "2025",
+    status: "in progress",
   },
   {
     id: 4,
-    title: "Token Swap Interface",
-    description: "A sleek token swap interface with price routing, slippage protection, and multi-DEX aggregation for optimal rates.",
-    longDescription: "Developed a token swap interface that aggregates liquidity from multiple DEXs on Solana. Features:\n\n- Multi-DEX routing (Orca, Raydium, Phoenix)\n- Best price finding algorithm\n- Slippage protection\n- Transaction simulation\n- Real-time price updates\n\nTechnologies: Next.js, TypeScript, Solana Web3.js",
-    image: "/github-dev.png",
-    github: "https://github.com/cryptoduke01",
-    demo: "https://example.com",
-    tags: ["Next.js", "TypeScript", "DeFi", "DEX"],
-    date: "2024-09-10",
-    status: "completed",
+    title: "pulse.fun",
+    description: "Your wallet tells your story. The social network for crypto traders. Connect your wallet and let your transactions become your social content.",
+    longDescription: "How pulse.fun Works\n\nTransform your wallet activity into a living social profile\n\nConnect Your Wallet\nLink your wallet securely and watch as your trading history automatically generates your profile.\n\nAuto-Generated Profile\nYour portfolio value, trading style, and performance metrics create a unique social identity.\n\nFollow & Discover\nFollow successful traders, discover new strategies, and build your crypto network.",
+    image: "/site-images/Macbook-Air-pulsedotfun.vercel.app.png",
+    github: "https://github.com/cryptoduke01/pulse.fun",
+    demo: "https://pulsedotfun.vercel.app/",
+    tags: ["Next.js", "Social", "Web3", "Solana"],
+    date: "2025",
+    status: "in progress",
   },
   {
     id: 5,
-    title: "DAO Governance Platform",
-    description: "A governance platform for DAOs with proposal creation, voting mechanisms, and on-chain execution on Solana.",
-    longDescription: "Built a comprehensive DAO governance platform enabling communities to manage proposals and voting. Features:\n\n- Proposal creation and management\n- Voting mechanisms (weighted, quadratic)\n- On-chain execution\n- Proposal history and analytics\n- Member management\n\nBuilt with React, TypeScript, and Solana program integration.",
-    image: "/github-dev.png",
-    github: "https://github.com/cryptoduke01",
-    demo: "https://example.com",
-    tags: ["React", "DAO", "Governance", "Solana"],
-    date: "2024-08-05",
+    title: "Blockfest Leaderboard",
+    description: "Leaderboard for Africa's biggest web3 festival.",
+    longDescription: "A real-time leaderboard system for Blockfest, Africa's biggest web3 festival. Track participants, scores, and rankings throughout the event.",
+    image: "/site-images/Macbook-Air-blockfestboard.vercel.app.png",
+    github: "https://github.com/cryptoduke01/blockfest-leaderboard",
+    demo: "https://blockfestboard.vercel.app/",
+    tags: ["Next.js", "Leaderboard", "Web3", "Event"],
+    date: "2025",
     status: "completed",
   },
   {
     id: 6,
-    title: "Cross-Chain Bridge UI",
-    description: "A user-friendly interface for cross-chain asset transfers with real-time status tracking and transaction history.",
-    longDescription: "Developed a cross-chain bridge interface that simplifies asset transfers between blockchains. Features:\n\n- Multi-chain support\n- Real-time transaction status\n- Transaction history\n- Fee estimation\n- Error handling and recovery\n\nTechnologies: Next.js, TypeScript, Wormhole SDK",
-    image: "/github-dev.png",
-    github: "https://github.com/cryptoduke01",
-    demo: "https://example.com",
-    tags: ["Next.js", "Cross-Chain", "Bridge", "Web3"],
-    date: "2024-07-15",
+    title: "Tactical Crypto Arena",
+    description: "A next-generation blockchain gaming experience built on Solana with Honeycomb Protocol integration and Verxio loyalty infrastructure.",
+    longDescription: "Overview\n\nTactical Crypto Arena is a comprehensive blockchain game that combines hero collection, automated battles, on-chain loyalty systems, and DeFi quests. Built with Next.js 14, TypeScript, and Tailwind CSS, it features a modern Solana-themed UI with real-time battle mechanics and blockchain integration.",
+    image: "/site-images/Macbook-Air-tactical-mocha.vercel.app.png",
+    github: "https://github.com/cryptoduke01/tactical",
+    demo: "https://tactical-mocha.vercel.app/",
+    tags: ["Next.js", "Gaming", "Solana", "DeFi"],
+    date: "2025",
+    status: "in progress",
+  },
+  {
+    id: 7,
+    title: "Warden Co-Pilot",
+    description: "Your Crypto Co-Pilot - Create Personalized Warden Protocol Visual Themes.",
+    longDescription: "Create personalized Warden Protocol visual themes to share and showcase your crypto journey.",
+    image: "/site-images/Macbook-Air-wardenisfor.vercel.app.png",
+    github: "https://github.com/cryptoduke01/wardendotfun",
+    demo: "https://wardenisfor.vercel.app/",
+    tags: ["Next.js", "Web3", "Visual", "Solana"],
+    date: "2025",
+    status: "completed",
+  },
+  {
+    id: 8,
+    title: "Fundrr",
+    description: "Supercharge Nigerian Creatives with Solana-Powered Funding. Solana Powered Funding for Web3 Creatives.",
+    longDescription: "Fundrr uses Solana for fast and low-cost transactions, enabling Nigerian creatives to access funding through Web3 technology.",
+    image: "/site-images/Macbook-Air-fundrr.vercel.app.png",
+    github: "https://github.com/cryptoduke01/fundrr",
+    demo: "https://fundrr.vercel.app/",
+    tags: ["Next.js", "Solana", "Funding", "Web3"],
+    date: "2025",
+    status: "in progress",
+  },
+  {
+    id: 9,
+    title: "Snappgram",
+    description: "Social media photo app for sharing photos and lifestyle.",
+    longDescription: "A social media platform focused on photo sharing and lifestyle content, built for the Web3 generation.",
+    image: "/site-images/Macbook-Air-snappgram.vercel.app.png",
+    github: "https://github.com/akachukwu-eth/snapgram",
+    demo: "https://snappgram.vercel.app/",
+    tags: ["Next.js", "Social Media", "Web3", "Photos"],
+    date: "2025",
+    status: "completed",
+  },
+  {
+    id: 10,
+    title: "Sui Mockup",
+    description: "Create customized Sui blockchain-themed visuals to share.",
+    longDescription: "Create customized Sui blockchain-themed visuals to share with your community.",
+    image: "/site-images/Macbook-Air-suisfor-git-main-trojancodes-projects-6d77485c.vercel.app.png",
+    github: "https://github.com/cryptoduke01/suisfor",
+    demo: "https://suisfor-git-main-trojancodes-projects-6d77485c.vercel.app/",
+    tags: ["Next.js", "Sui", "Visual", "Web3"],
+    date: "2025",
+    status: "completed",
+  },
+  {
+    id: 11,
+    title: "TUF Society",
+    description: "Founded in 2024, The Uncalled Family™ emerged as a collective of visionaries, developers, and creators united by a shared passion for Web3 innovation.",
+    longDescription: "Founded in 2024, The Uncalled Family™ emerged as a collective of visionaries, developers, and creators united by a shared passion for Web3 innovation.\n\nOur mission is to build a thriving ecosystem where creativity meets technology, fostering groundbreaking initiatives that shape the future of digital communities.",
+    image: "/site-images/Macbook-Air-tufsociety.vercel.app.png",
+    github: "https://github.com/cryptoduke01/tuf-society",
+    demo: "https://tufsociety.vercel.app/",
+    tags: ["Next.js", "Community", "Web3", "Innovation"],
+    date: "2025",
+    status: "completed",
+  },
+  {
+    id: 12,
+    title: "Solana Analytics Dashboard",
+    description: "Real-time ecosystem metrics and liquidity flow visualization.",
+    longDescription: "Real-time ecosystem metrics and liquidity flow visualization for the Solana blockchain.",
+    image: "/site-images/Macbook-Air-solanaboard.vercel.app.png",
+    github: "https://github.com/cryptoduke01/solana-analytics-board",
+    demo: "https://solanaboard.vercel.app/",
+    tags: ["Next.js", "Analytics", "Solana", "Dashboard"],
+    date: "2025",
+    status: "completed",
+  },
+  {
+    id: 13,
+    title: "Fundrr Waitlist",
+    description: "Supercharge Nigerian Creatives with Solana-Powered Funding.",
+    longDescription: "Join the waitlist for Fundrr - Supercharge Nigerian Creatives with Solana-Powered Funding.",
+    image: "/site-images/Macbook-Air-usefundrr.vercel.app.png",
+    github: "https://github.com/cryptoduke01/flofi-waitlist",
+    demo: "https://usefundrr.vercel.app/",
+    tags: ["Next.js", "Waitlist", "Solana", "Funding"],
+    date: "2025",
     status: "completed",
   },
 ];
@@ -341,11 +429,11 @@ export default function ProjectsPage() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-2xl max-h-[80vh] overflow-hidden glass border border-[#1a1a1a]"
+              className="relative w-full max-w-2xl max-h-[90vh] flex flex-col glass border border-[#1a1a1a]"
             >
               {/* Project Image */}
               {selectedProject.image && (
-                <div className="relative w-full h-64 overflow-hidden bg-[#0a0a0a]">
+                <div className="relative w-full h-64 flex-shrink-0 overflow-hidden bg-[#0a0a0a]">
                   <Image
                     src={selectedProject.image}
                     alt={selectedProject.title}
@@ -358,7 +446,7 @@ export default function ProjectsPage() {
               )}
 
               {/* Modal Header */}
-              <div className="flex items-center justify-between p-6 border-b border-[#1a1a1a]">
+              <div className="flex items-center justify-between p-6 border-b border-[#1a1a1a] flex-shrink-0">
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-2">
                     <div className="flex items-center gap-1.5 text-[#666]">
@@ -377,14 +465,14 @@ export default function ProjectsPage() {
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="p-2 text-[#666] hover:text-white transition-colors"
+                  className="p-2 text-[#666] hover:text-white transition-colors flex-shrink-0"
                 >
                   <X size={20} />
                 </button>
               </div>
 
-              {/* Modal Body */}
-              <div className="p-6 overflow-y-auto max-h-[50vh]">
+              {/* Modal Body - Scrollable */}
+              <div className="flex-1 overflow-y-auto p-6 min-h-0">
                 <div className="text-[#999] font-[family-name:var(--font-display)] text-sm leading-relaxed whitespace-pre-line mb-4">
                   {selectedProject.longDescription}
                 </div>
@@ -403,7 +491,8 @@ export default function ProjectsPage() {
               </div>
 
               {/* Modal Footer */}
-              <div className="p-6 border-t border-[#1a1a1a] flex items-center gap-4">
+              <div className="p-6 border-t border-[#1a1a1a] flex items-center gap-4 flex-shrink-0">
+                {selectedProject.github && (
                 <a
                   href={selectedProject.github}
                   target="_blank"
@@ -413,6 +502,7 @@ export default function ProjectsPage() {
                   view on github
                   <Github size={14} />
                 </a>
+                )}
                 {selectedProject.demo && (
                   <a
                     href={selectedProject.demo}
@@ -429,6 +519,168 @@ export default function ProjectsPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Footer */}
+      <footer className="relative mt-20 md:mt-32 pt-12 md:pt-16 border-t border-[#1a1a1a]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-8 md:pb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
+            {/* Logo column */}
+            <div className="col-span-2 sm:col-span-1">
+              <Link href="/" className="inline-block mb-3 md:mb-4">
+                <span className="text-lg md:text-xl font-semibold tracking-tight font-[family-name:var(--font-display)]">
+                  <span className="text-white">duke</span>
+                  <span className="text-[#00FFD1]">.sol</span>
+                </span>
+              </Link>
+              <p className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] leading-relaxed lowercase">
+                frontend developer & web3 builder based in nigeria and remote.
+              </p>
+            </div>
+
+            {/* Navigation */}
+            <div>
+              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+                navigation
+              </h4>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <Link href="/" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#work" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    work
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/projects" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    projects
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/content" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    content
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#contact" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Socials */}
+            <div>
+              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+                socials
+              </h4>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <a
+                    href="https://x.com/cryptoduke01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                  >
+                    <Twitter size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+                    <span>twitter / x</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://t.me/cryptoduke01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                  >
+                    <MessageCircle size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+                    <span>telegram</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/cryptoduke01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                  >
+                    <Github size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+                    <span>github</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/akachukwuu?originalSubdomain=ng"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                  >
+                    <Linkedin size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+                    <span>linkedin</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+                resources
+              </h4>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <a
+                    href="/resume-dev.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                  >
+                    dev resume
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/resume-writing.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                  >
+                    writing resume
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://superteam.ng"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                  >
+                    superteam ng
+                  </a>
+                </li>
+                <li>
+                  <Link href="/content" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    threads
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4 pt-6 md:pt-8 border-t border-[#1a1a1a]">
+            <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-left">
+              {new Date().getFullYear()} duke.sol. built with <span className="text-[#00FFD1]">❤️</span> by me
+            </span>
+
+            <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-right">
+              nigeria and remote / available worldwide
+            </span>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

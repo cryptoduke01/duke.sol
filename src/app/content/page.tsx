@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowUpRight, X, ArrowLeft, Download, FileText, Pen, Calendar, Heart, MessageCircle, Bookmark } from "lucide-react";
+import { ArrowUpRight, X, ArrowLeft, Download, FileText, Pen, Calendar, Heart, MessageCircle, Bookmark, Twitter, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -767,11 +767,11 @@ export default function ContentPage() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-2xl max-h-[80vh] overflow-hidden glass border border-[#1a1a1a]"
+              className="relative w-full max-w-2xl max-h-[90vh] flex flex-col glass border border-[#1a1a1a]"
             >
               {/* Thread Image */}
               {selectedContent.image && (
-                <div className="relative w-full h-64 overflow-hidden bg-[#0a0a0a]">
+                <div className="relative w-full h-64 flex-shrink-0 overflow-hidden bg-[#0a0a0a]">
                   <Image
                     src={selectedContent.image}
                     alt={selectedContent.title}
@@ -784,7 +784,7 @@ export default function ContentPage() {
               )}
 
               {/* Modal Header */}
-              <div className="flex items-center justify-between p-6 border-b border-[#1a1a1a]">
+              <div className="flex items-center justify-between p-6 border-b border-[#1a1a1a] flex-shrink-0">
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-2">
                     <div className="flex items-center gap-1.5 text-[#666]">
@@ -822,21 +822,21 @@ export default function ContentPage() {
                 </div>
                 <button
                   onClick={() => setSelectedContent(null)}
-                  className="p-2 text-[#666] hover:text-white transition-colors"
+                  className="p-2 text-[#666] hover:text-white transition-colors flex-shrink-0"
                 >
                   <X size={20} />
                 </button>
               </div>
 
-              {/* Modal Body */}
-              <div className="p-6 overflow-y-auto max-h-[50vh]">
+              {/* Modal Body - Scrollable */}
+              <div className="flex-1 overflow-y-auto p-6 min-h-0">
                 <div className="text-[#999] font-[family-name:var(--font-display)] text-sm leading-relaxed whitespace-pre-line">
                   {selectedContent.content}
                 </div>
               </div>
 
               {/* Modal Footer */}
-              <div className="p-6 border-t border-[#1a1a1a]">
+              <div className="p-6 border-t border-[#1a1a1a] flex-shrink-0">
                 <a
                   href={selectedContent.link}
                   target="_blank"
@@ -850,7 +850,169 @@ export default function ContentPage() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+          </AnimatePresence>
+
+      {/* Footer */}
+      <footer className="relative mt-20 md:mt-32 pt-12 md:pt-16 border-t border-[#1a1a1a]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-8 md:pb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
+            {/* Logo column */}
+            <div className="col-span-2 sm:col-span-1">
+              <Link href="/" className="inline-block mb-3 md:mb-4">
+                <span className="text-lg md:text-xl font-semibold tracking-tight font-[family-name:var(--font-display)]">
+                  <span className="text-white">duke</span>
+                  <span className="text-[#00FFD1]">.sol</span>
+                </span>
+              </Link>
+              <p className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] leading-relaxed lowercase">
+                frontend developer & web3 builder based in nigeria and remote.
+              </p>
+            </div>
+
+            {/* Navigation */}
+            <div>
+              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+                navigation
+              </h4>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <Link href="/" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#work" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    work
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/projects" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    projects
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/content" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    content
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#contact" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Socials */}
+            <div>
+              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+                socials
+              </h4>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <a
+                    href="https://x.com/cryptoduke01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                  >
+                    <Twitter size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+                    <span>twitter / x</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://t.me/cryptoduke01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                  >
+                    <MessageCircle size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+                    <span>telegram</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/cryptoduke01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                  >
+                    <Github size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+                    <span>github</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/akachukwuu?originalSubdomain=ng"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line group"
+                  >
+                    <Linkedin size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
+                    <span>linkedin</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h4 className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.2em] mb-3 md:mb-4 lowercase">
+                resources
+              </h4>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <a
+                    href="/resume-dev.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                  >
+                    dev resume
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/resume-writing.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                  >
+                    writing resume
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://superteam.ng"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line"
+                  >
+                    superteam ng
+                  </a>
+                </li>
+                <li>
+                  <Link href="/content" className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase link-line">
+                    threads
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4 pt-6 md:pt-8 border-t border-[#1a1a1a]">
+            <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-left">
+              {new Date().getFullYear()} duke.sol. built with <span className="text-[#00FFD1]">❤️</span> by me
+            </span>
+
+            <span className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-display)] lowercase text-center sm:text-right">
+              nigeria and remote / available worldwide
+            </span>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

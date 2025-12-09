@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
 
 const outfit = Outfit({
@@ -113,10 +112,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} antialiased bg-black text-[#e0e0e0] scanlines noise cursor-none`}
+        className={`${outfit.variable} antialiased bg-black text-[#e0e0e0] scanlines noise`}
       >
         <LoadingScreen />
-        <CustomCursor />
         {children}
       </body>
     </html>
