@@ -156,7 +156,7 @@ export default function ContentPage() {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
               />
-              <span className="text-xs text-[#666] font-[family-name:var(--font-mono)] lowercase">loading</span>
+              <span className="text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">loading</span>
             </div>
           </motion.div>
         )}
@@ -175,7 +175,7 @@ export default function ContentPage() {
               className="flex items-center gap-2 text-[#666] hover:text-white transition-colors"
             >
               <ArrowLeft size={16} />
-              <span className="text-sm font-[family-name:var(--font-mono)] lowercase">back</span>
+              <span className="text-sm font-[family-name:var(--font-display)] lowercase">back</span>
             </Link>
 
             <span className="text-xl font-semibold tracking-tight font-[family-name:var(--font-display)]">
@@ -187,7 +187,7 @@ export default function ContentPage() {
               href="https://x.com/cryptoduke01"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 glass border border-[#00FFD1]/30 text-[#00FFD1] text-sm font-[family-name:var(--font-mono)] hover:bg-[#00FFD1]/10 transition-all lowercase"
+              className="px-4 py-2 glass border border-[#00FFD1]/30 text-[#00FFD1] text-sm font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 transition-all lowercase"
             >
               x
             </a>
@@ -205,14 +205,14 @@ export default function ContentPage() {
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="h-[1px] w-12 bg-[#00FFD1]" />
-            <span className="text-xs font-medium text-[#00FFD1] tracking-[0.3em] lowercase font-[family-name:var(--font-mono)]">
+            <span className="text-xs font-medium text-[#00FFD1] tracking-[0.3em] lowercase font-[family-name:var(--font-display)]">
               content
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white font-[family-name:var(--font-display)] lowercase mb-4">
             threads & articles
           </h1>
-          <p className="text-[#666] max-w-lg font-[family-name:var(--font-mono)] text-sm lowercase">
+          <p className="text-[#666] max-w-lg font-[family-name:var(--font-display)] text-sm lowercase">
             sharing knowledge about web3, blockchain technology, and the solana ecosystem through educational content.
           </p>
         </motion.div>
@@ -233,7 +233,7 @@ export default function ContentPage() {
               <div className="text-2xl font-semibold text-[#00FFD1] font-[family-name:var(--font-display)] lowercase">
                 {stat.value}
               </div>
-              <div className="text-xs text-[#666] font-[family-name:var(--font-mono)] lowercase">
+              <div className="text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
                 {stat.label}
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function ContentPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 text-sm font-medium font-[family-name:var(--font-mono)] transition-all duration-300 lowercase ${
+              className={`px-6 py-3 text-sm font-medium font-[family-name:var(--font-display)] transition-all duration-300 lowercase ${
                 activeTab === tab.id
                   ? "bg-[#00FFD1] text-black"
                   : "glass text-[#666] hover:text-white border border-[#1a1a1a] hover:border-[#00FFD1]/30"
@@ -281,10 +281,10 @@ export default function ContentPage() {
                 className="group block p-6 glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300 text-left"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs text-[#666] font-[family-name:var(--font-mono)] lowercase">
+                  <span className="text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
                     {thread.date}
                   </span>
-                  <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-mono)] lowercase opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-display)] lowercase opacity-0 group-hover:opacity-100 transition-opacity">
                     read
                   </span>
                 </div>
@@ -293,11 +293,11 @@ export default function ContentPage() {
                   {thread.title}
                 </h3>
 
-                <p className="text-sm text-[#666] mb-4 font-[family-name:var(--font-mono)] leading-relaxed lowercase line-clamp-2">
+                <p className="text-sm text-[#666] mb-4 font-[family-name:var(--font-display)] leading-relaxed lowercase line-clamp-2">
                   {thread.preview}
                 </p>
 
-                <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-mono)] lowercase">
+                <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-display)] lowercase">
                   {thread.engagement}
                 </span>
               </motion.button>
@@ -324,10 +324,10 @@ export default function ContentPage() {
                 className="group block p-6 glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300 text-left"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 text-xs glass text-[#00FFD1] font-[family-name:var(--font-mono)] lowercase">
+                  <span className="px-3 py-1 text-xs glass text-[#00FFD1] font-[family-name:var(--font-display)] lowercase">
                     {article.platform}
                   </span>
-                  <span className="text-xs text-[#666] font-[family-name:var(--font-mono)] lowercase">
+                  <span className="text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
                     {article.readTime}
                   </span>
                 </div>
@@ -336,15 +336,15 @@ export default function ContentPage() {
                   {article.title}
                 </h3>
 
-                <p className="text-sm text-[#666] mb-4 font-[family-name:var(--font-mono)] leading-relaxed lowercase">
+                <p className="text-sm text-[#666] mb-4 font-[family-name:var(--font-display)] leading-relaxed lowercase">
                   {article.preview}
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666] font-[family-name:var(--font-mono)] lowercase">
+                  <span className="text-xs text-[#666] font-[family-name:var(--font-display)] lowercase">
                     {article.date}
                   </span>
-                  <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-mono)] lowercase opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-display)] lowercase opacity-0 group-hover:opacity-100 transition-opacity">
                     read
                   </span>
                 </div>
@@ -381,12 +381,12 @@ export default function ContentPage() {
                     <h3 className="text-lg font-semibold text-white mb-2 font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors lowercase">
                       {resume.title}
                     </h3>
-                    <p className="text-sm text-[#666] font-[family-name:var(--font-mono)] leading-relaxed lowercase mb-4">
+                    <p className="text-sm text-[#666] font-[family-name:var(--font-display)] leading-relaxed lowercase mb-4">
                       {resume.description}
                     </p>
                     <div className="flex items-center gap-2 text-[#00FFD1]">
                       <Download size={14} />
-                      <span className="text-xs font-[family-name:var(--font-mono)] lowercase">
+                      <span className="text-xs font-[family-name:var(--font-display)] lowercase">
                         download pdf
                       </span>
                     </div>
@@ -427,7 +427,7 @@ export default function ContentPage() {
               {/* Modal Header */}
               <div className="flex items-center justify-between p-6 border-b border-[#1a1a1a]">
                 <div>
-                  <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-mono)] lowercase mb-1 block">
+                  <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-display)] lowercase mb-1 block">
                     {selectedContent.date} {selectedContent.engagement && `/ ${selectedContent.engagement}`}
                   </span>
                   <h2 className="text-xl font-semibold text-white font-[family-name:var(--font-display)] lowercase">
@@ -444,7 +444,7 @@ export default function ContentPage() {
 
               {/* Modal Body */}
               <div className="p-6 overflow-y-auto max-h-[50vh]">
-                <div className="text-[#999] font-[family-name:var(--font-mono)] text-sm leading-relaxed lowercase whitespace-pre-line">
+                <div className="text-[#999] font-[family-name:var(--font-display)] text-sm leading-relaxed lowercase whitespace-pre-line">
                   {selectedContent.content}
                 </div>
               </div>
@@ -455,7 +455,7 @@ export default function ContentPage() {
                   href={selectedContent.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#00FFD1] text-black font-semibold text-sm font-[family-name:var(--font-mono)] hover:bg-[#00e6bc] transition-all lowercase"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#00FFD1] text-black font-semibold text-sm font-[family-name:var(--font-display)] hover:bg-[#00e6bc] transition-all lowercase"
                 >
                   read full thread on x
                   <ArrowUpRight size={14} />

@@ -34,8 +34,8 @@ export default function Navigation() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <motion.a
               href="#"
@@ -43,7 +43,7 @@ export default function Navigation() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="text-xl font-semibold tracking-tight font-[family-name:var(--font-display)]">
+              <span className="text-lg md:text-xl font-semibold tracking-tight font-[family-name:var(--font-display)]">
                 <span className="text-white">duke</span>
                 <span className="text-[#00FFD1]">.sol</span>
               </span>
@@ -51,7 +51,7 @@ export default function Navigation() {
             </motion.a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6 lg:gap-8">
               {navLinks.map((link, i) => {
                 const isExternal = link.href.startsWith("#");
                 const Component = isExternal ? "a" : Link;
@@ -65,7 +65,7 @@ export default function Navigation() {
                   >
                     <Component
                       href={link.href}
-                      className="relative text-sm font-medium text-[#666] hover:text-white transition-colors duration-300 font-[family-name:var(--font-mono)] tracking-wide link-line lowercase"
+                      className="relative text-xs md:text-sm font-medium text-[#666] hover:text-white transition-colors duration-300 font-[family-name:var(--font-display)] tracking-wide link-line lowercase"
                     >
                       {link.name}
                     </Component>
@@ -82,7 +82,7 @@ export default function Navigation() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-5 py-2.5 glass border border-[#00FFD1]/30 text-[#00FFD1] text-sm font-medium font-[family-name:var(--font-mono)] hover:bg-[#00FFD1]/10 hover:border-[#00FFD1]/50 transition-all duration-300 lowercase"
+                className="px-4 md:px-5 py-2 md:py-2.5 glass border border-[#00FFD1]/30 text-[#00FFD1] text-xs md:text-sm font-medium font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 hover:border-[#00FFD1]/50 transition-all duration-300 lowercase"
               >
                 x
               </motion.a>
@@ -141,9 +141,9 @@ export default function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="absolute right-0 top-0 h-full w-full glass-strong p-8 pt-28"
+              className="absolute right-0 top-0 h-full w-full glass-strong p-6 sm:p-8 pt-24 sm:pt-28"
             >
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-6 sm:gap-8">
                 {navLinks.map((link, i) => {
                   const isExternal = link.href.startsWith("#");
                   const Component = isExternal ? "a" : Link;
@@ -158,7 +158,7 @@ export default function Navigation() {
                       <Component
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-3xl font-semibold text-white hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase block"
+                        className="text-2xl sm:text-3xl font-semibold text-white hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] lowercase block"
                       >
                         {link.name}
                       </Component>
@@ -173,7 +173,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-8 inline-block px-6 py-3 glass border border-[#00FFD1]/30 text-[#00FFD1] text-center font-[family-name:var(--font-mono)] hover:bg-[#00FFD1]/10 transition-all lowercase"
+                  className="mt-4 sm:mt-8 inline-block px-6 py-3 glass border border-[#00FFD1]/30 text-[#00FFD1] text-center font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 transition-all lowercase"
                 >
                   x
                 </motion.a>
