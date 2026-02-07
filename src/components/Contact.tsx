@@ -2,11 +2,13 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowUpRight, Copy, Check, Twitter, MessageCircle, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight, Copy, Check, Twitter, MessageCircle, Github, Linkedin, BookOpen, FileText } from "lucide-react";
 import Link from "next/link";
 
 const socials = [
   { name: "twitter", handle: "duke.sol", href: "https://x.com/cryptoduke01", icon: Twitter },
+  { name: "substack", handle: "duke.sol", href: "https://dukesol.substack.com/", icon: BookOpen },
+  { name: "medium", handle: "@cryptoduke1", href: "https://medium.com/@cryptoduke1/", icon: FileText },
   { name: "telegram", handle: "duke.sol", href: "https://t.me/cryptoduke01", icon: MessageCircle },
   { name: "github", handle: "duke.sol", href: "https://github.com/cryptoduke01", icon: Github },
   { name: "linkedin", handle: "duke.sol", href: "https://www.linkedin.com/in/akachukwuu?originalSubdomain=ng", icon: Linkedin },
@@ -26,6 +28,8 @@ const footerLinks = [
     title: "socials",
     links: [
       { name: "twitter / x", href: "https://x.com/cryptoduke01", icon: Twitter },
+      { name: "substack", href: "https://dukesol.substack.com/", icon: BookOpen },
+      { name: "medium", href: "https://medium.com/@cryptoduke1/", icon: FileText },
       { name: "telegram", href: "https://t.me/cryptoduke01", icon: MessageCircle },
       { name: "github", href: "https://github.com/cryptoduke01", icon: Github },
       { name: "linkedin", href: "https://www.linkedin.com/in/akachukwuu?originalSubdomain=ng", icon: Linkedin },

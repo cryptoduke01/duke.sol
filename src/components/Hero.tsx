@@ -2,46 +2,10 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+
+const LOCATION = "nigeria and remote";
 
 export default function Hero() {
-  const [location, setLocation] = useState("nigeria and remote");
-  const [isLocating, setIsLocating] = useState(false);
-
-  useEffect(() => {
-    const getLocation = async () => {
-      if (!navigator.geolocation) return;
-      
-      setIsLocating(true);
-      
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          try {
-            const { latitude, longitude } = position.coords;
-            const response = await fetch(
-              `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
-            );
-            const data = await response.json();
-            const country = data.address?.country;
-            if (country) {
-              setLocation(`${country.toLowerCase()} and remote`);
-            }
-          } catch (error) {
-            console.log("Geocoding failed, using default location");
-          } finally {
-            setIsLocating(false);
-          }
-        },
-        () => {
-          setIsLocating(false);
-        },
-        { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
-      );
-    };
-
-    getLocation();
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Grid background */}
@@ -222,10 +186,9 @@ export default function Hero() {
                 className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 md:gap-1.5 px-2 md:px-3 py-1 md:py-1.5 glass font-[family-name:var(--font-display)] text-xs md:text-sm whitespace-nowrap capitalize"
               >
                 <span className="relative flex h-1.5 w-1.5">
-                  {isLocating && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FFD1] opacity-75" />}
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#00FFD1]" />
                 </span>
-                <span className="text-white">{location}</span>
+                <span className="text-white">{LOCATION}</span>
               </motion.div>
             </div>
           </motion.div>

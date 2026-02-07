@@ -327,6 +327,28 @@ const threadsData = [
     hook: "Physical Assets on the Blockchain",
     firstTweet: "This interesting project is opening up the possibilities of how physical assets could be made part of the blockchain.\n\nWhat about acquiring just a piece of the Eiffel Tower, or swapping a Picasso on stock through an Smartphone?\n\n@sailingprotocol is here for you\n\nLike & Retweet",
   },
+  {
+    id: 28,
+    link: "https://x.com/cryptoduke01/status/2014922175430459794?s=20",
+    image: "https://pbs.twimg.com/media/G_ZxCH0WEAAXbDj?format=jpg&name=medium",
+    date: "Sat, 07 Feb 2026 12:00:00 GMT",
+    likes: 0,
+    comments: 0,
+    bookmarks: 0,
+    hook: "$3K Up For Grabs For Designers",
+    firstTweet: "Superteam Brasil just launched a design bounty, offering a reward to find the best talent.\n\nIf you can use Figma and ship fast, this is your chance to get paid while building for one of the fastest-growing Solana communities.\n\nHere's the rundown of everything you need to know.🔻",
+  },
+  {
+    id: 29,
+    link: "https://x.com/cryptoduke01/status/1999961262084743631?s=20",
+    image: "https://pbs.twimg.com/media/G8E5yeDW4AAeafB?format=jpg&name=medium",
+    date: "Thu, 05 Dec 2025 12:00:00 GMT",
+    likes: 0,
+    comments: 0,
+    bookmarks: 0,
+    hook: "Traders Lose $149M Monthly To One Problem",
+    firstTweet: "85% of prediction market traders lose money, mostly due to timing, not poor bets.\n\nBy the time you notice a price shift on Polymarket, others have acted on it hours earlier, leading to a $27.9B annual loss in missed chances.\n\nBut here's a @SuperteamDE project tackling this🔻",
+  },
 ];
 
 // Sort threads by date (most recent first)
@@ -346,37 +368,144 @@ const threads = threadsData
   .sort((a, b) => b.sortDate - a.sortDate)
   .map(({ sortDate, ...thread }) => thread);
 
-const articles = [
+// Article sections: containers you fill as you write. Add items to each section's array.
+type ArticleCategory = "substack" | "x" | "medium" | "document";
+
+type ArticleItem = {
+  id: number | string;
+  title: string;
+  preview?: string;
+  content?: string;
+  date?: string;
+  readTime?: string;
+  link?: string;
+  embedUrl?: string;
+  /** Banner image URL (external). Rendered with a small bottom shadow. */
+  banner?: string;
+  /** Substack post embed HTML (div only). Script is loaded in modal. */
+  embedHtml?: string;
+};
+
+type ArticleSectionConfig = {
+  id: ArticleCategory;
+  label: string;
+  items: ArticleItem[];
+};
+
+const SUBSTACK_EMBED_URL = "https://dukesol.substack.com/embed";
+const REQUEST_ACCESS_EMAIL = "thepublicdesigner@gmail.com";
+const PROFILE_IMAGE = "/mypfp.jpg";
+
+// Substack logo SVG (S mark)
+function SubstackLogoIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+      <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+    </svg>
+  );
+}
+
+// X (Twitter) logo SVG
+function XLogoIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
+// Medium logo SVG
+function MediumLogoIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+      <path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.2-2.58-1.2-5.75s.54-5.75 1.2-5.75c.66 0 1.19 2.58 1.19 5.75z" />
+    </svg>
+  );
+}
+
+const ARTICLE_VIEW_LINKS: Record<ArticleCategory, string> = {
+  substack: "https://dukesol.substack.com/",
+  x: "https://x.com/cryptoduke01",
+  medium: "https://medium.com/@cryptoduke1/",
+  document: "#",
+};
+
+const articleSections: ArticleSectionConfig[] = [
   {
-    id: 1,
-    title: "a complete guide to solana development",
-    preview: "everything you need to know to start building on solana, from environment setup to deploying your first program.",
-    content: "this comprehensive guide walks you through the entire process of becoming a solana developer...",
-    date: "dec 2024",
-    readTime: "12 min",
-    link: "#",
-    platform: "mirror",
+    id: "substack",
+    label: "Substack",
+    items: [
+      {
+        id: "substack-1",
+        title: "Building a Trading Analytics Dashboard for Deriverse",
+        preview:
+          "I had a problem that probably sounds familiar if you trade on-chain: I had no idea how I was actually performing on Deriverse. Sure, I could see individual trades execute, but what about my total PnL, my win rate, which trading sessions were profitable, and how much I was paying in fees? The platform didn't have a dedicated analytics view, and I wasn't about to manually track everything in a spreadsheet. So I built my own dashboard, live data from my wallet, decoded from the chain, with every metric I actually care about. This is how I did it.",
+        link: "https://open.substack.com/pub/dukesol/p/building-a-trading-analytics-dashboard?utm_campaign=post-expanded-share&utm_medium=post%20viewer",
+        embedHtml:
+          '<div class="substack-post-embed"><p lang="en">Building a Trading Analytics Dashboard for Deriverse by duke.sol</p><p>How I built a full-stack trading journal that pulls live data from the Solana blockchain and transforms it into actionable trading insights.</p><a data-post-link href="https://dukesol.substack.com/p/building-a-trading-analytics-dashboard">Read on Substack</a></div>',
+      },
+    ],
   },
   {
-    id: 2,
-    title: "understanding token standards on solana",
-    preview: "spl tokens, nfts, and the token-2022 program explained for developers.",
-    content: "solana's token ecosystem is built on the spl token program...",
-    date: "nov 2024",
-    readTime: "8 min",
-    link: "#",
-    platform: "hashnode",
+    id: "x",
+    label: "X Articles",
+    items: [
+      {
+        id: "x-1",
+        title: "The Privacy Crisis Killing Crypto Adoption",
+        preview:
+          "You wouldn't tape your bank statement to your front door, so why are you doing exactly that every time you use crypto? The Glass House Problem — You're buying lunch from a food store that accepts crypto payments, and you scan the QR code and send $12 in USDC. To you, that was a straightforward transaction, but here's what just happened:",
+        link: "https://x.com/cryptoduke01/status/2017947282839065078?s=20",
+        banner: "https://pbs.twimg.com/media/HACQ_f2XcAAjIbx?format=jpg&name=medium",
+      },
+      {
+        id: "x-2",
+        title: "x402 on Solana: The Micropayments Standard",
+        preview: "Exploring the micropayments standard on Solana and how x402 is changing the game.",
+        link: "https://x.com/cryptoduke01",
+        banner: "https://pbs.twimg.com/media/G-EiJIbXEAAnVAi?format=jpg&name=medium",
+      },
+    ],
   },
   {
-    id: 3,
-    title: "web3 security best practices",
-    preview: "common vulnerabilities in smart contracts and how to protect your users.",
-    content: "security in web3 is paramount. this guide covers the most common attack vectors...",
-    date: "oct 2024",
-    readTime: "15 min",
-    link: "#",
-    platform: "dev.to",
+    id: "medium",
+    label: "Medium Article",
+    items: [
+      {
+        id: "medium-1",
+        title: "Overdrive by Prediction Index: Real-Time Intelligence and Prediction Markets on Solana",
+        preview:
+          "Prediction markets exploded in 2025. Combined trading volumes across platforms hit $7.4 billion in October alone, with Polymarket processing $3.02 billion and Kalshi recording $4.4 billion, and these aren't gambling sites. They're sophisticated forecasting engines where users bet real money on election outcomes, sports results, economic indicators, and tech developments. But here's the catch:",
+        link: "https://medium.com/@cryptoduke1/overdrive-by-prediction-index-real-time-intelligence-and-prediction-markets-on-solana-d43780cf01c8",
+        banner: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*V_9F2FndTbsoa3p8b078zw.jpeg",
+      },
+      {
+        id: "medium-2",
+        title: "Stop Losing Yields, The Smarter Way to Farm on Solana is Here",
+        preview:
+          "Your stablecoins sit idle, earning nothing, or you're jumping between five protocols chasing yields that disappear overnight. The smarter way to farm on Solana is here, and Carrot is automating the entire process. This piece covers how Solana's leading yield aggregator is turning passive stables into productive capital.",
+        link: "https://medium.com/@cryptoduke1/stop-losing-yields-the-smarter-way-to-farm-on-solana-is-here-8a6f1876f85d",
+        banner: "https://miro.medium.com/v2/resize:fit:1350/format:webp/1*vi-jDG60d5De6NOoUpQDpg.png",
+      },
+      {
+        id: "medium-3",
+        title: "Finternet's Potential In Nigeria's Digital Economy",
+        preview:
+          "It's so sad that Nigeria is exclusive or not being part of formal financial services in as much as they have a large economy and population which makes them stand at a better chance in the digitalization path. Why is this so? Just the \"normal\" problems we face everyday, high costs, under development in areas, infrastructures not strong enough. This gets more saddening because we have a very vibrant fintech sector and young highly tech-inclined population.",
+        link: "https://medium.com/@cryptoduke1/finternets-potential-in-nigeria-s-digital-economy-d51d84aaf376",
+        banner: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*mCCDN3PIrisELRwf9_uqZQ.png",
+      },
+      {
+        id: "medium-4",
+        title: "Who Will Create the Key Data Needed to Make Solana's AI Better?",
+        preview:
+          "AI Models trained on poor data are destined for failure! I struggled with AI models, which sometimes failed to deliver results, until I learned about the significance of high-quality data. This may be why your AI assistant is underperforming without you even realizing it! The issue isn't with the model, whether it's ChatGPT, Grok, or Deepseek; it's all about the data. Here's how everything is changing;",
+        link: "https://medium.com/@cryptoduke1/who-will-create-the-key-data-needed-to-make-solanas-ai-better-1ff7b8d2a40a",
+        banner: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*7fEkqedN2O_3e9v3kebkuw.jpeg",
+      },
+    ],
   },
+  { id: "document", label: "Document (Restricted Access)", items: [] },
 ];
 
 const resumes = [
@@ -408,11 +537,14 @@ type ContentItem = {
   likes?: number;
   comments?: number;
   bookmarks?: number;
+  category?: ArticleCategory;
+  embedUrl?: string;
 };
 
 export default function ContentPage() {
   const [activeTab, setActiveTab] = useState<"threads" | "articles" | "resume">("threads");
   const [selectedContent, setSelectedContent] = useState<ContentItem | null>(null);
+  const [selectedArticleSection, setSelectedArticleSection] = useState<ArticleCategory | null>(null);
   const [isPageLoading, setIsPageLoading] = useState(true);
 
   useEffect(() => {
@@ -512,8 +644,8 @@ export default function ContentPage() {
           className="flex flex-wrap gap-8 mb-12"
         >
           {[
-            { label: "threads written", value: "27" },
-            { label: "total engagement", value: "100k+" },
+            { label: "threads written", value: "29" },
+            { label: "total engagement", value: "120k+" },
             { label: "bounties won", value: "13x" },
           ].map((stat) => (
             <div key={stat.label}>
@@ -538,14 +670,16 @@ export default function ContentPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-                    className={`px-6 py-3 text-sm font-medium font-[family-name:var(--font-display)] transition-all duration-300 ${
-                      activeTab === tab.id
-                        ? "bg-[#00FFD1] text-black"
-                        : "glass text-[#666] hover:text-white border border-[#1a1a1a] hover:border-[#00FFD1]/30"
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
+              className={`px-6 py-3 text-sm font-medium font-[family-name:var(--font-display)] transition-all duration-300 ${
+                tab.id === "resume" && activeTab === "resume"
+                  ? "bg-[#222] text-[#666] border border-[#1a1a1a] cursor-default"
+                  : activeTab === tab.id
+                    ? "bg-[#00FFD1] text-black"
+                    : "glass text-[#666] hover:text-white border border-[#1a1a1a] hover:border-[#00FFD1]/30"
+              }`}
+            >
+              {tab.label}
+            </button>
           ))}
         </motion.div>
 
@@ -650,95 +784,118 @@ export default function ContentPage() {
           </motion.div>
         )}
 
-        {/* Articles Tab */}
+        {/* Articles Tab — 3 per row, 4th below; longer cards; spaced out; buttons in line, pointer cursor */}
         {activeTab === "articles" && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
           >
-            {articles.map((article, i) => (
-              <motion.button
-                key={article.id}
-                onClick={() => setSelectedContent(article)}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 + i * 0.05 }}
-                whileHover={{ y: -5 }}
-                className="group block p-6 glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300 text-left"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 text-xs glass text-[#00FFD1] font-[family-name:var(--font-display)]">
-                    {article.platform}
-                  </span>
-                  <span className="text-xs text-[#666] font-[family-name:var(--font-display)]">
-                    {article.readTime}
-                  </span>
-                </div>
-
-                <h3 className="text-lg font-semibold text-white mb-3 font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors">
-                  {article.title}
-                </h3>
-
-                <p className="text-sm text-[#666] mb-4 font-[family-name:var(--font-display)] leading-relaxed">
-                  {article.preview}
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#666] font-[family-name:var(--font-display)]">
-                    {article.date}
-                  </span>
-                  <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-display)] opacity-0 group-hover:opacity-100 transition-opacity">
-                    read
-                  </span>
-                </div>
-              </motion.button>
-            ))}
+            {articleSections.map((section, i) => {
+              const isDocument = section.id === "document";
+              const viewHref = ARTICLE_VIEW_LINKS[section.id];
+              const viewLabel =
+                section.id === "substack"
+                  ? "View on Substack"
+                  : section.id === "x"
+                    ? "View on X"
+                    : section.id === "medium"
+                      ? "View on Medium"
+                      : null;
+              const logoDefaultColor =
+                section.id === "substack"
+                  ? "text-[#FF6719]"
+                  : section.id === "x"
+                    ? "text-white"
+                    : section.id === "medium"
+                      ? "text-white"
+                      : "text-[#666]";
+              return (
+                <motion.div
+                  key={section.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                  className={`group rounded border overflow-hidden glass border-[#1a1a1a] flex flex-col min-h-[280px] ${
+                    isDocument ? "opacity-90" : "hover:border-[#00FFD1]/50"
+                  } transition-all duration-300`}
+                >
+                  {/* Top: logo (left, drop-cap style) + profile pic circle (right) */}
+                  <div className="flex items-center justify-between p-6 pb-4">
+                    <div
+                      className={`w-24 h-24 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:grayscale ${logoDefaultColor}`}
+                    >
+                      {section.id === "substack" && <SubstackLogoIcon className="w-14 h-14" />}
+                      {section.id === "x" && <XLogoIcon className="w-14 h-14" />}
+                      {section.id === "medium" && <MediumLogoIcon className="w-14 h-14" />}
+                      {section.id === "document" && <FileText className="w-14 h-14" />}
+                    </div>
+                    <div className="w-11 h-11 rounded-full overflow-hidden bg-[#0a0a0a] shrink-0 shadow-[0_3px_6px_rgba(0,0,0,0.35)] ring-1 ring-[#1a1a1a]">
+                      <Image
+                        src={PROFILE_IMAGE}
+                        alt=""
+                        width={44}
+                        height={44}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  {/* Bottom: actions in line, not full width, no radius, pointer */}
+                  <div className="mt-auto p-6 pt-4 flex flex-wrap items-center gap-3">
+                    {isDocument ? (
+                      <a
+                        href={`mailto:${REQUEST_ACCESS_EMAIL}?subject=Document access request`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="cursor-pointer inline-flex items-center justify-center gap-2 py-2 px-4 rounded-none border border-[#00FFD1]/40 text-[#00FFD1] text-xs font-medium font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 transition-colors"
+                      >
+                        Request access
+                        <ArrowUpRight size={12} />
+                      </a>
+                    ) : (
+                      <>
+                        <a
+                          href={viewHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="cursor-pointer inline-flex items-center justify-center gap-2 py-2 px-4 rounded-none border border-[#1a1a1a] text-[#999] text-xs font-medium font-[family-name:var(--font-display)] hover:border-[#00FFD1]/30 hover:text-[#00FFD1] transition-colors"
+                        >
+                          {viewLabel}
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => setSelectedArticleSection(section.id)}
+                          className="cursor-pointer inline-flex items-center justify-center gap-2 py-2 px-4 rounded-none bg-[#00FFD1]/10 border border-[#00FFD1]/30 text-[#00FFD1] text-xs font-medium font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/20 transition-colors"
+                        >
+                          {section.id === "substack"
+                            ? "Click to open Substack articles"
+                            : section.id === "x"
+                              ? "Click to open X articles"
+                              : "Click to open Medium articles"}
+                        </button>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         )}
 
-        {/* Resume Tab */}
+        {/* Resume Tab - Disabled */}
         {activeTab === "resume" && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="grid md:grid-cols-2 gap-6 max-w-3xl"
+            className="max-w-2xl"
           >
-            {resumes.map((resume, i) => (
-              <motion.a
-                key={resume.title}
-                href={resume.downloadLink}
-                download
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 + i * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="group block p-8 glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 hover:border-glow transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 flex items-center justify-center glass border border-[#1a1a1a] group-hover:border-[#00FFD1]/50 transition-colors">
-                    <resume.icon size={20} className="text-[#00FFD1]" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-2 font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors">
-                      {resume.title}
-                    </h3>
-                    <p className="text-sm text-[#666] font-[family-name:var(--font-display)] leading-relaxed mb-4">
-                      {resume.description}
-                    </p>
-                    <div className="flex items-center gap-2 text-[#00FFD1]">
-                      <Download size={14} />
-                      <span className="text-xs font-[family-name:var(--font-display)]">
-                        download pdf
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </motion.a>
-            ))}
+            <div className="rounded-xl glass border border-[#1a1a1a] p-10 text-center opacity-70 pointer-events-none select-none">
+              <p className="text-[#888] font-[family-name:var(--font-display)]">
+                We will resume later.
+              </p>
+            </div>
           </motion.div>
         )}
       </div>
@@ -828,7 +985,7 @@ export default function ContentPage() {
                 </button>
               </div>
 
-              {/* Modal Body - Scrollable */}
+              {/* Modal Body - Scrollable (threads only) */}
               <div className="flex-1 overflow-y-auto p-6 min-h-0">
                 <div className="text-[#999] font-[family-name:var(--font-display)] text-sm leading-relaxed whitespace-pre-line">
                   {selectedContent.content}
@@ -850,7 +1007,135 @@ export default function ContentPage() {
             </motion.div>
           </motion.div>
         )}
-          </AnimatePresence>
+      </AnimatePresence>
+
+      {/* Article section modal — cards for Substack / X / Medium / Document */}
+      <AnimatePresence>
+        {selectedArticleSection !== null && (() => {
+          const section = articleSections.find((s) => s.id === selectedArticleSection);
+          if (!section) return null;
+          const isDocument = section.id === "document";
+          const isSubstack = section.id === "substack";
+          return (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 bg-black/90 backdrop-blur-md"
+                onClick={() => setSelectedArticleSection(null)}
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-full max-w-4xl max-h-[90vh] flex flex-col glass border border-[#1a1a1a] rounded-lg overflow-hidden"
+              >
+                <div className="flex items-center justify-between p-6 border-b border-[#1a1a1a] flex-shrink-0">
+                  <h2 className="text-xl font-semibold text-white font-[family-name:var(--font-display)]">
+                    {section.label}
+                  </h2>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedArticleSection(null)}
+                    className="p-2 text-[#666] hover:text-white transition-colors"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+                <div className="flex-1 overflow-y-auto p-6 min-h-0">
+                  {section.items.length > 0 ? (
+                    <div className={`grid gap-4 ${isDocument ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3"}`}>
+                      {section.items.map((item) =>
+                        isDocument ? (
+                          <div
+                            key={item.id}
+                            className="flex flex-col p-5 rounded-lg border border-[#1a1a1a] bg-[#0a0a0a]/50 opacity-80 cursor-not-allowed select-none"
+                          >
+                            <div className="flex items-center justify-between mb-3">
+                              <span className="text-xs text-[#666] font-[family-name:var(--font-display)]">
+                                {item.readTime ?? "—"}
+                              </span>
+                            </div>
+                            <h4 className="text-base font-semibold text-[#666] font-[family-name:var(--font-display)] mb-2 line-clamp-2">
+                              {item.title}
+                            </h4>
+                            {item.preview && (
+                              <p className="text-xs text-[#555] font-[family-name:var(--font-display)] line-clamp-2 mb-4 flex-1">
+                                {item.preview}
+                              </p>
+                            )}
+                            <a
+                              href={`mailto:${REQUEST_ACCESS_EMAIL}?subject=Document access request: ${encodeURIComponent(item.title)}`}
+                              onClick={(e) => e.stopPropagation()}
+                              className="inline-flex items-center gap-2 self-start px-4 py-2 text-xs font-medium text-[#00FFD1] font-[family-name:var(--font-display)] border border-[#00FFD1]/40 rounded hover:bg-[#00FFD1]/10 transition-colors cursor-pointer"
+                            >
+                              Request access
+                              <ArrowUpRight size={12} />
+                            </a>
+                          </div>
+                        ) : (
+                          <a
+                            key={item.id}
+                            href={item.link ?? "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group block rounded-lg border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300 text-left overflow-hidden"
+                          >
+                            {item.banner && (
+                              <div className="relative w-full aspect-[16/10] bg-[#1a1a1a] overflow-hidden shadow-[0_6px_14px_rgba(0,0,0,0.4)]">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={item.banner}
+                                  alt=""
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                            )}
+                            <div className="p-5">
+                              <div className="flex items-center justify-between mb-2">
+                                <span className="text-xs text-[#666] font-[family-name:var(--font-display)]">
+                                  {item.date ?? ""}
+                                </span>
+                                <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-display)] opacity-0 group-hover:opacity-100 transition-opacity">
+                                  read
+                                </span>
+                              </div>
+                              <h4 className="text-base font-semibold text-white font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors line-clamp-2 mb-2">
+                                {item.title}
+                              </h4>
+                              {item.preview && (
+                                <p className="text-xs text-[#666] font-[family-name:var(--font-display)] line-clamp-3">
+                                  {item.preview}
+                                </p>
+                              )}
+                            </div>
+                          </a>
+                        )
+                      )}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-[#555] font-[family-name:var(--font-display)]">
+                      {isSubstack
+                        ? "Add Substack posts to the section array in code; they’ll appear as cards here."
+                        : isDocument
+                          ? "Add restricted documents to the section array; each will show as a disabled card with Request access."
+                          : "No articles yet. Add entries to the section array in code as you write."}
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            </motion.div>
+          );
+        })()}
+      </AnimatePresence>
 
       {/* Footer */}
       <footer className="relative mt-20 md:mt-32 pt-12 md:pt-16 border-t border-[#1a1a1a]">
@@ -918,6 +1203,26 @@ export default function ContentPage() {
                   >
                     <Twitter size={12} className="md:w-3.5 md:h-3.5 text-[#666] group-hover:text-[#00FFD1] transition-colors" />
                     <span>twitter / x</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://dukesol.substack.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line group"
+                  >
+                    <span>substack</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://medium.com/@cryptoduke1/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line group"
+                  >
+                    <span>medium</span>
                   </a>
                 </li>
                 <li>
