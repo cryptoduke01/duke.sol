@@ -20,6 +20,17 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+### Admin & content
+
+- **Admin dashboard** at `/admin`: edit threads and articles, then push to GitHub. Protected by passcode (set `ADMIN_PASSCODE` in env; default `180476`).
+- Admin also manages **site content** (`hero`, `testimonials`, `updates`, `projects`) and can push it to `data/site-content.json`.
+- For thread banners, admin supports direct **image upload** to the repo (`public/thread-images/...`) and auto-fills the image path.
+- **Content** (threads and articles) is loaded from the API, which reads `data/threads.json` and `data/articles.json` from the repo. If those files are missing, the content page falls back to in-code data.
+- To enable **Push to GitHub** from admin, set in `.env`:
+  - `GITHUB_TOKEN` – a personal access token with `repo` scope
+  - `GITHUB_REPO` – e.g. `your-username/duke-portfolio`
+- The first push from admin creates `data/threads.json` and/or `data/articles.json` in the repository.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

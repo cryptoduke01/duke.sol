@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ArrowUpRight, X, ArrowLeft, Download, FileText, Pen, Calendar, Heart, MessageCircle, Bookmark, Twitter, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -351,23 +351,6 @@ const threadsData = [
   },
 ];
 
-// Sort threads by date (most recent first)
-const threads = threadsData
-  .map((thread) => ({
-    ...thread,
-    title: thread.hook,
-    preview: thread.firstTweet.split("\n").slice(0, 3).join(" ") + "...",
-    content: thread.firstTweet,
-    date: formatDate(thread.date),
-    dateRaw: thread.date,
-    likes: thread.likes,
-    comments: thread.comments,
-    bookmarks: thread.bookmarks,
-    sortDate: parseDate(thread.date),
-  }))
-  .sort((a, b) => b.sortDate - a.sortDate)
-  .map(({ sortDate, ...thread }) => thread);
-
 // Article sections: containers you fill as you write. Add items to each section's array.
 type ArticleCategory = "substack" | "x" | "medium" | "document";
 
@@ -546,11 +529,48 @@ export default function ContentPage() {
   const [selectedContent, setSelectedContent] = useState<ContentItem | null>(null);
   const [selectedArticleSection, setSelectedArticleSection] = useState<ArticleCategory | null>(null);
   const [isPageLoading, setIsPageLoading] = useState(true);
+  const [threadsDataState, setThreadsDataState] = useState(threadsData);
+  const [articleSectionsState, setArticleSectionsState] = useState(articleSections);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsPageLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    fetch("/api/content/threads")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) setThreadsDataState(data);
+      })
+      .catch(() => {});
+    fetch("/api/content/articles")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) setArticleSectionsState(data);
+      })
+      .catch(() => {});
+  }, []);
+
+  const threads = useMemo(
+    () =>
+      threadsDataState
+        .map((thread) => ({
+          ...thread,
+          title: thread.hook,
+          preview: thread.firstTweet.split("\n").slice(0, 3).join(" ") + "...",
+          content: thread.firstTweet,
+          date: formatDate(thread.date),
+          dateRaw: thread.date,
+          likes: thread.likes,
+          comments: thread.comments,
+          bookmarks: thread.bookmarks,
+          sortDate: parseDate(thread.date),
+        }))
+        .sort((a, b) => b.sortDate - a.sortDate)
+        .map(({ sortDate, ...thread }) => thread),
+    [threadsDataState]
+  );
 
   const tabs = [
     { id: "threads" as const, label: "threads" },
@@ -792,7 +812,7 @@ export default function ContentPage() {
             transition={{ duration: 0.3 }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
           >
-            {articleSections.map((section, i) => {
+            {articleSectionsState.map((section, i) => {
               const isDocument = section.id === "document";
               const viewHref = ARTICLE_VIEW_LINKS[section.id];
               const viewLabel =
@@ -1012,7 +1032,7 @@ export default function ContentPage() {
       {/* Article section modal — cards for Substack / X / Medium / Document */}
       <AnimatePresence>
         {selectedArticleSection !== null && (() => {
-          const section = articleSections.find((s) => s.id === selectedArticleSection);
+          const section = articleSectionsState.find((s) => s.id === selectedArticleSection);
           if (!section) return null;
           const isDocument = section.id === "document";
           const isSubstack = section.id === "substack";

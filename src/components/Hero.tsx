@@ -2,214 +2,124 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import type { HeroContent } from "@/lib/content-types";
+import { defaultSiteContent } from "@/lib/default-site-content";
 
-const LOCATION = "nigeria and remote";
+type HeroProps = {
+  content?: HeroContent;
+};
 
-export default function Hero() {
+export default function Hero({ content = defaultSiteContent.hero }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Grid background */}
       <div className="absolute inset-0 grid-bg opacity-40" />
-      
-      {/* Gradient orbs */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#00FFD1]/5 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#FF006E]/5 rounded-full blur-[120px]" />
-
-      {/* 13x Bounty Signpost */}
-          <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-        className="fixed top-20 right-4 md:right-8 z-40 signpost"
-      >
-        <div className="relative">
-          <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-1 h-16 bg-[#00FFD1]/30" />
-          <div className="glass border border-[#00FFD1]/40 px-3 md:px-4 py-2 md:py-2.5">
-            <div className="text-center">
-              <div className="text-base md:text-lg font-bold text-[#00FFD1] font-[family-name:var(--font-display)]">
-                13x
-              </div>
-              <div className="text-xs md:text-sm text-white font-[family-name:var(--font-display)] tracking-wide">
-                Bounty Winner
-              </div>
-            </div>
-          </div>
-      </div>
-      </motion.div>
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#00FFD1]/10 rounded-full blur-[120px]" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-          {/* Left: Text Content */}
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            {/* Status badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 md:gap-3 mb-4 md:mb-6"
+              className="inline-flex items-center gap-2 mb-4 rounded-full border border-[#00FFD1]/30 px-3 py-1.5 text-xs text-[#00FFD1]"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FFD1] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00FFD1]" />
-              </span>
-              <span className="text-xs md:text-sm text-[#666] tracking-[0.15em] font-[family-name:var(--font-display)]">
-                Available for Work
-              </span>
+              {content.badge}
             </motion.div>
 
-            {/* Main Statement */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight leading-[0.95] mb-4 md:mb-6 font-[family-name:var(--font-display)]"
+              className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.02] mb-5"
             >
-              <span className="text-[#00FFD1]">Solana</span>
+              <span className="text-white">{content.titleTop}</span>
               <br />
-              <span className="text-white">Made Me</span>
-              <br />
-              <span className="text-white">Like This</span>
+              <span className="text-[#00FFD1]">{content.titleMain}</span>
             </motion.h1>
 
-            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-xs sm:text-sm text-[#666] max-w-md mb-6 md:mb-8 font-[family-name:var(--font-display)] leading-relaxed"
+              className="text-sm text-[#9aa] max-w-xl mb-6 leading-relaxed"
             >
-              Developer. Creator. Contributor. Core Member{" "}
-              <a 
-                href="https://x.com/SuperteamNG" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#00FFD1] hover:underline"
-              >
-                SuperteamNG 
-              </a>
+              {content.subtitle}
             </motion.p>
 
-            {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex items-center gap-4 md:gap-6 mb-6 md:mb-8"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6"
             >
-              <div>
-                <div className="text-xl sm:text-2xl font-semibold text-white font-[family-name:var(--font-display)]">
-                  2K+
+              {content.stats.map((stat) => (
+                <div key={stat.label} className="rounded-lg border border-[#1a1a1a] p-3">
+                  <div className="text-lg text-white font-semibold">{stat.value}</div>
+                  <div className="text-xs text-[#666] capitalize">{stat.label}</div>
                 </div>
-                <div className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)]">
-                  Followers
-                </div>
-              </div>
-              <div className="w-[1px] h-6 md:h-8 bg-[#1a1a1a]" />
-              <div>
-                <div className="text-xl sm:text-2xl font-semibold text-white font-[family-name:var(--font-display)]">
-                  Top 1%
-                </div>
-                <div className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)]">
-                  Solana
-                </div>
-              </div>
+              ))}
             </motion.div>
 
-            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap gap-3 mb-6"
             >
               <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(0,255,209,0.3)" }}
-                whileTap={{ scale: 0.98 }}
-                className="px-4 md:px-5 py-2 md:py-2.5 bg-[#00FFD1] text-black font-semibold text-xs md:text-sm font-[family-name:var(--font-display)] hover:bg-[#00e6bc] transition-all"
-              >
-                Socials
-              </motion.a>
-              <motion.a
-                href="#work"
+                href={content.ctaPrimaryLink}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-4 md:px-5 py-2 md:py-2.5 glass border border-[#1a1a1a] text-white font-semibold text-xs md:text-sm font-[family-name:var(--font-display)] hover:border-[#00FFD1] hover:text-[#00FFD1] transition-all"
+                className="px-4 py-2.5 bg-[#00FFD1] text-black font-semibold text-sm hover:bg-[#00e6bc] transition-all"
               >
-                Works
+                {content.ctaPrimaryLabel}
+              </motion.a>
+              <motion.a
+                href={content.ctaSecondaryLink}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                target={content.ctaSecondaryLink.startsWith("http") ? "_blank" : undefined}
+                rel={content.ctaSecondaryLink.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="px-4 py-2.5 border border-[#1a1a1a] text-white font-semibold text-sm hover:border-[#00FFD1] hover:text-[#00FFD1] transition-all"
+              >
+                {content.ctaSecondaryLabel}
               </motion.a>
             </motion.div>
+            <a
+              href={content.quoteSource}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-lg border border-[#1a1a1a] p-4 text-sm text-[#b0b0b0] hover:border-[#00FFD1]/40 transition-colors"
+            >
+              &quot;{content.quote}&quot;
+            </a>
           </div>
 
-          {/* Right: Profile Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative flex justify-center lg:justify-end"
           >
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] xl:w-[480px] xl:h-[480px]">
-              {/* Outer ring */}
-              <div className="absolute inset-0 -m-2 md:-m-3 border-2 border-[#00FFD1]/50 rounded-full pulse-ring" />
-              
-              {/* Main image */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-glow group scratch-effect">
+            <div className="relative w-72 h-72 sm:w-96 sm:h-96">
+              <div className="absolute inset-0 -m-2 border border-[#00FFD1]/40 rounded-2xl" />
+              <div className="relative w-full h-full rounded-2xl overflow-hidden border border-[#1a1a1a]">
                 <Image
-                  src="/mypfp.jpg"
+                  src={content.profileImage}
                   alt="duke.sol"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00FFD1]/30 via-[#00FFD1]/10 to-[#00FFD1]/20 mix-blend-overlay" />
-                <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent_0px,transparent_2px,rgba(0,255,209,0.08)_2px,rgba(0,255,209,0.08)_4px)] pointer-events-none" />
-                {/* Additional green glow overlay */}
-                <div className="absolute inset-0 bg-[#00FFD1]/5" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
-
-              {/* Status badge */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.9 }}
-                className="absolute -right-1 md:-right-2 top-1/4 px-2 md:px-3 py-1 md:py-1.5 glass font-[family-name:var(--font-display)] text-xs md:text-sm"
-              >
-                <span className="text-[#666]">Status: </span>
-                <span className="text-[#00FFD1]">Building</span>
-              </motion.div>
-
-              {/* Location badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1 }}
-                className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 md:gap-1.5 px-2 md:px-3 py-1 md:py-1.5 glass font-[family-name:var(--font-display)] text-xs md:text-sm whitespace-nowrap capitalize"
-              >
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#00FFD1]" />
-                </span>
-                <span className="text-white">{LOCATION}</span>
-              </motion.div>
+              <div className="absolute -bottom-3 left-4 rounded-full bg-black border border-[#1a1a1a] px-3 py-1 text-xs text-[#00FFD1] capitalize">
+                {content.location}
+              </div>
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-xs md:text-sm text-[#666] tracking-[0.2em] font-[family-name:var(--font-display)]">
-            Scroll
-          </span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-[1px] h-4 md:h-5 bg-gradient-to-b from-[#00FFD1] to-transparent"
-          />
-        </motion.div>
       </div>
     </section>
   );

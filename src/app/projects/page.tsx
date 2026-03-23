@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowUpRight, X, ArrowLeft, Github, ExternalLink, Calendar, Twitter, MessageCircle, Linkedin } from "lucide-react";
+import { X, ArrowLeft, Github, ExternalLink, Calendar, Twitter, MessageCircle, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -198,10 +198,22 @@ type Project = {
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isPageLoading, setIsPageLoading] = useState(true);
+  const [projectList, setProjectList] = useState<Project[]>(projects);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsPageLoading(false), 800);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/content/site")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data && Array.isArray(data.projects) && data.projects.length) {
+          setProjectList(data.projects);
+        }
+      })
+      .catch(() => {});
   }, []);
 
   return (
@@ -289,8 +301,8 @@ export default function ProjectsPage() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex flex-wrap gap-8 mb-12"
         >
-          {[
-            { label: "projects built", value: "20+" },
+            {[
+            { label: "projects built", value: String(projectList.length) },
             { label: "technologies", value: "15+" },
             { label: "github stars", value: "500+" },
           ].map((stat) => (
@@ -312,7 +324,7 @@ export default function ProjectsPage() {
           transition={{ duration: 0.3 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {projects.map((project, i) => (
+          {projectList.map((project, i) => (
             <motion.div
               key={project.id}
               onClick={() => setSelectedProject(project)}
