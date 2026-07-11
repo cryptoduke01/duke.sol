@@ -118,9 +118,9 @@ const projects = [
     title: "Siren",
     description: "Siren was a risk and intelligence layer for prediction markets routing through polymarket, kalshi, through Jupiter and DFlow on Solana.",
     longDescription: "Siren was a risk and intelligence layer for prediction markets routing through polymarket, kalshi, through Jupiter and DFlow on Solana.",
-    image: "", // TODO: [FILL] add Siren screenshot
+    image: "/site-images/siren.png",
     github: "https://github.com/cryptoduke01/siren",
-    demo: "",
+    demo: "https://app.onsiren.xyz/terminal",
     tags: ["Solana", "DeFi", "Trading"],
     date: "2025",
     status: "archived",
@@ -130,7 +130,7 @@ const projects = [
     title: "solweekly",
     description: "solweekly is a weekly Solana ecosystem reporting and publication resource for developers.",
     longDescription: "solweekly is a weekly Solana ecosystem reporting and publication resource for developers.",
-    image: "", // TODO: [FILL] add solweekly screenshot
+    image: "/site-images/solweekly.png",
     github: "", // TODO: [FILL or omit if private] add solweekly github
     demo: "https://solweekly.xyz",
     tags: ["Solana", "Content", "Media"],
@@ -239,7 +239,7 @@ const projects = [
     description: "KD Essence brand and storefront, a freelance client project delivering brand identity and a production e-commerce site.",
     longDescription: "KD Essence brand and storefront, a freelance client project delivering brand identity and a production e-commerce site.",
     image: "/site-images/kdessence.png",
-    github: "", // TODO: [FILL or omit if private] add KD Essence github
+    github: "", // KD Essence is an organization, no public github
     demo: "https://kdessence.vercel.app",
     tags: ["Next.js", "Client", "E-commerce"],
     date: "2025",
@@ -389,6 +389,7 @@ export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isPageLoading, setIsPageLoading] = useState(true);
   const [projectList, setProjectList] = useState<Project[]>(projects);
+  const [activeFilter, setActiveFilter] = useState("all");
 
   useEffect(() => {
     const timer = setTimeout(() => setIsPageLoading(false), 800);
@@ -406,8 +407,17 @@ export default function ProjectsPage() {
       .catch(() => {});
   }, []);
 
-  const featuredProjects = projectList.filter((project) => project.featured);
-  const standardProjects = projectList.filter((project) => !project.featured);
+  // Status filter, ordered; only statuses present in the data show up as chips
+  const statusOrder = ["all", "live", "shipped", "in progress", "completed", "archived"];
+  const filters = statusOrder.filter(
+    (status) => status === "all" || projectList.some((project) => project.status === status)
+  );
+  const visibleProjects =
+    activeFilter === "all"
+      ? projectList
+      : projectList.filter((project) => project.status === activeFilter);
+  const featuredProjects = visibleProjects.filter((project) => project.featured);
+  const standardProjects = visibleProjects.filter((project) => !project.featured);
 
   return (
     <main className="relative min-h-screen bg-black overflow-x-hidden scanlines noise">
@@ -509,8 +519,30 @@ export default function ProjectsPage() {
           ))}
         </motion.div>
 
-        {/* Featured Projects */}
-        {featuredProjects.length > 0 && (
+        {/* Filter */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="flex flex-wrap gap-2 mb-10"
+        >
+          {filters.map((status) => (
+            <button
+              key={status}
+              onClick={() => setActiveFilter(status)}
+              className={`px-3 py-1.5 text-xs font-[family-name:var(--font-display)] capitalize border transition-colors ${
+                activeFilter === status
+                  ? "border-[#00FFD1] text-[#00FFD1] bg-[#00FFD1]/10"
+                  : "border-[#1a1a1a] text-[#666] hover:border-[#00FFD1]/40 hover:text-[#999]"
+              }`}
+            >
+              {status}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Featured Projects (only in the unfiltered "all" view) */}
+        {activeFilter === "all" && featuredProjects.length > 0 && (
           <div className="mb-16">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-[1px] w-8 bg-[#00FFD1]" />
@@ -537,7 +569,7 @@ export default function ProjectsPage() {
         )}
 
         {/* Development Projects Grid */}
-        {featuredProjects.length > 0 && (
+        {activeFilter === "all" && featuredProjects.length > 0 && (
           <div className="flex items-center gap-4 mb-6">
             <div className="h-[1px] w-8 bg-[#00FFD1]" />
             <span className="text-xs font-medium text-[#00FFD1] tracking-[0.3em] font-[family-name:var(--font-display)]">
@@ -551,7 +583,7 @@ export default function ProjectsPage() {
           transition={{ duration: 0.3 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {standardProjects.map((project, i) => (
+          {(activeFilter === "all" ? standardProjects : visibleProjects).map((project, i) => (
             <ProjectCard
               key={project.id}
               project={project}

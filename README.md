@@ -1,47 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+
+# duke.sol
+
+**Personal Portfolio & Content Platform**
+
+[![Next.js](https://img.shields.io/badge/Next.js-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?style=flat&logo=vercel)](https://dukesol.vercel.app)
+
+**Live:** [dukesol.vercel.app](https://dukesol.vercel.app/)
+
+</div>
+
+---
+
+The central hub for duke.sol's experiments, threads, writings, and active Solana + AI agent builds.
+
+> "I build products, ship threads, and document the process."
+
+---
+
+## Features
+
+- **Clean portfolio experience** — Hero, testimonials, work updates, and project highlights
+- **Content system** — Threads + articles powered by local JSON + optional GitHub-backed storage
+- **Admin dashboard** (`/admin`) — Edit hero, testimonials, updates, projects, and publish new threads/articles
+- **Image uploads** for thread banners directly into `public/thread-images/`
+- **One-click push to GitHub** from the admin (optional, requires token + repo config)
+- Fully deployed on Vercel
+
+---
+
+## Live Site
+
+- **Portfolio & writing hub**: https://dukesol.vercel.app/
+- **Content page**: https://dukesol.vercel.app/content (threads & articles)
+- **GitHub profile**: https://github.com/cryptoduke01 (see the dedicated profile README repo for the polished landing)
+
+---
+
+## Tech Stack
+
+- Next.js (App Router) + TypeScript + Tailwind
+- Geist font (via next/font)
+- Local JSON data files for content (`data/threads.json`, `data/articles.json`, `data/site-content.json`)
+- Admin protected by simple passcode env var
+- Optional GitHub API integration for publishing content updates
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local`:
 
-### Admin & content
+```env
+ADMIN_PASSCODE=your-secure-passcode
 
-- **Admin dashboard** at `/admin`: edit threads and articles, then push to GitHub. Protected by passcode (set `ADMIN_PASSCODE` in env; default `180476`).
-- Admin also manages **site content** (`hero`, `testimonials`, `updates`, `projects`) and can push it to `data/site-content.json`.
-- For thread banners, admin supports direct **image upload** to the repo (`public/thread-images/...`) and auto-fills the image path.
-- **Content** (threads and articles) is loaded from the API, which reads `data/threads.json` and `data/articles.json` from the repo. If those files are missing, the content page falls back to in-code data.
-- To enable **Push to GitHub** from admin, set in `.env`:
-  - `GITHUB_TOKEN` – a personal access token with `repo` scope
-  - `GITHUB_REPO` – e.g. `your-username/duke-portfolio`
-- The first push from admin creates `data/threads.json` and/or `data/articles.json` in the repository.
+# Optional: Enable GitHub content pushing from /admin
+GITHUB_TOKEN=ghp_...
+GITHUB_REPO=cryptoduke01/duke.sol   # or your fork name
+```
 
-## Learn More
+Default passcode in code is `180476` (change it).
 
-To learn more about Next.js, take a look at the following resources:
+### Admin Workflow
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Visit `/admin`
+2. Authenticate with the passcode
+3. Edit hero, testimonials, updates, or projects
+4. Create/edit threads and articles
+5. Upload images for thread banners
+6. "Push to GitHub" to persist content in the repo (creates `data/*.json` files)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Content is read at runtime from the JSON files when present.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure Highlights
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/
+  page.tsx                 # Main portfolio
+  content/                 # Threads & articles listing
+  admin/                   # Protected content manager
+public/
+  thread-images/           # Banner uploads
+data/                      # Generated/persisted JSON content (threads, articles, site-content)
+```
+
+---
+
+## Deployment
+
+Deployed on Vercel. Push to main and Vercel will rebuild.
+
+The admin push-to-GitHub feature lets you update content without leaving the deployed site.
+
+---
+
+## Related
+
+- GitHub: [cryptoduke01](https://github.com/cryptoduke01)
+- X: [@dukedotsol](https://x.com/dukedotsol)
+- Main builds: [keryx](https://github.com/cryptoduke01/keryx), [swindle](https://github.com/cryptoduke01/swindle)
+
+---
+
+Built and maintained by duke.sol.
