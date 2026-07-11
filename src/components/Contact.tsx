@@ -82,13 +82,13 @@ export default function Contact() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white mb-4 md:mb-6 font-[family-name:var(--font-display)]">
-            Let&apos;s Build
+            hit me up,
             <br />
-            <span className="text-[#00FFD1]">Together</span>
+            <span className="text-[#00FFD1]">let&apos;s make something</span>
           </h2>
 
           <p className="text-xs sm:text-sm text-[#666] max-w-md mx-auto mb-8 md:mb-12 font-[family-name:var(--font-display)]">
-            Available for freelance projects, collaborations, and community roles in the Web3 space.
+            Open to building roles, research collaborations, and freelance work across the Solana ecosystem. My inbox does not bite.
           </p>
 
           {/* Email */}

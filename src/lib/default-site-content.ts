@@ -3,10 +3,10 @@ import type { SiteContent } from "@/lib/content-types";
 export const defaultSiteContent: SiteContent = {
   hero: {
     badge: "Solana builder since 2023",
-    titleTop: "payment rails, consumer apps,",
-    titleMain: "and real USDC flows.",
+    titleTop: "i build, i research,",
+    titleMain: "and i write it all down.",
     subtitle:
-      "I build consumer and infrastructure products on Solana and Circle's Arc, from AI agent payment rails to on-chain apps with real USDC flows. Solana builder since 2023, Ecosystem Lead at JupNigeria, Core Member at Superteam Nigeria, 3x hackathon winner, 14+ Superteam Earn bounty wins, with an independent Percolator audit quoted by Toly.",
+      "I build consumer and infrastructure products on Solana and Circle's Arc, from AI agent payment rails to on-chain apps with real USDC flows. I do protocol and security research, including an independent Percolator audit quoted by Toly, and I write the threads, articles, and weekly ecosystem reports that turn what I learn into something others can use. Solana builder since 2023, Core Member at Superteam Nigeria, 3x hackathon winner, 14+ Superteam Earn bounty wins.",
     quote:
       "Independent Phase 1 audit of Toly's Percolator was quoted by Toly and verified.",
     quoteSource: "https://x.com/toly/status/2020528646163689624",
@@ -19,7 +19,7 @@ export const defaultSiteContent: SiteContent = {
     stats: [
       { label: "hackathon wins", value: "3x" },
       { label: "bounty wins", value: "14x" },
-      { label: "role", value: "JupNigeria Lead" },
+      { label: "building since", value: "2023" },
     ],
   },
   testimonials: [
@@ -34,24 +34,25 @@ export const defaultSiteContent: SiteContent = {
   ],
   updates: [
     {
-      id: "percolator-audit",
-      title: "Independent audit of Toly's Percolator",
+      id: "okx-genesis-hack",
+      title: "Building for the OKX AI Genesis Hack",
       summary:
-        "Published the Phase 1 risk-engine audit, then got quoted by Toly. Followed up by shipping Percolator SDK helpers and dashboard updates.",
-      link: "https://x.com/cryptoduke01/status/2020527640801653028",
+        "Currently heads-down building for the OKX AI Genesis Hackathon.",
+      // TODO: [FILL] add OKX AI Genesis project link
     },
     {
-      id: "portfolio-refresh",
-      title: "Portfolio refresh shipped",
+      id: "bitget-lepton-hack",
+      title: "Bitget AI and Lepton Agents Hackathon",
       summary:
-        "Updated central portfolio hub for experiments, threads, writings, and active builds.",
-      link: "https://dukesol.vercel.app/",
+        "Submitted to the Bitget AI and Lepton Agents Hackathon.",
+      // TODO: [FILL] add Bitget / Lepton submission link
     },
     {
-      id: "solweekly",
-      title: "Solweekly in active development",
-      summary: "Building a weekly Solana ecosystem reporting and publication flow.",
-      link: "https://solweekly.xyz",
+      id: "sidetrack-wins",
+      title: "3x Superteam Earn sidetrack winner",
+      summary:
+        "Won three Superteam Earn sidetrack hackathons: Torque Protocol, Sagapad, and Jupiter.",
+      // TODO: [FILL] add proof link
     },
   ],
   projects: [

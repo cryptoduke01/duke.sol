@@ -31,7 +31,7 @@ const projects = [
     title: "Keryx",
     description: "Keryx is the toll booth for the agent economy, a pay-per-call monetization layer for AI agents built on the x402 protocol with USDC settlement on Arc, shipped with a full site, docs, and whitepaper.",
     longDescription: "Keryx is the toll booth for the agent economy, a pay-per-call monetization layer for AI agents built on the x402 protocol with USDC settlement on Arc, shipped with a full site, docs, and whitepaper.",
-    image: "", // TODO: [FILL] add Keryx screenshot
+    image: "/site-images/keryx.png",
     github: "https://github.com/cryptoduke01/keryx",
     demo: "https://keryxhq.xyz",
     tags: ["Next.js", "x402", "USDC", "AI Agents"],
@@ -44,7 +44,7 @@ const projects = [
     title: "Swindle",
     description: "Swindle is an AI chess arena on Solana where autonomous agents compete and users wager USDC on the outcome, a consumer app with wallet connection and real on-chain money flows.",
     longDescription: "Swindle is an AI chess arena on Solana where autonomous agents compete and users wager USDC on the outcome, a consumer app with wallet connection and real on-chain money flows.",
-    image: "", // TODO: [FILL] add Swindle screenshot
+    image: "/site-images/swindle.png",
     github: "https://github.com/cryptoduke01/swindle",
     demo: "https://playswindle.fun",
     tags: ["Next.js", "Solana", "USDC", "AI"],
@@ -57,7 +57,7 @@ const projects = [
     title: "Percolator SDK & Audit",
     description: "Independent Phase 1 security audit of Toly's Percolator protocol, quoted and verified by Anatoly Yakovenko, followed by shipping the Percolator SDK and dashboard, published on npm as @percolatortool/sdk.",
     longDescription: "Independent Phase 1 security audit of Toly's Percolator protocol, quoted and verified by Anatoly Yakovenko, followed by shipping the Percolator SDK and dashboard, published on npm as @percolatortool/sdk.\n\nnpm: https://www.npmjs.com/package/@percolatortool/sdk\ntweet: https://x.com/toly/status/2020528646163689624",
-    image: "", // TODO: [FILL] add Percolator screenshot
+    image: "/site-images/percolator.png",
     github: "https://github.com/cryptoduke01/percolator-cli",
     demo: "https://www.npmjs.com/package/@percolatortool/sdk",
     tags: ["Solana", "Security", "SDK", "Rust"],
@@ -70,7 +70,7 @@ const projects = [
     title: "Vector",
     description: "Vector is an autonomous AI trading agent with a four-channel signal jury that votes before the LLM decides, plus deterministic TypeScript risk layers that enforce sizing, alignment gates, and hard caps.",
     longDescription: "Vector is an autonomous AI trading agent with a four-channel signal jury that votes before the LLM decides, plus deterministic TypeScript risk layers that enforce sizing, alignment gates, and hard caps.",
-    image: "", // TODO: [FILL] add Vector screenshot
+    image: "/site-images/vector.png",
     github: "https://github.com/cryptoduke01/vector",
     demo: "https://vector-demo-qzdb.onrender.com",
     tags: ["AI", "Trading", "TypeScript"],
@@ -82,9 +82,9 @@ const projects = [
     title: "crewdeck",
     description: "crewdeck is a marketing agency marketplace built on Supabase Postgres, Auth, and Storage, with agency dashboards, a messaging system, image uploads, and email notifications.",
     longDescription: "crewdeck is a marketing agency marketplace built on Supabase Postgres, Auth, and Storage, with agency dashboards, a messaging system, image uploads, and email notifications.",
-    image: "", // TODO: [FILL] add crewdeck screenshot
+    image: "/site-images/crewdeck.png",
     github: "https://github.com/cryptoduke01/crewdeck",
-    demo: "", // TODO: [FILL] add crewdeck live link
+    demo: "https://crewdeck.xyz",
     tags: ["Next.js", "Supabase", "Marketplace"],
     date: "2025",
     status: "shipped",
@@ -94,9 +94,9 @@ const projects = [
     title: "bulldropper",
     description: "Bulldropper scans X for viral posts on any cashtag or Solana mint, surfaces author wallets, and runs batched custody-free airdrops with full Token-2022 support, ATA creation, and Jito bundles.",
     longDescription: "Bulldropper scans X for viral posts on any cashtag or Solana mint, surfaces author wallets, and runs batched custody-free airdrops with full Token-2022 support, ATA creation, and Jito bundles.",
-    image: "", // TODO: [FILL] add bulldropper screenshot
+    image: "/site-images/bulldropper.png",
     github: "https://github.com/cryptoduke01/bulldropper",
-    demo: "", // TODO: [FILL] add bulldropper live link
+    demo: "https://bulldropper.xyz",
     tags: ["Solana", "SPL", "Airdrop", "Privy"],
     date: "2026",
     status: "shipped",
@@ -106,9 +106,9 @@ const projects = [
     title: "Deriverse Dashboard",
     description: "Trading analytics that decodes raw Solana wallet transaction history into structured trades, PnL, drawdown, and session analysis.",
     longDescription: "Trading analytics that decodes raw Solana wallet transaction history into structured trades, PnL, drawdown, and session analysis.",
-    image: "", // TODO: [FILL] add Deriverse Dashboard screenshot
+    image: "/site-images/deriverse.png",
     github: "https://github.com/cryptoduke01/deriverse-dashboard",
-    demo: "", // TODO: [FILL] add Deriverse Dashboard live link
+    demo: "https://deriverseboard.vercel.app/",
     tags: ["Next.js", "Solana", "Analytics"],
     date: "2025",
     status: "shipped",
@@ -124,18 +124,6 @@ const projects = [
     tags: ["Solana", "DeFi", "Trading"],
     date: "2025",
     status: "archived",
-  },
-  {
-    id: 105,
-    title: "Moveasy",
-    description: "Moveasy is WhatsApp-first AI logistics for the Nigerian market, bringing agent-driven delivery coordination to where users already are.",
-    longDescription: "Moveasy is WhatsApp-first AI logistics for the Nigerian market, bringing agent-driven delivery coordination to where users already are.",
-    image: "", // TODO: [FILL] add Moveasy screenshot
-    github: "", // TODO: [FILL or omit if private] add Moveasy github
-    demo: "", // TODO: [FILL] add Moveasy live link
-    tags: ["AI", "Logistics", "Nigeria"],
-    date: "2026",
-    status: "in progress",
   },
   {
     id: 106,
@@ -250,9 +238,9 @@ const projects = [
     title: "KD Essence",
     description: "KD Essence brand and storefront, a freelance client project delivering brand identity and a production e-commerce site.",
     longDescription: "KD Essence brand and storefront, a freelance client project delivering brand identity and a production e-commerce site.",
-    image: "", // TODO: [FILL] add KD Essence screenshot
+    image: "/site-images/kdessence.png",
     github: "", // TODO: [FILL or omit if private] add KD Essence github
-    demo: "", // TODO: [FILL] add KD Essence live link
+    demo: "https://kdessence.vercel.app",
     tags: ["Next.js", "Client", "E-commerce"],
     date: "2025",
     status: "completed",
@@ -509,8 +497,6 @@ export default function ProjectsPage() {
             {[
             { label: "projects built", value: String(projectList.length) },
             { label: "technologies", value: "15+" },
-            // TODO: confirm "500+ github stars" — unverified, replace with a real number
-            { label: "github stars", value: "500+" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="text-2xl font-semibold text-[#00FFD1] font-[family-name:var(--font-display)]">
