@@ -2,11 +2,11 @@ import type { SiteContent } from "@/lib/content-types";
 
 export const defaultSiteContent: SiteContent = {
   hero: {
-    badge: "Solana builder and writer",
-    titleTop: "I build products,",
-    titleMain: "ship threads, and document the process.",
+    badge: "Solana builder since 2023",
+    titleTop: "payment rails, consumer apps,",
+    titleMain: "and real USDC flows.",
     subtitle:
-      "13x Superteam Earn bounty winner. I turn research into clear content and usable tooling.",
+      "I build consumer and infrastructure products on Solana and Circle's Arc, from AI agent payment rails to on-chain apps with real USDC flows. Solana builder since 2023, Ecosystem Lead at JupNigeria, Core Member at Superteam Nigeria, 13+ Superteam Earn bounty wins, with an independent Percolator audit quoted by Toly.",
     quote:
       "Independent Phase 1 audit of Toly's Percolator was quoted by Toly and verified.",
     quoteSource: "https://x.com/toly/status/2020528646163689624",
@@ -17,9 +17,9 @@ export const defaultSiteContent: SiteContent = {
     ctaSecondaryLabel: "Read highlights",
     ctaSecondaryLink: "https://x.com/cryptoduke01/highlights",
     stats: [
-      { label: "bounty wins", value: "13x" },
+      { label: "bounty wins", value: "13+" },
       { label: "focus", value: "Solana" },
-      { label: "mode", value: "build -> write -> ship" },
+      { label: "role", value: "JupNigeria Lead" },
     ],
   },
   testimonials: [

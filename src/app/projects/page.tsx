@@ -24,6 +24,191 @@ const formatDate = (dateString: string): string => {
 
 // Project data
 const projects = [
+  // Featured flagship work
+  {
+    id: 101,
+    featured: true,
+    title: "Keryx",
+    description: "Keryx is the toll booth for the agent economy, a pay-per-call monetization layer for AI agents built on the x402 protocol with USDC settlement on Arc, shipped with a full site, docs, and whitepaper.",
+    longDescription: "Keryx is the toll booth for the agent economy, a pay-per-call monetization layer for AI agents built on the x402 protocol with USDC settlement on Arc, shipped with a full site, docs, and whitepaper.",
+    image: "", // TODO: [FILL] add Keryx screenshot
+    github: "https://github.com/cryptoduke01/keryx",
+    demo: "https://keryxhq.xyz",
+    tags: ["Next.js", "x402", "USDC", "AI Agents"],
+    date: "2026",
+    status: "live",
+  },
+  {
+    id: 102,
+    featured: true,
+    title: "Swindle",
+    description: "Swindle is an AI chess arena on Solana where autonomous agents compete and users wager USDC on the outcome, a consumer app with wallet connection and real on-chain money flows.",
+    longDescription: "Swindle is an AI chess arena on Solana where autonomous agents compete and users wager USDC on the outcome, a consumer app with wallet connection and real on-chain money flows.",
+    image: "", // TODO: [FILL] add Swindle screenshot
+    github: "https://github.com/cryptoduke01/swindle",
+    demo: "https://playswindle.fun",
+    tags: ["Next.js", "Solana", "USDC", "AI"],
+    date: "2026",
+    status: "live",
+  },
+  {
+    id: 103,
+    featured: true,
+    title: "Percolator SDK & Audit",
+    description: "Independent Phase 1 security audit of Toly's Percolator protocol, quoted and verified by Anatoly Yakovenko, followed by shipping the Percolator SDK and dashboard, published on npm as @percolatortool/sdk.",
+    longDescription: "Independent Phase 1 security audit of Toly's Percolator protocol, quoted and verified by Anatoly Yakovenko, followed by shipping the Percolator SDK and dashboard, published on npm as @percolatortool/sdk.\n\nnpm: https://www.npmjs.com/package/@percolatortool/sdk\ntweet: https://x.com/toly/status/2020528646163689624",
+    image: "", // TODO: [FILL] add Percolator screenshot
+    github: "https://github.com/cryptoduke01/percolator-cli",
+    demo: "https://www.npmjs.com/package/@percolatortool/sdk",
+    tags: ["Solana", "Security", "SDK", "Rust"],
+    date: "2025",
+    status: "shipped",
+  },
+  // Standard projects
+  {
+    id: 108,
+    title: "Vector",
+    description: "Vector is an autonomous AI trading agent with a four-channel signal jury that votes before the LLM decides, plus deterministic TypeScript risk layers that enforce sizing, alignment gates, and hard caps.",
+    longDescription: "Vector is an autonomous AI trading agent with a four-channel signal jury that votes before the LLM decides, plus deterministic TypeScript risk layers that enforce sizing, alignment gates, and hard caps.",
+    image: "", // TODO: [FILL] add Vector screenshot
+    github: "https://github.com/cryptoduke01/vector",
+    demo: "https://vector-demo-qzdb.onrender.com",
+    tags: ["AI", "Trading", "TypeScript"],
+    date: "2026",
+    status: "shipped",
+  },
+  {
+    id: 109,
+    title: "crewdeck",
+    description: "crewdeck is a marketing agency marketplace built on Supabase Postgres, Auth, and Storage, with agency dashboards, a messaging system, image uploads, and email notifications.",
+    longDescription: "crewdeck is a marketing agency marketplace built on Supabase Postgres, Auth, and Storage, with agency dashboards, a messaging system, image uploads, and email notifications.",
+    image: "", // TODO: [FILL] add crewdeck screenshot
+    github: "https://github.com/cryptoduke01/crewdeck",
+    demo: "", // TODO: [FILL] add crewdeck live link
+    tags: ["Next.js", "Supabase", "Marketplace"],
+    date: "2025",
+    status: "shipped",
+  },
+  {
+    id: 110,
+    title: "bulldropper",
+    description: "Bulldropper scans X for viral posts on any cashtag or Solana mint, surfaces author wallets, and runs batched custody-free airdrops with full Token-2022 support, ATA creation, and Jito bundles.",
+    longDescription: "Bulldropper scans X for viral posts on any cashtag or Solana mint, surfaces author wallets, and runs batched custody-free airdrops with full Token-2022 support, ATA creation, and Jito bundles.",
+    image: "", // TODO: [FILL] add bulldropper screenshot
+    github: "https://github.com/cryptoduke01/bulldropper",
+    demo: "", // TODO: [FILL] add bulldropper live link
+    tags: ["Solana", "SPL", "Airdrop", "Privy"],
+    date: "2026",
+    status: "shipped",
+  },
+  {
+    id: 111,
+    title: "Deriverse Dashboard",
+    description: "Trading analytics that decodes raw Solana wallet transaction history into structured trades, PnL, drawdown, and session analysis.",
+    longDescription: "Trading analytics that decodes raw Solana wallet transaction history into structured trades, PnL, drawdown, and session analysis.",
+    image: "", // TODO: [FILL] add Deriverse Dashboard screenshot
+    github: "https://github.com/cryptoduke01/deriverse-dashboard",
+    demo: "", // TODO: [FILL] add Deriverse Dashboard live link
+    tags: ["Next.js", "Solana", "Analytics"],
+    date: "2025",
+    status: "shipped",
+  },
+  {
+    id: 104,
+    title: "Siren",
+    description: "Siren was a risk and intelligence layer for prediction markets routing through polymarket, kalshi, through Jupiter and DFlow on Solana.",
+    longDescription: "Siren was a risk and intelligence layer for prediction markets routing through polymarket, kalshi, through Jupiter and DFlow on Solana.",
+    image: "", // TODO: [FILL] add Siren screenshot
+    github: "https://github.com/cryptoduke01/siren",
+    demo: "",
+    tags: ["Solana", "DeFi", "Trading"],
+    date: "2025",
+    status: "archived",
+  },
+  {
+    id: 105,
+    title: "Moveasy",
+    description: "Moveasy is WhatsApp-first AI logistics for the Nigerian market, bringing agent-driven delivery coordination to where users already are.",
+    longDescription: "Moveasy is WhatsApp-first AI logistics for the Nigerian market, bringing agent-driven delivery coordination to where users already are.",
+    image: "", // TODO: [FILL] add Moveasy screenshot
+    github: "", // TODO: [FILL or omit if private] add Moveasy github
+    demo: "", // TODO: [FILL] add Moveasy live link
+    tags: ["AI", "Logistics", "Nigeria"],
+    date: "2026",
+    status: "in progress",
+  },
+  {
+    id: 106,
+    title: "solweekly",
+    description: "solweekly is a weekly Solana ecosystem reporting and publication resource for developers.",
+    longDescription: "solweekly is a weekly Solana ecosystem reporting and publication resource for developers.",
+    image: "", // TODO: [FILL] add solweekly screenshot
+    github: "", // TODO: [FILL or omit if private] add solweekly github
+    demo: "https://solweekly.xyz",
+    tags: ["Solana", "Content", "Media"],
+    date: "2025",
+    status: "live",
+  },
+  {
+    id: 3,
+    title: "stable.fun",
+    description: "Transform your wealth by creating your own stablecoins backed by yield-bearing stablebonds and start earning.",
+    longDescription: "Transform your wealth by creating your own stablecoins backed by yield-bearing stablebonds and start earning.",
+    image: "/site-images/Macbook-Air-stablefun.vercel.app.png",
+    github: "https://github.com/cryptoduke01/stable.fun",
+    demo: "https://stablefun.vercel.app/",
+    tags: ["Next.js", "DeFi", "Stablecoins", "Solana"],
+    date: "2025",
+    status: "in progress",
+  },
+  {
+    id: 6,
+    title: "Tactical Crypto Arena",
+    description: "A next-generation blockchain gaming experience built on Solana with Honeycomb Protocol integration and Verxio loyalty infrastructure.",
+    longDescription: "Overview\n\nTactical Crypto Arena is a comprehensive blockchain game that combines hero collection, automated battles, on-chain loyalty systems, and DeFi quests. Built with Next.js 14, TypeScript, and Tailwind CSS, it features a modern Solana-themed UI with real-time battle mechanics and blockchain integration.",
+    image: "/site-images/Macbook-Air-tactical-mocha.vercel.app.png",
+    github: "https://github.com/cryptoduke01/tactical",
+    demo: "https://tactical-mocha.vercel.app/",
+    tags: ["Next.js", "Gaming", "Solana", "DeFi"],
+    date: "2025",
+    status: "in progress",
+  },
+  {
+    id: 8,
+    title: "Fundrr",
+    description: "Supercharge Nigerian Creatives with Solana-Powered Funding. Solana Powered Funding for Web3 Creatives.",
+    longDescription: "Fundrr uses Solana for fast and low-cost transactions, enabling Nigerian creatives to access funding through Web3 technology.",
+    image: "/site-images/Macbook-Air-fundrr.vercel.app.png",
+    github: "https://github.com/cryptoduke01/fundrr",
+    demo: "https://fundrr.vercel.app/",
+    tags: ["Next.js", "Solana", "Funding", "Web3"],
+    date: "2025",
+    status: "in progress",
+  },
+  {
+    id: 4,
+    title: "pulse.fun",
+    description: "Your wallet tells your story. The social network for crypto traders. Connect your wallet and let your transactions become your social content.",
+    longDescription: "How pulse.fun Works\n\nTransform your wallet activity into a living social profile\n\nConnect Your Wallet\nLink your wallet securely and watch as your trading history automatically generates your profile.\n\nAuto-Generated Profile\nYour portfolio value, trading style, and performance metrics create a unique social identity.\n\nFollow & Discover\nFollow successful traders, discover new strategies, and build your crypto network.",
+    image: "/site-images/Macbook-Air-pulsedotfun.vercel.app.png",
+    github: "https://github.com/cryptoduke01/pulse.fun",
+    demo: "https://pulsedotfun.vercel.app/",
+    tags: ["Next.js", "Social", "Web3", "Solana"],
+    date: "2025",
+    status: "in progress",
+  },
+  {
+    id: 12,
+    title: "Solana Analytics Dashboard",
+    description: "Real-time ecosystem metrics and liquidity flow visualization.",
+    longDescription: "Real-time ecosystem metrics and liquidity flow visualization for the Solana blockchain.",
+    image: "/site-images/Macbook-Air-solanaboard.vercel.app.png",
+    github: "https://github.com/cryptoduke01/solana-analytics-board",
+    demo: "https://solanaboard.vercel.app/",
+    tags: ["Next.js", "Analytics", "Solana", "Dashboard"],
+    date: "2025",
+    status: "completed",
+  },
   {
     id: 1,
     title: "Artvault",
@@ -49,30 +234,6 @@ const projects = [
     status: "completed",
   },
   {
-    id: 3,
-    title: "stable.fun",
-    description: "Transform your wealth by creating your own stablecoins backed by yield-bearing stablebonds and start earning.",
-    longDescription: "Transform your wealth by creating your own stablecoins backed by yield-bearing stablebonds and start earning.",
-    image: "/site-images/Macbook-Air-stablefun.vercel.app.png",
-    github: "https://github.com/cryptoduke01/stable.fun",
-    demo: "https://stablefun.vercel.app/",
-    tags: ["Next.js", "DeFi", "Stablecoins", "Solana"],
-    date: "2025",
-    status: "in progress",
-  },
-  {
-    id: 4,
-    title: "pulse.fun",
-    description: "Your wallet tells your story. The social network for crypto traders. Connect your wallet and let your transactions become your social content.",
-    longDescription: "How pulse.fun Works\n\nTransform your wallet activity into a living social profile\n\nConnect Your Wallet\nLink your wallet securely and watch as your trading history automatically generates your profile.\n\nAuto-Generated Profile\nYour portfolio value, trading style, and performance metrics create a unique social identity.\n\nFollow & Discover\nFollow successful traders, discover new strategies, and build your crypto network.",
-    image: "/site-images/Macbook-Air-pulsedotfun.vercel.app.png",
-    github: "https://github.com/cryptoduke01/pulse.fun",
-    demo: "https://pulsedotfun.vercel.app/",
-    tags: ["Next.js", "Social", "Web3", "Solana"],
-    date: "2025",
-    status: "in progress",
-  },
-  {
     id: 5,
     title: "Blockfest Leaderboard",
     description: "Leaderboard for Africa's biggest web3 festival.",
@@ -85,62 +246,14 @@ const projects = [
     status: "completed",
   },
   {
-    id: 6,
-    title: "Tactical Crypto Arena",
-    description: "A next-generation blockchain gaming experience built on Solana with Honeycomb Protocol integration and Verxio loyalty infrastructure.",
-    longDescription: "Overview\n\nTactical Crypto Arena is a comprehensive blockchain game that combines hero collection, automated battles, on-chain loyalty systems, and DeFi quests. Built with Next.js 14, TypeScript, and Tailwind CSS, it features a modern Solana-themed UI with real-time battle mechanics and blockchain integration.",
-    image: "/site-images/Macbook-Air-tactical-mocha.vercel.app.png",
-    github: "https://github.com/cryptoduke01/tactical",
-    demo: "https://tactical-mocha.vercel.app/",
-    tags: ["Next.js", "Gaming", "Solana", "DeFi"],
-    date: "2025",
-    status: "in progress",
-  },
-  {
-    id: 7,
-    title: "Warden Co-Pilot",
-    description: "Your Crypto Co-Pilot - Create Personalized Warden Protocol Visual Themes.",
-    longDescription: "Create personalized Warden Protocol visual themes to share and showcase your crypto journey.",
-    image: "/site-images/Macbook-Air-wardenisfor.vercel.app.png",
-    github: "https://github.com/cryptoduke01/wardendotfun",
-    demo: "https://wardenisfor.vercel.app/",
-    tags: ["Next.js", "Web3", "Visual", "Solana"],
-    date: "2025",
-    status: "completed",
-  },
-  {
-    id: 8,
-    title: "Fundrr",
-    description: "Supercharge Nigerian Creatives with Solana-Powered Funding. Solana Powered Funding for Web3 Creatives.",
-    longDescription: "Fundrr uses Solana for fast and low-cost transactions, enabling Nigerian creatives to access funding through Web3 technology.",
-    image: "/site-images/Macbook-Air-fundrr.vercel.app.png",
-    github: "https://github.com/cryptoduke01/fundrr",
-    demo: "https://fundrr.vercel.app/",
-    tags: ["Next.js", "Solana", "Funding", "Web3"],
-    date: "2025",
-    status: "in progress",
-  },
-  {
-    id: 9,
-    title: "Snappgram",
-    description: "Social media photo app for sharing photos and lifestyle.",
-    longDescription: "A social media platform focused on photo sharing and lifestyle content, built for the Web3 generation.",
-    image: "/site-images/Macbook-Air-snappgram.vercel.app.png",
-    github: "https://github.com/akachukwu-eth/snapgram",
-    demo: "https://snappgram.vercel.app/",
-    tags: ["Next.js", "Social Media", "Web3", "Photos"],
-    date: "2025",
-    status: "completed",
-  },
-  {
-    id: 10,
-    title: "Sui Mockup",
-    description: "Create customized Sui blockchain-themed visuals to share.",
-    longDescription: "Create customized Sui blockchain-themed visuals to share with your community.",
-    image: "/site-images/Macbook-Air-suisfor-git-main-trojancodes-projects-6d77485c.vercel.app.png",
-    github: "https://github.com/cryptoduke01/suisfor",
-    demo: "https://suisfor-git-main-trojancodes-projects-6d77485c.vercel.app/",
-    tags: ["Next.js", "Sui", "Visual", "Web3"],
+    id: 107,
+    title: "KD Essence",
+    description: "KD Essence brand and storefront, a freelance client project delivering brand identity and a production e-commerce site.",
+    longDescription: "KD Essence brand and storefront, a freelance client project delivering brand identity and a production e-commerce site.",
+    image: "", // TODO: [FILL] add KD Essence screenshot
+    github: "", // TODO: [FILL or omit if private] add KD Essence github
+    demo: "", // TODO: [FILL] add KD Essence live link
+    tags: ["Next.js", "Client", "E-commerce"],
     date: "2025",
     status: "completed",
   },
@@ -157,26 +270,14 @@ const projects = [
     status: "completed",
   },
   {
-    id: 12,
-    title: "Solana Analytics Dashboard",
-    description: "Real-time ecosystem metrics and liquidity flow visualization.",
-    longDescription: "Real-time ecosystem metrics and liquidity flow visualization for the Solana blockchain.",
-    image: "/site-images/Macbook-Air-solanaboard.vercel.app.png",
-    github: "https://github.com/cryptoduke01/solana-analytics-board",
-    demo: "https://solanaboard.vercel.app/",
-    tags: ["Next.js", "Analytics", "Solana", "Dashboard"],
-    date: "2025",
-    status: "completed",
-  },
-  {
-    id: 13,
-    title: "Fundrr Waitlist",
-    description: "Supercharge Nigerian Creatives with Solana-Powered Funding.",
-    longDescription: "Join the waitlist for Fundrr - Supercharge Nigerian Creatives with Solana-Powered Funding.",
-    image: "/site-images/Macbook-Air-usefundrr.vercel.app.png",
-    github: "https://github.com/cryptoduke01/flofi-waitlist",
-    demo: "https://usefundrr.vercel.app/",
-    tags: ["Next.js", "Waitlist", "Solana", "Funding"],
+    id: 9,
+    title: "Snappgram",
+    description: "Social media photo app for sharing photos and lifestyle.",
+    longDescription: "A social media platform focused on photo sharing and lifestyle content, built for the Web3 generation.",
+    image: "/site-images/Macbook-Air-snappgram.vercel.app.png",
+    github: "https://github.com/akachukwu-eth/snapgram",
+    demo: "https://snappgram.vercel.app/",
+    tags: ["Next.js", "Social Media", "Web3", "Photos"],
     date: "2025",
     status: "completed",
   },
@@ -193,7 +294,108 @@ type Project = {
   tags: string[];
   date: string;
   status: string;
+  featured?: boolean;
 };
+
+type ProjectCardProps = {
+  project: Project;
+  index: number;
+  onSelect: (project: Project) => void;
+};
+
+function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
+  return (
+    <motion.div
+      onClick={() => onSelect(project)}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
+      whileHover={{ y: -5 }}
+      className="group block overflow-hidden glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300 cursor-pointer"
+    >
+      {/* Project Image */}
+      {project.image && (
+        <div className="relative w-full h-48 overflow-hidden bg-[#0a0a0a]">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+        </div>
+      )}
+
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5 text-[#666]">
+              <Calendar size={12} />
+              <span className="text-xs font-[family-name:var(--font-display)]">
+                {formatDate(project.date)}
+              </span>
+            </div>
+            <span className="px-2 py-0.5 text-[9px] glass text-[#00FFD1] font-[family-name:var(--font-display)]">
+              {project.status}
+            </span>
+          </div>
+          <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-display)] opacity-0 group-hover:opacity-100 transition-opacity">
+            view
+          </span>
+        </div>
+
+        <h3 className="text-lg font-semibold text-white mb-3 font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors line-clamp-2">
+          {project.title}
+        </h3>
+
+        <p className="text-sm text-[#666] mb-4 font-[family-name:var(--font-display)] leading-relaxed line-clamp-2">
+          {project.description}
+        </p>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="px-2 py-1 text-[9px] text-[#666] glass border border-[#1a1a1a] font-[family-name:var(--font-display)]"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Links */}
+        <div className="flex items-center gap-4">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-1.5 text-[#00FFD1] hover:text-[#00e6bc] transition-colors"
+            >
+              <Github size={12} />
+              <span className="text-xs font-[family-name:var(--font-display)]">github</span>
+            </a>
+          )}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-1.5 text-[#00FFD1] hover:text-[#00e6bc] transition-colors"
+            >
+              <ExternalLink size={12} />
+              <span className="text-xs font-[family-name:var(--font-display)]">demo</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -215,6 +417,9 @@ export default function ProjectsPage() {
       })
       .catch(() => {});
   }, []);
+
+  const featuredProjects = projectList.filter((project) => project.featured);
+  const standardProjects = projectList.filter((project) => !project.featured);
 
   return (
     <main className="relative min-h-screen bg-black overflow-x-hidden scanlines noise">
@@ -304,6 +509,7 @@ export default function ProjectsPage() {
             {[
             { label: "projects built", value: String(projectList.length) },
             { label: "technologies", value: "15+" },
+            // TODO: confirm "500+ github stars" — unverified, replace with a real number
             { label: "github stars", value: "500+" },
           ].map((stat) => (
             <div key={stat.label}>
@@ -317,102 +523,55 @@ export default function ProjectsPage() {
           ))}
         </motion.div>
 
+        {/* Featured Projects */}
+        {featuredProjects.length > 0 && (
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-[1px] w-8 bg-[#00FFD1]" />
+              <span className="text-xs font-medium text-[#00FFD1] tracking-[0.3em] font-[family-name:var(--font-display)]">
+                Featured
+              </span>
+            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {featuredProjects.map((project, i) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={i}
+                  onSelect={setSelectedProject}
+                />
+              ))}
+            </motion.div>
+          </div>
+        )}
+
         {/* Development Projects Grid */}
+        {featuredProjects.length > 0 && (
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-[1px] w-8 bg-[#00FFD1]" />
+            <span className="text-xs font-medium text-[#00FFD1] tracking-[0.3em] font-[family-name:var(--font-display)]">
+              All Projects
+            </span>
+          </div>
+        )}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {projectList.map((project, i) => (
-            <motion.div
+          {standardProjects.map((project, i) => (
+            <ProjectCard
               key={project.id}
-              onClick={() => setSelectedProject(project)}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 + i * 0.05 }}
-              whileHover={{ y: -5 }}
-              className="group block overflow-hidden glass border border-[#1a1a1a] hover:border-[#00FFD1]/50 transition-all duration-300 cursor-pointer"
-            >
-              {/* Project Image */}
-              {project.image && (
-                <div className="relative w-full h-48 overflow-hidden bg-[#0a0a0a]">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                </div>
-              )}
-              
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1.5 text-[#666]">
-                      <Calendar size={12} />
-                      <span className="text-xs font-[family-name:var(--font-display)]">
-                        {formatDate(project.date)}
-                      </span>
-                    </div>
-                    <span className="px-2 py-0.5 text-[9px] glass text-[#00FFD1] font-[family-name:var(--font-display)]">
-                      {project.status}
-                    </span>
-                  </div>
-                  <span className="text-xs text-[#00FFD1] font-[family-name:var(--font-display)] opacity-0 group-hover:opacity-100 transition-opacity">
-                    view
-                  </span>
-                </div>
-
-                <h3 className="text-lg font-semibold text-white mb-3 font-[family-name:var(--font-display)] group-hover:text-[#00FFD1] transition-colors line-clamp-2">
-                  {project.title}
-                </h3>
-
-                <p className="text-sm text-[#666] mb-4 font-[family-name:var(--font-display)] leading-relaxed line-clamp-2">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 text-[9px] text-[#666] glass border border-[#1a1a1a] font-[family-name:var(--font-display)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links */}
-                <div className="flex items-center gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="flex items-center gap-1.5 text-[#00FFD1] hover:text-[#00e6bc] transition-colors"
-                  >
-                    <Github size={12} />
-                    <span className="text-xs font-[family-name:var(--font-display)]">github</span>
-                  </a>
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-1.5 text-[#00FFD1] hover:text-[#00e6bc] transition-colors"
-                    >
-                      <ExternalLink size={12} />
-                      <span className="text-xs font-[family-name:var(--font-display)]">demo</span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
+              project={project}
+              index={i}
+              onSelect={setSelectedProject}
+            />
           ))}
         </motion.div>
 
