@@ -666,7 +666,7 @@ export default function ContentPage() {
           {[
             { label: "threads written", value: "29" },
             { label: "total engagement", value: "120k+" },
-            { label: "bounties won", value: "13x" },
+            { label: "bounties won", value: "14x" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="text-2xl font-semibold text-[#00FFD1] font-[family-name:var(--font-display)]">
