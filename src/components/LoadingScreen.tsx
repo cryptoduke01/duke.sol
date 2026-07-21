@@ -67,9 +67,9 @@ export default function LoadingScreen() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.3em] lowercase"
+              className="text-xs text-[#666] font-[family-name:var(--font-display)] tracking-[0.3em]"
             >
-              loading
+              Loading
             </motion.span>
           </div>
 

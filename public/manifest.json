@@ -1,7 +1,7 @@
 {
-  "name": "duke.sol - Frontend & Web3 Developer",
+  "name": "duke.sol - Solana Builder, Researcher & Writer",
   "short_name": "duke.sol",
-  "description": "Frontend developer crafting interfaces for Web3 products. Core member at Superteam Nigeria.",
+  "description": "Consumer and infrastructure products, protocol and security research, and the writing that makes it useful. Core member at Superteam Nigeria.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
@@ -9,9 +9,9 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "/mypfp.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
     }
   ]
 }

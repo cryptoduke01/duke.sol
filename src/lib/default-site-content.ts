@@ -3,10 +3,10 @@ import type { SiteContent } from "@/lib/content-types";
 export const defaultSiteContent: SiteContent = {
   hero: {
     badge: "Solana builder since 2023",
-    titleTop: "i build, i research,",
-    titleMain: "and i write it all down.",
+    titleTop: "I build, I research,",
+    titleMain: "and I write it all down.",
     subtitle:
-      "I build consumer and infrastructure products on Solana and Circle's Arc, from AI agent payment rails to on-chain apps with real USDC flows. I do protocol and security research, including an independent Percolator audit quoted by Toly, and I write the threads, articles, and weekly ecosystem reports that turn what I learn into something others can use. Solana builder since 2023, Core Member at Superteam Nigeria, 3x hackathon winner, 14+ Superteam Earn bounty wins.",
+      "Consumer and infrastructure products, protocol and security research, and the threads and reports that make it useful to others. Solana builder since 2023, Core Member at Superteam Nigeria, 3x hackathon winner, 14+ Superteam Earn bounty wins.",
     quote:
       "Independent Phase 1 audit of Toly's Percolator was quoted by Toly and verified.",
     quoteSource: "https://x.com/toly/status/2020528646163689624",

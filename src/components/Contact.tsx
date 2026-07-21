@@ -9,7 +9,7 @@ const socials = [
   { name: "twitter", handle: "duke.sol", href: "https://x.com/cryptoduke01", icon: Twitter },
   { name: "substack", handle: "duke.sol", href: "https://dukesol.substack.com/", icon: BookOpen },
   { name: "medium", handle: "@cryptoduke1", href: "https://medium.com/@cryptoduke1/", icon: FileText },
-  { name: "telegram", handle: "duke.sol", href: "https://t.me/cryptoduke01", icon: MessageCircle },
+  { name: "telegram", handle: "duke.sol", href: "https://t.me/dukedotsol", icon: MessageCircle },
   { name: "github", handle: "duke.sol", href: "https://github.com/cryptoduke01", icon: Github },
   { name: "linkedin", handle: "duke.sol", href: "https://www.linkedin.com/in/akachukwuu?originalSubdomain=ng", icon: Linkedin },
 ];
@@ -30,7 +30,7 @@ const footerLinks = [
       { name: "twitter / x", href: "https://x.com/cryptoduke01", icon: Twitter },
       { name: "substack", href: "https://dukesol.substack.com/", icon: BookOpen },
       { name: "medium", href: "https://medium.com/@cryptoduke1/", icon: FileText },
-      { name: "telegram", href: "https://t.me/cryptoduke01", icon: MessageCircle },
+      { name: "telegram", href: "https://t.me/dukedotsol", icon: MessageCircle },
       { name: "github", href: "https://github.com/cryptoduke01", icon: Github },
       { name: "linkedin", href: "https://www.linkedin.com/in/akachukwuu?originalSubdomain=ng", icon: Linkedin },
     ],
@@ -38,8 +38,7 @@ const footerLinks = [
   {
     title: "resources",
     links: [
-      { name: "dev resume", href: "/resume-dev.pdf" },
-      { name: "writing resume", href: "/resume-writing.pdf" },
+      { name: "cv", href: "/cv" },
       { name: "superteam ng", href: "https://superteam.ng" },
       { name: "threads", href: "/content" },
     ],
@@ -81,8 +80,8 @@ export default function Contact() {
             <div className="h-[1px] w-8 md:w-12 bg-[#00FFD1]" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white mb-4 md:mb-6 font-[family-name:var(--font-display)]">
-            hit me up,
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-4 md:mb-6 font-[family-name:var(--font-serif)]">
+            Hit me up,
             <br />
             <span className="text-[#00FFD1]">let&apos;s make something</span>
           </h2>

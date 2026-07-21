@@ -8,8 +8,6 @@
   --color-surface: #0a0a0a;
   --color-border: #1a1a1a;
   --color-muted: #666666;
-  --font-display: var(--font-outfit);
-  --font-mono: var(--font-outfit);
 }
 
 :root {
@@ -427,4 +425,31 @@ body {
 .signpost {
   animation: signpost-sway 3s ease-in-out infinite;
   transform-origin: bottom center;
+}
+
+/* Print / PDF styles for the CV page */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .scanlines::after,
+  .noise::before {
+    display: none !important;
+  }
+  html,
+  body {
+    background: #000 !important;
+  }
+  .cv-sheet {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 32px 40px !important;
+    max-width: 100% !important;
+  }
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+  @page {
+    margin: 12mm;
+  }
 }

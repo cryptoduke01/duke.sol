@@ -37,7 +37,7 @@ export default function Work({
               Work
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white font-[family-name:var(--font-display)]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-white font-[family-name:var(--font-serif)]">
             Projects and Updates
           </h2>
         </motion.div>

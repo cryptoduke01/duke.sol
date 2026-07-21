@@ -31,7 +31,7 @@ export default function Hero({ content = defaultSiteContent.hero }: HeroProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.02] mb-5"
+              className="text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-[1.02] mb-5 font-[family-name:var(--font-serif)]"
             >
               <span className="text-white">{content.titleTop}</span>
               <br />

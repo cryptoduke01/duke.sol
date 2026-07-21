@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Contact from "./Contact";
 
 const navLinks = [
-  { name: "work", href: "#work" },
+  { name: "work", href: "/#work" },
   { name: "projects", href: "/projects" },
   { name: "content", href: "/content" },
-  { name: "contact", href: "#contact" },
+  { name: "CV", href: "/cv" },
+  { name: "contact", href: "/#contact" },
 ];
 
 export default function Navigation() {
@@ -40,7 +40,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <motion.a
-              href="#"
+              href="/"
               className="group relative"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -76,7 +76,7 @@ export default function Navigation() {
               })}
               
               <motion.a
-                href="#contact"
+                href="/#contact"
                 // target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: -20 }}
@@ -168,7 +168,7 @@ export default function Navigation() {
                   );
                 })}
                 <motion.a
-                  href="#contact"
+                  href="/#contact"
                   // target="_blank"
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, x: 20 }}

@@ -2,9 +2,10 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
-import { ArrowUpRight, X, ArrowLeft, Download, FileText, Pen, Calendar, Heart, MessageCircle, Bookmark, Twitter, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight, X, FileText, Calendar, Heart, MessageCircle, Bookmark, Twitter, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import Navigation from "@/components/Navigation";
 
 // Helper function to format date
 const formatDate = (dateString: string): string => {
@@ -491,21 +492,6 @@ const articleSections: ArticleSectionConfig[] = [
   { id: "document", label: "Document (Restricted Access)", items: [] },
 ];
 
-const resumes = [
-  {
-    title: "developer resume",
-    description: "frontend & web3 development experience, technical skills, and project highlights.",
-    icon: FileText,
-    downloadLink: "/resume-dev.pdf",
-  },
-  {
-    title: "writing resume",
-    description: "content creation, technical writing, and community management experience.",
-    icon: Pen,
-    downloadLink: "/resume-writing.pdf",
-  },
-];
-
 type ContentItem = {
   id: number;
   title: string;
@@ -606,33 +592,7 @@ export default function ContentPage() {
       <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-[#00FFD1]/5 rounded-full blur-[200px] pointer-events-none" />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-strong">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-[#666] hover:text-white transition-colors"
-            >
-              <ArrowLeft size={16} />
-              <span className="text-sm font-[family-name:var(--font-display)]">Back</span>
-            </Link>
-
-            <span className="text-xl font-semibold tracking-tight font-[family-name:var(--font-display)]">
-              <span className="text-white">duke</span>
-              <span className="text-[#00FFD1]">.sol</span>
-            </span>
-
-            <a
-              href="https://x.com/cryptoduke01"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 glass border border-[#00FFD1]/30 text-[#00FFD1] text-sm font-[family-name:var(--font-display)] hover:bg-[#00FFD1]/10 transition-all"
-            >
-              X
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20">
         {/* Header */}
@@ -648,7 +608,7 @@ export default function ContentPage() {
               Content
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white font-[family-name:var(--font-display)] mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-white font-[family-name:var(--font-serif)] mb-4">
             Threads & Articles
           </h1>
           <p className="text-[#666] max-w-lg font-[family-name:var(--font-display)] text-sm">
@@ -1247,7 +1207,7 @@ export default function ContentPage() {
                 </li>
                 <li>
                   <a
-                    href="https://t.me/cryptoduke01"
+                    href="https://t.me/dukedotsol"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line group"
@@ -1288,24 +1248,12 @@ export default function ContentPage() {
               </h4>
               <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <a
-                    href="/resume-dev.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/cv"
                     className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line"
                   >
-                    dev resume
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/resume-writing.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line"
-                  >
-                    writing resume
-                  </a>
+                    cv
+                  </Link>
                 </li>
                 <li>
                   <a
