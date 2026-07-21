@@ -27,6 +27,29 @@ const formatDate = (dateString: string): string => {
 const projects = [
   // Featured flagship work
   {
+    id: 104,
+    featured: true,
+    title: "Siren",
+    description: "Prediction market trading terminal on Solana that aggregated Kalshi (via DFlow) and Polymarket into one feed, with adaptive YES and NO execution, live PnL tracking, a natural language trading agent, and a risk layer. Founder and lead developer.",
+    longDescription: "I was the founder and lead developer of Siren, a prediction market trading terminal built on Solana that processed over $2,000 in trading volume. It aggregated live markets from Kalshi (via DFlow) and Polymarket into a single feed spanning politics, sports, crypto, finance, and entertainment, plus crypto price bracket markets for BTC, ETH, SOL, and more.\n\nTraders could buy and sell YES and NO positions with adaptive execution and partial fill fallback, track live positions, PnL, and execution history, and trade in plain English through the Siren Agent, for example 'Buy $20 YES on Bitcoin above 100k'. A risk intelligence layer flagged correlation across positions, concentration, and thin liquidity.\n\nStack: Next.js frontend, Fastify API, Supabase, DFlow and the Polymarket API for execution, Jupiter for onchain swaps, and Privy for embedded wallets with real-time USDC and SOL balance reads via Solana web3.js and SPL token accounts.",
+    image: "/site-images/siren.png",
+    github: "https://github.com/cryptoduke01/siren",
+    demo: "https://app.onsiren.xyz/terminal",
+    tags: ["Solana", "Prediction Markets", "Privy", "Supabase", "Fastify"],
+    date: "2025",
+    status: "founder",
+    caseStudy: {
+      problem:
+        "Prediction market liquidity was fragmented across Kalshi and Polymarket, with no single place to trade YES/NO positions, manage risk, and track PnL.",
+      built:
+        "As founder and lead developer, I built a trading terminal aggregating Kalshi (via DFlow) and Polymarket, with adaptive execution, live position and PnL tracking, a natural language trading agent, and a risk layer for correlation and concentration alerts.",
+      stack:
+        "Next.js, Fastify, Supabase, DFlow, Polymarket API, Jupiter, and Privy embedded wallets with real-time USDC/SOL balances via Solana web3.js and SPL token accounts.",
+      outcome:
+        "Shipped end to end and processed over $2,000 in trading volume. Archived after the startup wound down; the code and live terminal stay verifiable.",
+    },
+  },
+  {
     id: 101,
     featured: true,
     title: "Keryx",
@@ -92,24 +115,63 @@ const projects = [
   },
   // Standard projects
   {
-    id: 104,
-    title: "Siren",
-    description: "Siren was a prediction market trading terminal on Solana that aggregated Kalshi (via DFlow) and Polymarket into one feed, with adaptive YES and NO trade execution, live portfolio and PnL tracking, a natural language trading agent, and a risk layer for correlation and concentration alerts.",
-    longDescription: "Siren was a prediction market trading terminal built on Solana. It aggregated live markets from Kalshi (via DFlow) and Polymarket into a single feed spanning politics, sports, crypto, finance, and entertainment, plus crypto price bracket markets for BTC, ETH, SOL, and more.\n\nTraders could buy and sell YES and NO positions with adaptive execution and partial fill fallback, track live positions, PnL, and execution history, and trade in plain English through the Siren Agent, for example 'Buy $20 YES on Bitcoin above 100k'. A risk intelligence layer flagged correlation across positions, concentration, and thin liquidity.\n\nStack: Next.js frontend, Fastify API, Supabase, DFlow and the Polymarket API for execution, Jupiter for onchain swaps, and Privy for social login and embedded wallets.",
-    image: "/site-images/siren.png",
-    github: "https://github.com/cryptoduke01/siren",
-    demo: "https://app.onsiren.xyz/terminal",
-    tags: ["Solana", "Supabase", "Fastify", "Prediction Markets", "Privy"],
-    date: "2025",
-    status: "archived",
+    id: 112,
+    title: "Gloam",
+    description: "Private trading and money movement on Robinhood Chain. Hold, move, and trade stocks and memes without printing your book to a public chain.",
+    longDescription: "Gloam is private money on Robinhood Chain, a sealed chamber for anything liquid: stocks, memes, and more, held, moved, and traded without exposing your positions on a transparent ledger. Shipped with a full site, app, docs, and whitepaper.",
+    image: "/site-images/gloam.png",
+    github: "https://github.com/cryptoduke01/gloam",
+    demo: "https://gloam.trade",
+    tags: ["Robinhood Chain", "Privacy", "Trading", "TypeScript"],
+    date: "2026",
+    status: "live",
     caseStudy: {
       problem:
-        "Prediction market liquidity was fragmented across Kalshi and Polymarket, with no single place to trade and manage risk.",
+        "Public ledgers leak your positions and balances. Trading and holding on transparent chains means printing your book to anyone watching.",
       built:
-        "A trading terminal aggregating Kalshi (via DFlow) and Polymarket, with adaptive YES/NO execution, portfolio and PnL tracking, a natural language trading agent, and a risk layer.",
-      stack: "Next.js, Fastify, Supabase, DFlow, Polymarket API, Jupiter, Privy.",
-      outcome:
-        "Shipped as a full terminal. Archived after the startup wound down; the code and terminal stay verifiable.",
+        "A private trading and payments app on Robinhood Chain that lets users hold, move, and trade stocks and memes without exposing their positions, shipped with site, app, docs, and whitepaper.",
+      stack: "Next.js, TypeScript, Robinhood Chain.",
+      outcome: "Live at gloam.trade with a working testnet app.",
+    },
+  },
+  {
+    id: 113,
+    title: "Onca",
+    description: "Solana-native tool plugins for the ZeroClaw agent runtime that let an AI agent handle money safely: it proposes a payment request a person signs, never holding a key that can spend.",
+    longDescription: "Onca is a set of Solana tools for the ZeroClaw agent runtime, shipped as wasm32-wasip2 WIT components in Rust. The tools let an agent read the chain and build payment requests a person signs, so the agent proposes and the user disposes, never a key that can spend on its own.",
+    image: "/site-images/onca.png",
+    github: "https://github.com/cryptoduke01/onca",
+    demo: "https://onca.run",
+    tags: ["Solana", "Rust", "AI Agents", "WASM"],
+    date: "2026",
+    status: "live",
+    caseStudy: {
+      problem:
+        "Letting an AI agent move money is dangerous if it holds a spendable key. Agents need to transact without becoming a custody risk.",
+      built:
+        "Solana tool plugins for the ZeroClaw runtime, as Rust wasm32-wasip2 WIT components, that read the chain and build payment requests a human signs in their own wallet.",
+      stack: "Rust, wasm32-wasip2 (WIT components), Solana, ZeroClaw runtime.",
+      outcome: "Live at onca.run with the plugins open-sourced.",
+    },
+  },
+  {
+    id: 114,
+    title: "Hanko",
+    description: "Claim records for every tokenized asset on Solana. Public label pages for tokenized equities, graded from primary documents, that make the legal structure behind a token real.",
+    longDescription: "Hanko is the stamp that makes the legal structure of a tokenized asset real. Every tokenized stock has a price, a chart, a ticker, and a legal structure, but your wallet only shows three. Hanko is a production v1 web app of public label pages for tokenized equities, graded from primary documents, with live market data where a mint is known.",
+    image: "/site-images/hanko.png",
+    github: "https://github.com/cryptoduke01/hanko",
+    demo: "https://hankolabs.xyz",
+    tags: ["Solana", "RWA", "Tokenized Assets", "Next.js"],
+    date: "2026",
+    status: "live",
+    caseStudy: {
+      problem:
+        "Tokenized equities show a price, chart, and ticker, but the legal structure behind the token is invisible to holders.",
+      built:
+        "A production web app of public label pages for tokenized equities, graded from primary documents, with search, structure filters, and live market data where a mint is known.",
+      stack: "Next.js, TypeScript, Solana, public DEX market data.",
+      outcome: "Live at hankolabs.xyz as a v1 index of graded tokenized assets.",
     },
   },
   {

@@ -2,11 +2,11 @@ import type { SiteContent } from "@/lib/content-types";
 
 export const defaultSiteContent: SiteContent = {
   hero: {
-    badge: "Solana builder since 2023",
+    badge: "",
     titleTop: "I build, I research,",
     titleMain: "and I write it all down.",
     subtitle:
-      "Consumer and infrastructure products, protocol and security research, and the threads and reports that make it useful to others. Solana builder since 2023, Core Member at Superteam Nigeria, 3x hackathon winner, 14+ Superteam Earn bounty wins.",
+      "Consumer and infrastructure products, protocol and security research, and the threads and reports that make it useful to others.",
     quote:
       "Independent Phase 1 audit of Toly's Percolator was quoted by Toly and verified.",
     quoteSource: "https://x.com/toly/status/2020528646163689624",
@@ -30,6 +30,20 @@ export const defaultSiteContent: SiteContent = {
       author: "Anatoly Yakovenko",
       role: "Co-founder, Solana",
       link: "https://x.com/toly/status/2020528646163689624",
+    },
+    {
+      id: "getblock-firstplace",
+      quote:
+        "First place. Unanimous winner across the team. Clear, insightful, beautifully designed thread plus an applied doc with 48 hours of hands-on GetBlock research. Congrats, you nailed it.",
+      author: "GetBlock",
+      role: "Node infrastructure provider",
+    },
+    {
+      id: "nataly-getblock",
+      quote:
+        "Reviewing the results of our first bounty with Superteam Earn, the talent density in Web3 is really something else. Congrats to duke, you definitely know your way around Web3.",
+      author: "Nataly Lahuti",
+      role: "GetBlock",
     },
   ],
   updates: [

@@ -18,14 +18,16 @@ export default function Hero({ content = defaultSiteContent.hero }: HeroProps) {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 mb-4 rounded-full border border-[#00FFD1]/30 px-3 py-1.5 text-xs text-[#00FFD1]"
-            >
-              {content.badge}
-            </motion.div>
+            {content.badge && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center gap-2 mb-4 rounded-full border border-[#00FFD1]/30 px-3 py-1.5 text-xs text-[#00FFD1]"
+              >
+                {content.badge}
+              </motion.div>
+            )}
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -86,14 +88,6 @@ export default function Hero({ content = defaultSiteContent.hero }: HeroProps) {
                 {content.ctaSecondaryLabel}
               </motion.a>
             </motion.div>
-            <a
-              href={content.quoteSource}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block rounded-lg border border-[#1a1a1a] p-4 text-sm text-[#b0b0b0] hover:border-[#00FFD1]/40 transition-colors"
-            >
-              &quot;{content.quote}&quot;
-            </a>
           </div>
 
           <motion.div

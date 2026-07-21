@@ -28,14 +28,25 @@ const contact = [
 
 const experience = [
   {
+    role: "Founder and Lead Developer",
+    org: "Siren, prediction market trading terminal",
+    period: "2025",
+    points: [
+      "Built a prediction market trading terminal that aggregated Kalshi (via DFlow) and Polymarket, integrating live order placement, position tracking, and closing across providers.",
+      "Implemented Privy embedded wallets with real-time USDC and SOL balance reads using Solana web3.js and SPL token accounts.",
+      "Built a persistent data layer on Supabase for hedge history and PnL, moving beyond localStorage, with real-time PnL updates in place of polling.",
+      "Designed a natural language trading agent covering intent parsing, market matching, and edge-case handling, plus a risk layer for correlation and concentration.",
+      "Hardened API routes with error handling and retries; shipped end to end and processed over $2,000 in trading volume.",
+    ],
+  },
+  {
     role: "Independent Builder and Researcher",
     org: "Solana and Circle's Arc",
     period: "2023 — Present",
     points: [
       "Shipped Keryx, a pay-per-call monetization layer for AI agents on the x402 protocol with USDC settlement on Arc, with a full site, docs, and whitepaper.",
       "Published an independent Phase 1 security audit of Toly's Percolator risk engine, quoted and verified by Anatoly Yakovenko, then shipped the Percolator SDK and dashboard on npm as @percolatortool/sdk.",
-      "Built Siren, a prediction market trading terminal aggregating Kalshi (via DFlow) and Polymarket, with adaptive execution, PnL tracking, and a natural language trading agent (Next.js, Fastify, Supabase, Privy, Jupiter).",
-      "Shipped Swindle (AI chess arena with on-chain USDC wagering), Vector (autonomous trading agent), Bulldropper (Token-2022 airdrop tooling with Jito bundles), crewdeck (Supabase marketplace), and Deriverse (Solana trading analytics).",
+      "Shipped Gloam (private trading on Robinhood Chain), Onca (Solana agent-payment tooling in Rust), Hanko (claim records for tokenized assets), Swindle (AI chess arena with on-chain USDC wagering), Vector, Bulldropper, crewdeck, and Deriverse.",
     ],
   },
   {
@@ -167,12 +178,14 @@ export default function CVPage() {
             <section className="mb-9">
               <SectionLabel>Profile</SectionLabel>
               <p className="text-sm leading-relaxed text-[#b0b0b0]">
-                I build consumer and infrastructure products across Solana and Circle&apos;s Arc,
-                from AI agent payment rails to on-chain apps with real USDC flows. I run protocol and
-                security research, including an independent Phase 1 audit of Toly&apos;s Percolator
-                that was quoted and verified by Anatoly Yakovenko, and I write the threads, articles,
-                and weekly reports that make the work useful to others. Solana builder since 2023 and
-                Core Member at Superteam Nigeria.
+                I ship consumer and infrastructure products across Solana and Circle&apos;s Arc. Most
+                recently I founded and led Siren, a prediction market trading terminal that integrated
+                Kalshi and Polymarket, Privy embedded wallets, and real-time PnL over live USDC and SOL
+                balances, the same shape of problem as production prediction-market apps. I also run
+                protocol and security research, including an independent Phase 1 audit of Toly&apos;s
+                Percolator that was quoted and verified by Anatoly Yakovenko, and I write the threads,
+                articles, and weekly reports that make the work useful to others. Solana builder since
+                2023 and Core Member at Superteam Nigeria.
               </p>
             </section>
 

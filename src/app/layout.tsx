@@ -1,12 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Instrument_Serif } from "next/font/google";
+import localFont from "next/font/local";
+import { Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import LoadingScreen from "@/components/LoadingScreen";
 
-const spaceGrotesk = Space_Grotesk({
+const overusedGrotesk = localFont({
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  src: [
+    { path: "./fonts/OverusedGrotesk-Roman.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/OverusedGrotesk-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/OverusedGrotesk-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/OverusedGrotesk-Bold.woff2", weight: "700", style: "normal" },
+  ],
 });
 
 const instrumentSerif = Instrument_Serif({
@@ -116,7 +122,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${instrumentSerif.variable} antialiased bg-black text-[#e0e0e0] scanlines noise`}
+        className={`${overusedGrotesk.variable} ${instrumentSerif.variable} antialiased bg-black text-[#e0e0e0] scanlines noise`}
       >
         <LoadingScreen />
         {children}

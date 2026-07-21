@@ -18,19 +18,30 @@ export default function Testimonials({ items = defaultSiteContent.testimonials }
           <span className="text-xs text-[#00FFD1] tracking-[0.2em] uppercase">Testimonials</span>
         </div>
         <div className="grid md:grid-cols-2 gap-4">
-          {items.map((item) => (
-            <a
-              key={item.id}
-              href={item.link || "#"}
-              target={item.link?.startsWith("http") ? "_blank" : undefined}
-              rel={item.link?.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="border border-[#1a1a1a] p-5 hover:border-[#00FFD1]/40 transition-colors"
-            >
-              <p className="text-sm text-[#ddd] mb-4">&quot;{item.quote}&quot;</p>
-              <p className="text-sm text-white">{item.author}</p>
-              <p className="text-xs text-[#777]">{item.role}</p>
-            </a>
-          ))}
+          {items.map((item) =>
+            item.link ? (
+              <a
+                key={item.id}
+                href={item.link}
+                target={item.link.startsWith("http") ? "_blank" : undefined}
+                rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="border border-[#1a1a1a] p-5 hover:border-[#00FFD1]/40 transition-colors"
+              >
+                <p className="text-sm text-[#ddd] mb-4">&quot;{item.quote}&quot;</p>
+                <p className="text-sm text-white">{item.author}</p>
+                <p className="text-xs text-[#777]">{item.role}</p>
+              </a>
+            ) : (
+              <div
+                key={item.id}
+                className="border border-[#1a1a1a] p-5"
+              >
+                <p className="text-sm text-[#ddd] mb-4">&quot;{item.quote}&quot;</p>
+                <p className="text-sm text-white">{item.author}</p>
+                <p className="text-xs text-[#777]">{item.role}</p>
+              </div>
+            )
+          )}
         </div>
       </div>
     </section>

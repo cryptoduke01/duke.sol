@@ -416,23 +416,8 @@ const ARTICLE_VIEW_LINKS: Record<ArticleCategory, string> = {
 
 const articleSections: ArticleSectionConfig[] = [
   {
-    id: "substack",
-    label: "Substack",
-    items: [
-      {
-        id: "substack-1",
-        title: "Building a Trading Analytics Dashboard for Deriverse",
-        preview:
-          "I had a problem that probably sounds familiar if you trade on-chain: I had no idea how I was actually performing on Deriverse. Sure, I could see individual trades execute, but what about my total PnL, my win rate, which trading sessions were profitable, and how much I was paying in fees? The platform didn't have a dedicated analytics view, and I wasn't about to manually track everything in a spreadsheet. So I built my own dashboard, live data from my wallet, decoded from the chain, with every metric I actually care about. This is how I did it.",
-        link: "https://open.substack.com/pub/dukesol/p/building-a-trading-analytics-dashboard?utm_campaign=post-expanded-share&utm_medium=post%20viewer",
-        embedHtml:
-          '<div class="substack-post-embed"><p lang="en">Building a Trading Analytics Dashboard for Deriverse by duke.sol</p><p>How I built a full-stack trading journal that pulls live data from the Solana blockchain and transforms it into actionable trading insights.</p><a data-post-link href="https://dukesol.substack.com/p/building-a-trading-analytics-dashboard">Read on Substack</a></div>',
-      },
-    ],
-  },
-  {
     id: "x",
-    label: "X Articles",
+    label: "Articles",
     items: [
       {
         id: "x-aggregator-inversion",
@@ -526,6 +511,21 @@ const articleSections: ArticleSectionConfig[] = [
           "AI Models trained on poor data are destined for failure! I struggled with AI models, which sometimes failed to deliver results, until I learned about the significance of high-quality data. This may be why your AI assistant is underperforming without you even realizing it! The issue isn't with the model, whether it's ChatGPT, Grok, or Deepseek; it's all about the data. Here's how everything is changing;",
         link: "https://medium.com/@cryptoduke1/who-will-create-the-key-data-needed-to-make-solanas-ai-better-1ff7b8d2a40a",
         banner: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*7fEkqedN2O_3e9v3kebkuw.jpeg",
+      },
+    ],
+  },
+  {
+    id: "substack",
+    label: "Substack",
+    items: [
+      {
+        id: "substack-1",
+        title: "Building a Trading Analytics Dashboard for Deriverse",
+        preview:
+          "I had a problem that probably sounds familiar if you trade on-chain: I had no idea how I was actually performing on Deriverse. Sure, I could see individual trades execute, but what about my total PnL, my win rate, which trading sessions were profitable, and how much I was paying in fees? The platform didn't have a dedicated analytics view, and I wasn't about to manually track everything in a spreadsheet. So I built my own dashboard, live data from my wallet, decoded from the chain, with every metric I actually care about. This is how I did it.",
+        link: "https://open.substack.com/pub/dukesol/p/building-a-trading-analytics-dashboard?utm_campaign=post-expanded-share&utm_medium=post%20viewer",
+        embedHtml:
+          '<div class="substack-post-embed"><p lang="en">Building a Trading Analytics Dashboard for Deriverse by duke.sol</p><p>How I built a full-stack trading journal that pulls live data from the Solana blockchain and transforms it into actionable trading insights.</p><a data-post-link href="https://dukesol.substack.com/p/building-a-trading-analytics-dashboard">Read on Substack</a></div>',
       },
     ],
   },
