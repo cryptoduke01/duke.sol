@@ -66,6 +66,18 @@ const projects = [
   },
   // Standard projects
   {
+    id: 104,
+    title: "Siren",
+    description: "Siren was a prediction market trading terminal on Solana that aggregated Kalshi (via DFlow) and Polymarket into one feed, with adaptive YES and NO trade execution, live portfolio and PnL tracking, a natural language trading agent, and a risk layer for correlation and concentration alerts.",
+    longDescription: "Siren was a prediction market trading terminal built on Solana. It aggregated live markets from Kalshi (via DFlow) and Polymarket into a single feed spanning politics, sports, crypto, finance, and entertainment, plus crypto price bracket markets for BTC, ETH, SOL, and more.\n\nTraders could buy and sell YES and NO positions with adaptive execution and partial fill fallback, track live positions, PnL, and execution history, and trade in plain English through the Siren Agent, for example 'Buy $20 YES on Bitcoin above 100k'. A risk intelligence layer flagged correlation across positions, concentration, and thin liquidity.\n\nStack: Next.js frontend, Fastify API, Supabase, DFlow and the Polymarket API for execution, Jupiter for onchain swaps, and Privy for social login and embedded wallets.",
+    image: "/site-images/siren.png",
+    github: "https://github.com/cryptoduke01/siren",
+    demo: "https://app.onsiren.xyz/terminal",
+    tags: ["Solana", "Supabase", "Fastify", "Prediction Markets", "Privy"],
+    date: "2025",
+    status: "archived",
+  },
+  {
     id: 108,
     title: "Vector",
     description: "Vector is an autonomous AI trading agent with a four-channel signal jury that votes before the LLM decides, plus deterministic TypeScript risk layers that enforce sizing, alignment gates, and hard caps.",
@@ -112,18 +124,6 @@ const projects = [
     tags: ["Next.js", "Solana", "Analytics"],
     date: "2025",
     status: "shipped",
-  },
-  {
-    id: 104,
-    title: "Siren",
-    description: "Siren was a risk and intelligence layer for prediction markets routing through polymarket, kalshi, through Jupiter and DFlow on Solana.",
-    longDescription: "Siren was a risk and intelligence layer for prediction markets routing through polymarket, kalshi, through Jupiter and DFlow on Solana.",
-    image: "/site-images/siren.png",
-    github: "https://github.com/cryptoduke01/siren",
-    demo: "https://app.onsiren.xyz/terminal",
-    tags: ["Solana", "DeFi", "Trading"],
-    date: "2025",
-    status: "archived",
   },
   {
     id: 106,
