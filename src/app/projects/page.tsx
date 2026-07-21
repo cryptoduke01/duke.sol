@@ -38,6 +38,14 @@ const projects = [
     tags: ["Next.js", "x402", "USDC", "AI Agents"],
     date: "2026",
     status: "live",
+    caseStudy: {
+      problem:
+        "AI agents call tools and APIs all day, but the publishers behind those tools had no clean way to get paid per call.",
+      built:
+        "A pay-per-call monetization layer on the x402 protocol: agents pay USDC per request, publishers price and meter access. Shipped with a full site, docs, and a whitepaper.",
+      stack: "Next.js, x402 protocol, USDC settlement on Circle's Arc.",
+      outcome: "Live on Arc testnet as the toll booth for the agent economy.",
+    },
   },
   {
     id: 102,
@@ -51,6 +59,14 @@ const projects = [
     tags: ["Next.js", "Solana", "USDC", "AI"],
     date: "2026",
     status: "live",
+    caseStudy: {
+      problem:
+        "Consumer crypto rarely puts real money flows in front of everyday users in a way that feels like a game.",
+      built:
+        "An AI chess arena where autonomous agents compete and users wager USDC on the outcome, with wallet connection and on-chain settlement.",
+      stack: "Next.js, Solana, USDC, Wallet Adapter, AI agents.",
+      outcome: "Live consumer app with real on-chain wagering.",
+    },
   },
   {
     id: 103,
@@ -64,6 +80,15 @@ const projects = [
     tags: ["Solana", "Security", "SDK", "Rust"],
     date: "2025",
     status: "shipped",
+    caseStudy: {
+      problem:
+        "Toly's Percolator risk engine had no independent review, and integrators had no typed way to build on it without hand-rolling instruction layouts.",
+      built:
+        "An independent Phase 1 security audit, quoted and verified by Anatoly Yakovenko, followed by the Percolator SDK and dashboard published on npm.",
+      stack: "Rust, TypeScript SDK, Solana, npm (@percolatortool/sdk).",
+      outcome:
+        "Audit quoted by Toly; SDK shipped so integrators can build wrappers and bots without reimplementing wire formats.",
+    },
   },
   // Standard projects
   {
@@ -77,6 +102,15 @@ const projects = [
     tags: ["Solana", "Supabase", "Fastify", "Prediction Markets", "Privy"],
     date: "2025",
     status: "archived",
+    caseStudy: {
+      problem:
+        "Prediction market liquidity was fragmented across Kalshi and Polymarket, with no single place to trade and manage risk.",
+      built:
+        "A trading terminal aggregating Kalshi (via DFlow) and Polymarket, with adaptive YES/NO execution, portfolio and PnL tracking, a natural language trading agent, and a risk layer.",
+      stack: "Next.js, Fastify, Supabase, DFlow, Polymarket API, Jupiter, Privy.",
+      outcome:
+        "Shipped as a full terminal. Archived after the startup wound down; the code and terminal stay verifiable.",
+    },
   },
   {
     id: 108,
@@ -89,6 +123,14 @@ const projects = [
     tags: ["AI", "Trading", "TypeScript"],
     date: "2026",
     status: "shipped",
+    caseStudy: {
+      problem:
+        "LLM trading agents tend to hallucinate conviction and blow through risk limits.",
+      built:
+        "An autonomous agent with a four-channel signal jury that votes before the LLM decides, plus deterministic TypeScript risk layers enforcing sizing, alignment gates, and hard caps.",
+      stack: "TypeScript, LLM reasoning, deterministic risk engine.",
+      outcome: "Shipped with a live demo dashboard showing the signal jury and reconciliation.",
+    },
   },
   {
     id: 109,
@@ -101,6 +143,14 @@ const projects = [
     tags: ["Next.js", "Supabase", "Marketplace"],
     date: "2025",
     status: "shipped",
+    caseStudy: {
+      problem:
+        "Web3 projects had no vetted, searchable place to find marketing agencies and KOLs.",
+      built:
+        "A marketplace with agency dashboards, a messaging system, image uploads, and email notifications.",
+      stack: "Next.js, Supabase (Postgres, Auth, Storage), email notifications.",
+      outcome: "Shipped and live at crewdeck.xyz.",
+    },
   },
   {
     id: 110,
@@ -113,6 +163,14 @@ const projects = [
     tags: ["Solana", "SPL", "Airdrop", "Privy"],
     date: "2026",
     status: "shipped",
+    caseStudy: {
+      problem:
+        "Rewarding the people who make a token loud meant manual wallet hunting and custodial airdrop tooling.",
+      built:
+        "A tool that scans X for viral posts on a cashtag or mint, surfaces author wallets, and runs batched custody-free airdrops with Token-2022 support, ATA creation, and Jito bundles.",
+      stack: "Solana, SPL / Token-2022, Jito bundles, Privy.",
+      outcome: "Shipped and live at bulldropper.xyz.",
+    },
   },
   {
     id: 111,
@@ -125,6 +183,14 @@ const projects = [
     tags: ["Next.js", "Solana", "Analytics"],
     date: "2025",
     status: "shipped",
+    caseStudy: {
+      problem:
+        "Traders on Deriverse had no view of their real PnL, win rate, drawdown, or session performance.",
+      built:
+        "Analytics that decode raw Solana wallet transaction history into structured trades, PnL, drawdown, and session analysis.",
+      stack: "Next.js, Solana RPC decoding, analytics pipeline.",
+      outcome: "Shipped as a live dashboard, with a full write-up on Substack.",
+    },
   },
   {
     id: 106,
@@ -284,6 +350,12 @@ type Project = {
   date: string;
   status: string;
   featured?: boolean;
+  caseStudy?: {
+    problem: string;
+    built: string;
+    stack: string;
+    outcome: string;
+  };
 };
 
 type ProjectCardProps = {
@@ -657,6 +729,28 @@ export default function ProjectsPage() {
                 <div className="text-[#999] font-[family-name:var(--font-display)] text-sm leading-relaxed whitespace-pre-line mb-4">
                   {selectedProject.longDescription}
                 </div>
+
+                {/* Case study */}
+                {selectedProject.caseStudy && (
+                  <div className="mb-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {[
+                      { label: "Problem", value: selectedProject.caseStudy.problem },
+                      { label: "What I built", value: selectedProject.caseStudy.built },
+                      { label: "Stack", value: selectedProject.caseStudy.stack },
+                      { label: "Outcome", value: selectedProject.caseStudy.outcome },
+                    ].map((row) => (
+                      <div
+                        key={row.label}
+                        className="border border-[#1a1a1a] p-3 font-[family-name:var(--font-display)]"
+                      >
+                        <div className="mb-1 text-[10px] uppercase tracking-[0.2em] text-[#00FFD1]">
+                          {row.label}
+                        </div>
+                        <div className="text-sm leading-relaxed text-[#999]">{row.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">

@@ -435,6 +435,46 @@ const articleSections: ArticleSectionConfig[] = [
     label: "X Articles",
     items: [
       {
+        id: "x-aggregator-inversion",
+        title: "The Aggregator Inversion",
+        preview:
+          "Written for BullpenFi. Why the aggregation layer is quietly becoming where the value in the stack actually accrues, and what that means for anyone building on top of it.",
+        link: "https://x.com/dukedotsol/status/2071574396913799179",
+        banner: "/article-images/aggregator-inversion.png",
+      },
+      {
+        id: "x-security-layer-agents",
+        title: "The Security Layer for Solana's Agent Economy",
+        preview:
+          "Written for Bento Guard. How autonomous agents get guardrails before they start moving real money, and why a security layer is the missing piece of the agent economy.",
+        link: "https://x.com/dukedotsol/status/2058928188869251544",
+        banner: "/article-images/security-layer-agents.png",
+      },
+      {
+        id: "x-prediction-markets-not-gambling",
+        title: "Prediction Markets Are Not Gambling",
+        preview:
+          "The difference between a forecasting engine and a casino, made concrete. A case for why prediction markets deserve to be treated as information infrastructure, not a betting product.",
+        link: "https://x.com/dukedotsol/status/2056394239076888885",
+        banner: "/article-images/prediction-markets-not-gambling.png",
+      },
+      {
+        id: "x-precision-gap",
+        title: "The Precision Gap: Why Prediction Markets Are Leaving Money on the Table",
+        preview:
+          "Written for Trepa. Where current prediction markets lose precision, and the money that gets left on the table because of it.",
+        link: "https://x.com/dukedotsol/status/2053380243105153478",
+        banner: "/article-images/precision-gap.png",
+      },
+      {
+        id: "x-building-on-bayse",
+        title: "Building on Bayse: A Practical Walkthrough of the Bayse Markets API",
+        preview:
+          "A developer's guide to Africa's prediction market API. A hands-on walkthrough of building on Bayse, from the first request to a working integration.",
+        link: "https://x.com/dukedotsol/status/2041825264334753812",
+        banner: "/article-images/building-on-bayse.png",
+      },
+      {
         id: "x-1",
         title: "The Privacy Crisis Killing Crypto Adoption",
         preview:

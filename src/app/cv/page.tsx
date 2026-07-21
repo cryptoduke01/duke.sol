@@ -19,7 +19,7 @@ const contact = [
   { icon: Mail, label: "thepublicdesigner@gmail.com", href: "mailto:thepublicdesigner@gmail.com" },
   { icon: Phone, label: "+234 704 785 6771", href: "tel:+2347047856771" },
   { icon: MapPin, label: "Jos, Nigeria (Remote)", href: undefined },
-  { icon: Globe, label: "dukesol.vercel.app", href: "https://dukesol.vercel.app" },
+  { icon: Globe, label: "iamduke.xyz", href: "https://iamduke.xyz" },
   { icon: Twitter, label: "x.com/cryptoduke01", href: "https://x.com/cryptoduke01" },
   { icon: Github, label: "github.com/cryptoduke01", href: "https://github.com/cryptoduke01" },
   { icon: Linkedin, label: "linkedin.com/in/akachukwuu", href: "https://www.linkedin.com/in/akachukwuu" },
@@ -107,13 +107,14 @@ export default function CVPage() {
             <ArrowLeft size={16} />
             Back to site
           </Link>
-          <button
-            onClick={() => window.print()}
+          <a
+            href="/resume.pdf"
+            download="duke-sol-cv.pdf"
             className="inline-flex items-center gap-2 border border-[#00FFD1]/30 bg-[#00FFD1]/10 px-4 py-2 text-sm text-[#00FFD1] transition-colors hover:bg-[#00FFD1]/20"
           >
             <Printer size={15} />
             Download PDF
-          </button>
+          </a>
         </div>
       </div>
 

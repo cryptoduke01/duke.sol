@@ -7,11 +7,14 @@ export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate minimum loading time for smooth UX
-    const timer = setTimeout(() => {
+    // Only show the intro loader once per session, and keep it brief
+    // so returning reviewers are not blocked on every full page load.
+    if (typeof window !== "undefined" && sessionStorage.getItem("seenLoader")) {
       setIsLoading(false);
-    }, 1500);
-
+      return;
+    }
+    sessionStorage.setItem("seenLoader", "1");
+    const timer = setTimeout(() => setIsLoading(false), 600);
     return () => clearTimeout(timer);
   }, []);
 
@@ -22,7 +25,7 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-[10001] bg-black flex items-center justify-center"
+          className="no-print fixed inset-0 z-[10001] bg-black flex items-center justify-center"
         >
           <div className="flex flex-col items-center gap-8">
             {/* Logo */}

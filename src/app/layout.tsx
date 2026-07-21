@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dukesol.vercel.app"),
+  metadataBase: new URL("https://iamduke.xyz"),
   title: {
     default: "duke.sol | Solana Builder, Researcher & Writer",
     template: "%s | duke.sol",
@@ -65,14 +65,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dukesol.vercel.app",
+    url: "https://iamduke.xyz",
     siteName: "duke.sol",
     title: "duke.sol | Solana Builder, Researcher & Writer",
     description:
       "Consumer and infrastructure products, protocol and security research, and the threads and reports that make it useful to others.",
     images: [
       {
-        url: "/mypfp.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "duke.sol - Solana builder, researcher, and writer",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
       "Consumer and infrastructure products, protocol and security research, and the writing that makes it useful.",
     creator: "@cryptoduke01",
     site: "@cryptoduke01",
-    images: ["/mypfp.jpg"],
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [{ url: "/mypfp.jpg" }],
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   alternates: {
-    canonical: "https://duke.sol",
+    canonical: "https://iamduke.xyz",
   },
   category: "technology",
   appleWebApp: {
