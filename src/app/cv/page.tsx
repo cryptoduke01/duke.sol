@@ -42,7 +42,7 @@ const experience = [
   {
     role: "Independent Builder and Researcher",
     org: "Solana and Circle's Arc",
-    period: "2023 — Present",
+    period: "2023 - Present",
     points: [
       "Shipped Keryx, a pay-per-call monetization layer for AI agents on the x402 protocol with USDC settlement on Arc, with a full site, docs, and whitepaper.",
       "Published an independent Phase 1 security audit of Toly's Percolator risk engine, quoted and verified by Anatoly Yakovenko, then shipped the Percolator SDK and dashboard on npm as @percolatortool/sdk.",
@@ -52,7 +52,7 @@ const experience = [
   {
     role: "Core Member and Community",
     org: "Superteam Nigeria",
-    period: "2024 — Present",
+    period: "2024 - Present",
     points: [
       "Core contributor driving growth of the Solana ecosystem in Nigeria.",
       "Run technical workshops, create educational content, and connect developers with resources and opportunities.",
@@ -61,7 +61,7 @@ const experience = [
   {
     role: "Frontend and Product Developer",
     org: "Freelance and Partner Projects",
-    period: "2023 — Present",
+    period: "2023 - Present",
     points: [
       "Built responsive React, Next.js, and TypeScript web applications and Web3 product interfaces.",
       "Delivered brand identity and a production e-commerce site for KD Essence, plus landing pages and dashboards that improved performance and engagement.",
@@ -268,7 +268,7 @@ export default function CVPage() {
               <SectionLabel>Education</SectionLabel>
               <p className="text-sm font-semibold text-white">Secondary School Certificate</p>
               <p className="text-sm text-[#00FFD1]">St. Paul&apos;s Academy, Jos</p>
-              <p className="text-xs text-[#666]">2017 — 2023, Science and Mathematics</p>
+              <p className="text-xs text-[#666]">2017 - 2023, Science and Mathematics</p>
             </section>
           </div>
         </div>

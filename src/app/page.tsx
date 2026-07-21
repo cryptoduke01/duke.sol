@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Work from "@/components/Work";
 import Contact from "@/components/Contact";
 import Testimonials from "@/components/Testimonials";
+import Collaborators from "@/components/Collaborators";
 import { useEffect, useState } from "react";
 import type { SiteContent } from "@/lib/content-types";
 import { defaultSiteContent } from "@/lib/default-site-content";
@@ -34,6 +35,7 @@ export default function Home() {
     <main className="relative min-h-screen bg-black overflow-x-hidden">
       <Navigation />
       <Hero content={siteContent.hero} />
+      <Collaborators />
       <Testimonials items={siteContent.testimonials} />
       <Work projects={siteContent.projects} updates={siteContent.updates} />
       <Contact />

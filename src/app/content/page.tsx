@@ -463,7 +463,7 @@ const articleSections: ArticleSectionConfig[] = [
         id: "x-1",
         title: "The Privacy Crisis Killing Crypto Adoption",
         preview:
-          "You wouldn't tape your bank statement to your front door, so why are you doing exactly that every time you use crypto? The Glass House Problem — You're buying lunch from a food store that accepts crypto payments, and you scan the QR code and send $12 in USDC. To you, that was a straightforward transaction, but here's what just happened:",
+          "You wouldn't tape your bank statement to your front door, so why are you doing exactly that every time you use crypto? The Glass House Problem: you're buying lunch from a food store that accepts crypto payments, and you scan the QR code and send $12 in USDC. To you, that was a straightforward transaction, but here's what just happened:",
         link: "https://x.com/cryptoduke01/status/2017947282839065078?s=20",
         banner: "https://pbs.twimg.com/media/HACQ_f2XcAAjIbx?format=jpg&name=medium",
       },
@@ -1081,7 +1081,7 @@ export default function ContentPage() {
                           >
                             <div className="flex items-center justify-between mb-3">
                               <span className="text-xs text-[#666] font-[family-name:var(--font-display)]">
-                                {item.readTime ?? "—"}
+                                {item.readTime ?? "-"}
                               </span>
                             </div>
                             <h4 className="text-base font-semibold text-[#666] font-[family-name:var(--font-display)] mb-2 line-clamp-2">
