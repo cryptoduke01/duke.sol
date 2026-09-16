@@ -48,18 +48,17 @@ export const defaultSiteContent: SiteContent = {
   ],
   updates: [
     {
-      id: "okx-genesis-hack",
-      title: "Building for the OKX AI Genesis Hack",
+      id: "smc-head-of-audits",
+      title: "Joined SMC Audits as Head of Audits",
       summary:
-        "Currently heads-down building for the OKX AI Genesis Hackathon.",
-      // TODO: [FILL] add OKX AI Genesis project link
+        "Now leading smart contract and protocol security audits across EVM and Solana, from scoping to responsible disclosure.",
     },
     {
-      id: "bitget-lepton-hack",
-      title: "Bitget AI and Lepton Agents Hackathon",
+      id: "okx-genesis-hack",
+      title: "Built for the OKX AI Genesis Hack",
       summary:
-        "Submitted to the Bitget AI and Lepton Agents Hackathon.",
-      // TODO: [FILL] add Bitget / Lepton submission link
+        "Shipped an AI agent build for the OKX AI Genesis Hackathon.",
+      // TODO: [FILL] add OKX AI Genesis project link
     },
     {
       id: "sidetrack-wins",

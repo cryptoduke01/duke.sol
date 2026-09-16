@@ -28,6 +28,16 @@ const contact = [
 
 const experience = [
   {
+    role: "Head of Audits",
+    org: "SMC Audits",
+    period: "2026 - Present",
+    points: [
+      "Lead smart contract and protocol security audits across EVM and Solana, from scoping through responsible disclosure and fix verification.",
+      "Run adversarial reviews of DeFi protocols, launchpads, and on-chain financial infrastructure, proving findings with fork and local proof-of-concept exploits.",
+      "Author and maintain Kensho, a public offensive-security playbook for Web3 assessment and responsible disclosure.",
+    ],
+  },
+  {
     role: "Founder and Lead Developer",
     org: "Siren, prediction market trading terminal",
     period: "2025",
@@ -79,6 +89,7 @@ const writing = [
 ];
 
 const achievements = [
+  "Head of Audits at SMC Audits, leading EVM and Solana security reviews",
   "3x hackathon winner: Superteam Earn sidetracks (Torque Protocol, Sagapad, Jupiter)",
   "14x Superteam Earn bounty winner",
   "Percolator Phase 1 audit quoted by Anatoly Yakovenko (Toly)",
@@ -89,7 +100,8 @@ const skills = [
   { group: "Frontend", items: "React, Next.js, Tailwind CSS, Framer Motion" },
   { group: "Backend and Infra", items: "Fastify, REST / GraphQL, Supabase (Postgres, Auth, Storage), webhooks" },
   { group: "Solana and Web3", items: "web3.js, Wallet Adapter, SPL / Token-2022, Jito, x402, USDC, Privy, Jupiter, DFlow" },
-  { group: "Practice", items: "Security research and auditing, data pipelines, technical writing, Git" },
+  { group: "Security", items: "Smart contract auditing (EVM and Solana), responsible disclosure, fork and local PoC exploits" },
+  { group: "Practice", items: "Data pipelines, technical writing, Git" },
 ];
 
 const languages = ["English (Fluent)", "French (Intermediate)", "Igbo (Fluent)"];
@@ -142,7 +154,7 @@ export default function CVPage() {
               <span className="text-[#00FFD1]">.sol</span>
             </h1>
             <p className="mt-2 text-sm text-[#9aa]">
-              Solana Builder, Researcher, and Writer
+              Head of Audits at SMC Audits · Solana Builder and Writer
             </p>
             <p className="mt-1 max-w-xl text-sm leading-relaxed text-[#666]">
               Consumer and infrastructure products, protocol and security research, and the threads
@@ -172,20 +184,20 @@ export default function CVPage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.7fr_1fr]">
+        <div className="cv-grid grid grid-cols-1 gap-10 lg:grid-cols-[1.7fr_1fr]">
           {/* Main column */}
           <div>
             <section className="mb-9">
               <SectionLabel>Profile</SectionLabel>
               <p className="text-sm leading-relaxed text-[#b0b0b0]">
-                I ship consumer and infrastructure products across Solana and Circle&apos;s Arc. Most
-                recently I founded and led Siren, a prediction market trading terminal that integrated
-                Kalshi and Polymarket, Privy embedded wallets, and real-time PnL over live USDC and SOL
-                balances, the same shape of problem as production prediction-market apps. I also run
-                protocol and security research, including an independent Phase 1 audit of Toly&apos;s
-                Percolator that was quoted and verified by Anatoly Yakovenko, and I write the threads,
-                articles, and weekly reports that make the work useful to others. Solana builder since
-                2023 and Core Member at Superteam Nigeria.
+                I ship consumer and infrastructure products across Solana and Circle&apos;s Arc, and I
+                lead security as Head of Audits at SMC Audits. Most recently I founded and led Siren, a
+                prediction market trading terminal that integrated Kalshi and Polymarket, Privy embedded
+                wallets, and real-time PnL over live USDC and SOL balances, the same shape of problem as
+                production prediction-market apps. My security work spans EVM and Solana, including an
+                independent Phase 1 audit of Toly&apos;s Percolator that was quoted and verified by
+                Anatoly Yakovenko, and I write the threads, articles, and weekly reports that make the
+                work useful to others. Solana builder since 2023 and Core Member at Superteam Nigeria.
               </p>
             </section>
 

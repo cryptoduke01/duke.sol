@@ -443,13 +443,26 @@ body {
   .cv-sheet {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    padding: 32px 40px !important;
+    padding: 24px 32px !important;
     max-width: 100% !important;
+  }
+  /* Keep the two-column CV layout in print so it fits ~2 pages, not 4 */
+  .cv-grid {
+    display: grid !important;
+    grid-template-columns: 1.7fr 1fr !important;
+    gap: 28px !important;
+  }
+  .cv-sheet section {
+    margin-bottom: 18px !important;
+  }
+  .cv-sheet header {
+    margin-bottom: 20px !important;
+    padding-bottom: 16px !important;
   }
   .break-inside-avoid {
     break-inside: avoid;
   }
   @page {
-    margin: 12mm;
+    margin: 10mm;
   }
 }
