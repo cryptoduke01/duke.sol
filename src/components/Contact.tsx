@@ -6,7 +6,7 @@ import { ArrowUpRight, Copy, Check, Twitter, MessageCircle, Github, Linkedin, Bo
 import Link from "next/link";
 
 const socials = [
-  { name: "twitter", handle: "duke.sol", href: "https://x.com/cryptoduke01", icon: Twitter },
+  { name: "twitter", handle: "duke.sol", href: "https://x.com/dukedotsol", icon: Twitter },
   { name: "substack", handle: "duke.sol", href: "https://dukesol.substack.com/", icon: BookOpen },
   { name: "medium", handle: "@cryptoduke1", href: "https://medium.com/@cryptoduke1/", icon: FileText },
   { name: "telegram", handle: "duke.sol", href: "https://t.me/dukedotsol", icon: MessageCircle },
@@ -27,7 +27,7 @@ const footerLinks = [
   {
     title: "socials",
     links: [
-      { name: "twitter / x", href: "https://x.com/cryptoduke01", icon: Twitter },
+      { name: "twitter / x", href: "https://x.com/dukedotsol", icon: Twitter },
       { name: "substack", href: "https://dukesol.substack.com/", icon: BookOpen },
       { name: "medium", href: "https://medium.com/@cryptoduke1/", icon: FileText },
       { name: "telegram", href: "https://t.me/dukedotsol", icon: MessageCircle },
@@ -180,7 +180,7 @@ export default function Contact() {
               </span>
             </Link>
             <p className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] leading-relaxed">
-              Frontend Developer & Web3 Builder based in Nigeria and Remote.
+              Builder, researcher, and writer. Based in Nigeria and remote.
             </p>
           </div>
 

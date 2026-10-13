@@ -870,7 +870,7 @@ export default function ProjectsPage() {
                 </span>
               </Link>
               <p className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] leading-relaxed">
-                Frontend Developer & Web3 Builder based in Nigeria and Remote.
+                Builder, researcher, and writer. Based in Nigeria and remote.
               </p>
             </div>
 
@@ -916,7 +916,7 @@ export default function ProjectsPage() {
               <ul className="space-y-2 md:space-y-3">
                 <li>
                   <a
-                    href="https://x.com/cryptoduke01"
+                    href="https://x.com/dukedotsol"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line group"

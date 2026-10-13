@@ -105,18 +105,25 @@ export default function Work({
         >
           <h3 className="text-lg text-white mb-4">Latest Updates</h3>
           <div className="grid md:grid-cols-3 gap-3">
-            {updates.map((update) => (
-              <a
-                key={update.id}
-                href={update.link || "#"}
-                target={update.link?.startsWith("http") ? "_blank" : undefined}
-                rel={update.link?.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="border border-[#1a1a1a] p-4 hover:border-[#00FFD1]/40 transition-colors"
-              >
-                <p className="text-sm text-white mb-2">{update.title}</p>
-                <p className="text-xs text-[#777]">{update.summary}</p>
-              </a>
-            ))}
+            {updates.map((update) =>
+              update.link ? (
+                <a
+                  key={update.id}
+                  href={update.link}
+                  target={update.link.startsWith("http") ? "_blank" : undefined}
+                  rel={update.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="border border-[#1a1a1a] p-4 hover:border-[#00FFD1]/40 transition-colors"
+                >
+                  <p className="text-sm text-white mb-2">{update.title}</p>
+                  <p className="text-xs text-[#777]">{update.summary}</p>
+                </a>
+              ) : (
+                <div key={update.id} className="border border-[#1a1a1a] p-4">
+                  <p className="text-sm text-white mb-2">{update.title}</p>
+                  <p className="text-xs text-[#777]">{update.summary}</p>
+                </div>
+              )
+            )}
           </div>
         </motion.div>
 

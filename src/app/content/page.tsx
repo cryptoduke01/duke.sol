@@ -33,7 +33,7 @@ const parseDate = (dateString: string): number => {
 const threadsData = [
   {
     id: 1,
-    link: "https://x.com/cryptoduke01/status/1888051718660739337",
+    link: "https://x.com/dukedotsol/status/1888051718660739337",
     image: "/thread-images/thread-1.jpg",
     date: "Sat, 08 Feb 2025 02:26:22 GMT",
     likes: 96,
@@ -44,7 +44,7 @@ const threadsData = [
   },
   {
     id: 2,
-    link: "https://x.com/cryptoduke01/status/1899156234646741112",
+    link: "https://x.com/dukedotsol/status/1899156234646741112",
     image: "/thread-images/thread-2.jpg",
     date: "Mon, 10 Mar 2025 17:51:45 GMT",
     likes: 82,
@@ -55,7 +55,7 @@ const threadsData = [
   },
   {
     id: 3,
-    link: "https://x.com/cryptoduke01/status/1902798281509322797",
+    link: "https://x.com/dukedotsol/status/1902798281509322797",
     image: "/thread-images/thread-3.jpg",
     date: "Thu, 20 Mar 2025 19:03:57 GMT",
     likes: 66,
@@ -66,7 +66,7 @@ const threadsData = [
   },
   {
     id: 4,
-    link: "https://x.com/cryptoduke01/status/1927908240882385262",
+    link: "https://x.com/dukedotsol/status/1927908240882385262",
     image: "/thread-images/thread-4.jpg",
     date: "Thu, 29 May 2025 02:01:58 GMT",
     likes: 170,
@@ -77,7 +77,7 @@ const threadsData = [
   },
   {
     id: 5,
-    link: "https://x.com/cryptoduke01/status/1935531684704735319",
+    link: "https://x.com/dukedotsol/status/1935531684704735319",
     image: "/thread-images/thread-5.jpg",
     date: "Thu, 19 Jun 2025 02:54:48 GMT",
     likes: 112,
@@ -88,7 +88,7 @@ const threadsData = [
   },
   {
     id: 6,
-    link: "https://x.com/cryptoduke01/status/1945108835154137485",
+    link: "https://x.com/dukedotsol/status/1945108835154137485",
     image: "/thread-images/thread-6.jpg",
     date: "Tue, 15 Jul 2025 13:10:59 GMT",
     likes: 108,
@@ -99,7 +99,7 @@ const threadsData = [
   },
   {
     id: 7,
-    link: "https://x.com/cryptoduke01/status/1945774342341877822",
+    link: "https://x.com/dukedotsol/status/1945774342341877822",
     image: "/thread-images/thread-7.jpg",
     date: "Thu, 17 Jul 2025 09:15:28 GMT",
     likes: 89,
@@ -110,7 +110,7 @@ const threadsData = [
   },
   {
     id: 8,
-    link: "https://x.com/cryptoduke01/status/1947137430844211394",
+    link: "https://x.com/dukedotsol/status/1947137430844211394",
     image: "/thread-images/thread-8.jpg",
     date: "Mon, 21 Jul 2025 03:31:54 GMT",
     likes: 17,
@@ -121,7 +121,7 @@ const threadsData = [
   },
   {
     id: 9,
-    link: "https://x.com/cryptoduke01/status/1949437873544892464",
+    link: "https://x.com/dukedotsol/status/1949437873544892464",
     image: "/thread-images/thread-9.jpg",
     date: "Sun, 27 Jul 2025 11:53:02 GMT",
     likes: 72,
@@ -132,7 +132,7 @@ const threadsData = [
   },
   {
     id: 10,
-    link: "https://x.com/cryptoduke01/status/1962664781212451044",
+    link: "https://x.com/dukedotsol/status/1962664781212451044",
     image: "/thread-images/thread-10.jpg",
     date: "Mon, 01 Sep 2025 23:52:03 GMT",
     likes: 155,
@@ -143,7 +143,7 @@ const threadsData = [
   },
   {
     id: 11,
-    link: "https://x.com/cryptoduke01/status/1965230358967804097",
+    link: "https://x.com/dukedotsol/status/1965230358967804097",
     image: "/thread-images/thread-11.jpg",
     date: "Tue, 09 Sep 2025 01:46:44 GMT",
     likes: 111,
@@ -154,7 +154,7 @@ const threadsData = [
   },
   {
     id: 12,
-    link: "https://x.com/cryptoduke01/status/1969100752590164360",
+    link: "https://x.com/dukedotsol/status/1969100752590164360",
     image: "/thread-images/thread-12.jpg",
     date: "Fri, 19 Sep 2025 18:06:18 GMT",
     likes: 85,
@@ -165,7 +165,7 @@ const threadsData = [
   },
   {
     id: 13,
-    link: "https://x.com/cryptoduke01/status/1975197136661975101",
+    link: "https://x.com/dukedotsol/status/1975197136661975101",
     image: "/thread-images/thread-13.jpg",
     date: "Mon, 06 Oct 2025 13:51:09 GMT",
     likes: 77,
@@ -176,7 +176,7 @@ const threadsData = [
   },
   {
     id: 14,
-    link: "https://x.com/cryptoduke01/status/1978997645629661537",
+    link: "https://x.com/dukedotsol/status/1978997645629661537",
     image: "/thread-images/thread-14.jpg",
     date: "Fri, 17 Oct 2025 01:33:01 GMT",
     likes: 89,
@@ -187,7 +187,7 @@ const threadsData = [
   },
   {
     id: 15,
-    link: "https://x.com/cryptoduke01/status/1981172563578421600",
+    link: "https://x.com/dukedotsol/status/1981172563578421600",
     image: "/thread-images/thread-15.png",
     date: "Thu, 23 Oct 2025 01:35:22 GMT",
     likes: 44,
@@ -198,7 +198,7 @@ const threadsData = [
   },
   {
     id: 16,
-    link: "https://x.com/cryptoduke01/status/1988432633643016570",
+    link: "https://x.com/dukedotsol/status/1988432633643016570",
     image: "/thread-images/thread-16.jpg",
     date: "Wed, 12 Nov 2025 02:24:17 GMT",
     likes: 37,
@@ -209,7 +209,7 @@ const threadsData = [
   },
   {
     id: 17,
-    link: "https://x.com/cryptoduke01/status/1991319820802093467",
+    link: "https://x.com/dukedotsol/status/1991319820802093467",
     image: "/thread-images/thread-17.jpg",
     date: "Thu, 20 Nov 2025 01:36:56 GMT",
     likes: 142,
@@ -220,7 +220,7 @@ const threadsData = [
   },
   {
     id: 18,
-    link: "https://x.com/cryptoduke01/status/1996666291831427407",
+    link: "https://x.com/dukedotsol/status/1996666291831427407",
     image: "/thread-images/thread-18.jpg",
     date: "N/A (Fetch failed)",
     likes: 0,
@@ -231,7 +231,7 @@ const threadsData = [
   },
   {
     id: 19,
-    link: "https://x.com/cryptoduke01/status/1995683911930896651",
+    link: "https://x.com/dukedotsol/status/1995683911930896651",
     image: "/thread-images/thread-19.jpg",
     date: "Tue, 02 Dec 2025 02:38:17 GMT",
     likes: 38,
@@ -242,7 +242,7 @@ const threadsData = [
   },
   {
     id: 20,
-    link: "https://x.com/cryptoduke01/status/1994812297144144295",
+    link: "https://x.com/dukedotsol/status/1994812297144144295",
     image: "/thread-images/thread-20.jpg",
     date: "Sat, 29 Nov 2025 16:54:48 GMT",
     likes: 60,
@@ -253,7 +253,7 @@ const threadsData = [
   },
   {
     id: 21,
-    link: "https://x.com/cryptoduke01/status/1978491986848972982",
+    link: "https://x.com/dukedotsol/status/1978491986848972982",
     image: "/thread-images/thread-21.png",
     date: "Wed, 15 Oct 2025 16:03:42 GMT",
     likes: 45,
@@ -264,7 +264,7 @@ const threadsData = [
   },
   {
     id: 22,
-    link: "https://x.com/cryptoduke01/status/1961481893976633737",
+    link: "https://x.com/dukedotsol/status/1961481893976633737",
     image: "/thread-images/thread-22.jpg",
     date: "Fri, 29 Aug 2025 17:31:40 GMT",
     likes: 28,
@@ -275,7 +275,7 @@ const threadsData = [
   },
   {
     id: 23,
-    link: "https://x.com/cryptoduke01/status/1954255301701485025",
+    link: "https://x.com/dukedotsol/status/1954255301701485025",
     image: "/thread-images/thread-23.jpg",
     date: "Sat, 09 Aug 2025 18:55:46 GMT",
     likes: 135,
@@ -286,7 +286,7 @@ const threadsData = [
   },
   {
     id: 24,
-    link: "https://x.com/cryptoduke01/status/1947253269115384209",
+    link: "https://x.com/dukedotsol/status/1947253269115384209",
     image: "/thread-images/thread-24.jpg",
     date: "Mon, 21 Jul 2025 11:12:12 GMT",
     likes: 12,
@@ -297,7 +297,7 @@ const threadsData = [
   },
   {
     id: 25,
-    link: "https://x.com/cryptoduke01/status/1915826173839388768",
+    link: "https://x.com/dukedotsol/status/1915826173839388768",
     image: "/thread-images/thread-25.jpg",
     date: "Fri, 25 Apr 2025 17:52:08 GMT",
     likes: 89,
@@ -308,7 +308,7 @@ const threadsData = [
   },
   {
     id: 26,
-    link: "https://x.com/cryptoduke01/status/1821891690094837826",
+    link: "https://x.com/dukedotsol/status/1821891690094837826",
     image: "/thread-images/thread-26.jpg",
     date: "Fri, 09 Aug 2024 12:50:02 GMT",
     likes: 13,
@@ -319,7 +319,7 @@ const threadsData = [
   },
   {
     id: 27,
-    link: "https://x.com/cryptoduke01/status/1820933036000616525",
+    link: "https://x.com/dukedotsol/status/1820933036000616525",
     image: "/thread-images/thread-27.png",
     date: "Tue, 06 Aug 2024 21:20:41 GMT",
     likes: 13,
@@ -330,7 +330,7 @@ const threadsData = [
   },
   {
     id: 28,
-    link: "https://x.com/cryptoduke01/status/2014922175430459794?s=20",
+    link: "https://x.com/dukedotsol/status/2014922175430459794?s=20",
     image: "https://pbs.twimg.com/media/G_ZxCH0WEAAXbDj?format=jpg&name=medium",
     date: "Sat, 07 Feb 2026 12:00:00 GMT",
     likes: 0,
@@ -341,7 +341,7 @@ const threadsData = [
   },
   {
     id: 29,
-    link: "https://x.com/cryptoduke01/status/1999961262084743631?s=20",
+    link: "https://x.com/dukedotsol/status/1999961262084743631?s=20",
     image: "https://pbs.twimg.com/media/G8E5yeDW4AAeafB?format=jpg&name=medium",
     date: "Thu, 05 Dec 2025 12:00:00 GMT",
     likes: 0,
@@ -409,7 +409,7 @@ function MediumLogoIcon({ className }: { className?: string }) {
 
 const ARTICLE_VIEW_LINKS: Record<ArticleCategory, string> = {
   substack: "https://dukesol.substack.com/",
-  x: "https://x.com/cryptoduke01",
+  x: "https://x.com/dukedotsol",
   medium: "https://medium.com/@cryptoduke1/",
   document: "#",
 };
@@ -464,14 +464,14 @@ const articleSections: ArticleSectionConfig[] = [
         title: "The Privacy Crisis Killing Crypto Adoption",
         preview:
           "You wouldn't tape your bank statement to your front door, so why are you doing exactly that every time you use crypto? The Glass House Problem: you're buying lunch from a food store that accepts crypto payments, and you scan the QR code and send $12 in USDC. To you, that was a straightforward transaction, but here's what just happened:",
-        link: "https://x.com/cryptoduke01/status/2017947282839065078?s=20",
+        link: "https://x.com/dukedotsol/status/2017947282839065078?s=20",
         banner: "https://pbs.twimg.com/media/HACQ_f2XcAAjIbx?format=jpg&name=medium",
       },
       {
         id: "x-2",
         title: "x402 on Solana: The Micropayments Standard",
         preview: "Exploring the micropayments standard on Solana and how x402 is changing the game.",
-        link: "https://x.com/cryptoduke01",
+        link: "https://x.com/dukedotsol",
         banner: "https://pbs.twimg.com/media/G-EiJIbXEAAnVAi?format=jpg&name=medium",
       },
     ],
@@ -1170,7 +1170,7 @@ export default function ContentPage() {
                 </span>
               </Link>
               <p className="text-xs md:text-sm text-[#666] font-[family-name:var(--font-display)] leading-relaxed">
-                Frontend Developer & Web3 Builder based in Nigeria and Remote.
+                Builder, researcher, and writer. Based in Nigeria and remote.
               </p>
             </div>
 
@@ -1216,7 +1216,7 @@ export default function ContentPage() {
               <ul className="space-y-2 md:space-y-3">
                 <li>
                   <a
-                    href="https://x.com/cryptoduke01"
+                    href="https://x.com/dukedotsol"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-xs md:text-sm text-[#999] hover:text-[#00FFD1] transition-colors font-[family-name:var(--font-display)] link-line group"

@@ -20,7 +20,7 @@ const contact = [
   { icon: Phone, label: "+234 704 785 6771", href: "tel:+2347047856771" },
   { icon: MapPin, label: "Jos, Nigeria (Remote)", href: undefined },
   { icon: Globe, label: "iamduke.xyz", href: "https://iamduke.xyz" },
-  { icon: Twitter, label: "x.com/cryptoduke01", href: "https://x.com/cryptoduke01" },
+  { icon: Twitter, label: "x.com/dukedotsol", href: "https://x.com/dukedotsol" },
   { icon: Github, label: "github.com/cryptoduke01", href: "https://github.com/cryptoduke01" },
   { icon: Linkedin, label: "linkedin.com/in/akachukwuu", href: "https://www.linkedin.com/in/akachukwuu" },
   { icon: MessageCircle, label: "t.me/dukedotsol", href: "https://t.me/dukedotsol" },
@@ -44,7 +44,7 @@ const experience = [
     points: [
       "Built a prediction market trading terminal that aggregated Kalshi (via DFlow) and Polymarket, integrating live order placement, position tracking, and closing across providers.",
       "Implemented Privy embedded wallets with real-time USDC and SOL balance reads using Solana web3.js and SPL token accounts.",
-      "Built a persistent data layer on Supabase for hedge history and PnL, moving beyond localStorage, with real-time PnL updates in place of polling.",
+      "Built a persistent data layer on Supabase for hedge history and PnL, with real-time PnL streamed over Supabase Realtime (WebSocket subscriptions) in place of polling.",
       "Designed a natural language trading agent covering intent parsing, market matching, and edge-case handling, plus a risk layer for correlation and concentration.",
       "Hardened API routes with error handling and retries; shipped end to end and processed over $2,000 in trading volume.",
     ],
@@ -80,12 +80,20 @@ const experience = [
 ];
 
 const writing = [
-  "The Aggregator Inversion (BullpenFi)",
-  "The Security Layer for Solana's Agent Economy (Bento Guard)",
-  "Prediction Markets Are Not Gambling",
-  "The Precision Gap (Trepa)",
-  "Building on Bayse",
-  "solweekly, weekly Solana ecosystem reports",
+  { title: "The Aggregator Inversion (BullpenFi)", href: "https://x.com/dukedotsol/status/2071574396913799179" },
+  { title: "The Security Layer for Solana's Agent Economy (Bento Guard)", href: "https://x.com/dukedotsol/status/2058928188869251544" },
+  { title: "Prediction Markets Are Not Gambling", href: "https://x.com/dukedotsol/status/2056394239076888885" },
+  { title: "The Precision Gap (Trepa)", href: "https://x.com/dukedotsol/status/2053380243105153478" },
+  { title: "Building on Bayse", href: "https://x.com/dukedotsol/status/2041825264334753812" },
+  { title: "solweekly, weekly Solana ecosystem reports", href: "https://solweekly.xyz" },
+];
+
+const media = [
+  {
+    title: "Founders Corner Ep. 01: building Gloam",
+    outlet: "3rd Variation interview",
+    href: "https://x.com/3rdvariation/status/2107817012017668444",
+  },
 ];
 
 const achievements = [
@@ -96,10 +104,10 @@ const achievements = [
 ];
 
 const skills = [
-  { group: "Languages", items: "TypeScript, JavaScript, Rust (SDK), Node.js" },
+  { group: "Languages", items: "TypeScript, JavaScript, Rust, Solidity, Node.js" },
   { group: "Frontend", items: "React, Next.js, Tailwind CSS, Framer Motion" },
-  { group: "Backend and Infra", items: "Fastify, REST / GraphQL, Supabase (Postgres, Auth, Storage), webhooks" },
-  { group: "Solana and Web3", items: "web3.js, Wallet Adapter, SPL / Token-2022, Jito, x402, USDC, Privy, Jupiter, DFlow" },
+  { group: "Backend and Infra", items: "Fastify, REST / GraphQL, Supabase (Postgres, Auth, Storage, Realtime), WebSockets, webhooks" },
+  { group: "Solana and Web3", items: "web3.js, Anchor, Wallet Adapter, SPL / Token-2022, Jito, x402, USDC, Privy, Jupiter, DFlow" },
   { group: "Security", items: "Smart contract auditing (EVM and Solana), responsible disclosure, fork and local PoC exploits" },
   { group: "Practice", items: "Data pipelines, technical writing, Git" },
 ];
@@ -163,6 +171,29 @@ export default function CVPage() {
           </div>
         </header>
 
+        {/* Pinned testimonials */}
+        <div className="mb-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <a
+            href="https://x.com/toly/status/2020528646163689624"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="break-inside-avoid border border-[#1a1a1a] p-4 transition-colors hover:border-[#00FFD1]/40"
+          >
+            <p className="text-xs leading-relaxed text-[#b0b0b0]">
+              &quot;Independent Phase 1 Security Audit of Toly&apos;s Percolator was quoted by Toly and verified.&quot;
+            </p>
+            <p className="mt-2 text-xs text-white">Anatoly Yakovenko</p>
+            <p className="text-[11px] text-[#666]">Co-founder, Solana</p>
+          </a>
+          <div className="break-inside-avoid border border-[#1a1a1a] p-4">
+            <p className="text-xs leading-relaxed text-[#b0b0b0]">
+              &quot;First place. Unanimous winner across the team. Clear, insightful, beautifully designed thread plus an applied doc with 48 hours of hands-on GetBlock research.&quot;
+            </p>
+            <p className="mt-2 text-xs text-white">GetBlock</p>
+            <p className="text-[11px] text-[#666]">Node infrastructure provider</p>
+          </div>
+        </div>
+
         {/* Contact row */}
         <div className="mb-10 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {contact.map(({ icon: Icon, label, href }) => (
@@ -193,8 +224,7 @@ export default function CVPage() {
                 I ship consumer and infrastructure products across Solana and Circle&apos;s Arc, and I
                 lead security as Head of Audits at SMC Audits. Most recently I founded and led Siren, a
                 prediction market trading terminal that integrated Kalshi and Polymarket, Privy embedded
-                wallets, and real-time PnL over live USDC and SOL balances, the same shape of problem as
-                production prediction-market apps. My security work spans EVM and Solana, including an
+                wallets, and real-time PnL over live USDC and SOL balances. My security work spans EVM and Solana, including an
                 independent Phase 1 audit of Toly&apos;s Percolator that was quoted and verified by
                 Anatoly Yakovenko, and I write the threads, articles, and weekly reports that make the
                 work useful to others. Solana builder since 2023 and Core Member at Superteam Nigeria.
@@ -224,13 +254,42 @@ export default function CVPage() {
               </div>
             </section>
 
-            <section className="break-inside-avoid">
+            <section className="mb-9 break-inside-avoid">
               <SectionLabel>Selected Writing</SectionLabel>
               <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                 {writing.map((w) => (
-                  <li key={w} className="flex gap-2 text-sm leading-relaxed text-[#999]">
+                  <li key={w.title} className="flex gap-2 text-sm leading-relaxed text-[#999]">
                     <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#00FFD1]" />
-                    <span>{w}</span>
+                    <a
+                      href={w.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-[#00FFD1]"
+                    >
+                      {w.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="break-inside-avoid">
+              <SectionLabel>Talks and Media</SectionLabel>
+              <ul className="space-y-1.5">
+                {media.map((m) => (
+                  <li key={m.title} className="flex gap-2 text-sm leading-relaxed text-[#999]">
+                    <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#00FFD1]" />
+                    <span>
+                      <a
+                        href={m.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-[#00FFD1]"
+                      >
+                        {m.title}
+                      </a>
+                      <span className="text-[#666]"> · {m.outlet}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -278,9 +337,15 @@ export default function CVPage() {
 
             <section className="break-inside-avoid">
               <SectionLabel>Education</SectionLabel>
-              <p className="text-sm font-semibold text-white">Secondary School Certificate</p>
-              <p className="text-sm text-[#00FFD1]">St. Paul&apos;s Academy, Jos</p>
-              <p className="text-xs text-[#666]">2017 - 2023, Science and Mathematics</p>
+              <div className="mb-3">
+                <p className="text-sm font-semibold text-white">African Leadership University</p>
+                <p className="text-xs text-[#666]">Starting January 2027</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-white">Secondary School Certificate</p>
+                <p className="text-sm text-[#00FFD1]">St. Paul&apos;s Academy, Jos</p>
+                <p className="text-xs text-[#666]">2017 - 2023, Science and Mathematics</p>
+              </div>
             </section>
           </div>
         </div>

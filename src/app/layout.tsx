@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "3x Hackathon Winner",
     "Top 1% Solana",
   ],
-  authors: [{ name: "duke.sol", url: "https://x.com/cryptoduke01" }],
+  authors: [{ name: "duke.sol", url: "https://x.com/dukedotsol" }],
   creator: "duke.sol",
   publisher: "duke.sol",
   robots: {
@@ -94,8 +94,8 @@ export const metadata: Metadata = {
     title: "duke.sol | Solana Builder, Researcher & Writer",
     description:
       "Consumer and infrastructure products, protocol and security research, and the writing that makes it useful.",
-    creator: "@cryptoduke01",
-    site: "@cryptoduke01",
+    creator: "@dukedotsol",
+    site: "@dukedotsol",
     images: ["/og-image.png"],
   },
   icons: {
