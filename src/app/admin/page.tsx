@@ -41,7 +41,9 @@ export default function AdminPage() {
         if (aRes.ok) setArticles(await aRes.json());
         if (sRes.ok) {
           const incoming = await sRes.json();
-          setSite({ ...defaultSiteContent, ...incoming, hero: { ...defaultSiteContent.hero, ...(incoming.hero || {}) } });
+          if (incoming) {
+            setSite({ ...defaultSiteContent, ...incoming, hero: { ...defaultSiteContent.hero, ...(incoming.hero || {}) } });
+          }
         }
       })
       .catch(() => {});

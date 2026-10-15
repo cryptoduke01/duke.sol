@@ -38,6 +38,16 @@ const experience = [
     ],
   },
   {
+    role: "Founder",
+    org: "Gloam, privacy layer for onchain finance",
+    period: "2026 - Present",
+    points: [
+      "Building private stablecoin payments and payroll on Tempo and Robinhood Chain: a shielded pool with selective disclosure proofs (Circom, Groth16) so users can prove a payment or balance without opening their whole book.",
+      "Shipped an MCP server listed on the MCP Registry and agent plugins for Claude Code, Codex, and Cursor, giving AI agents capped spending keys they cannot raise.",
+      "Private payroll live on testnet; submitted to Colosseum and interviewed on 3rd Variation's Founders Corner.",
+    ],
+  },
+  {
     role: "Founder and Lead Developer",
     org: "Siren, prediction market trading terminal",
     period: "2025",
@@ -56,7 +66,9 @@ const experience = [
     points: [
       "Shipped Keryx, a pay-per-call monetization layer for AI agents on the x402 protocol with USDC settlement on Arc, with a full site, docs, and whitepaper.",
       "Published an independent Phase 1 security audit of Toly's Percolator risk engine, quoted and verified by Anatoly Yakovenko, then shipped the Percolator SDK and dashboard on npm as @percolatortool/sdk.",
-      "Shipped Gloam (private trading on Robinhood Chain), Onca (Solana agent-payment tooling in Rust), Hanko (claim records for tokenized assets), Swindle (AI chess arena with on-chain USDC wagering), Vector, Bulldropper, crewdeck, and Deriverse.",
+      "Built Hanko, a Solana vault program that splits a tokenized stock into three SPL tokens (Shield, Core, Edge) settled against Pyth, live on devnet and submitted to the Solana Foundation Stocklana hackathon.",
+      "Built Onca, a manipulation-resistant DePIN oracle for prediction markets delivered as Rust/WASM tools for ZeroClaw agents, proven on Solana devnet.",
+      "Also shipped notch (survival-ranked token launchpad, live with $NOTCH), Aumo (autonomous stablecoin treasury on X Layer), Celano (confidential yield on Zama FHEVM), Bulldropper, Deriverse, Vector, and crewdeck. Helius RPC, webhooks, and DAS power the Solana data layers.",
     ],
   },
   {
@@ -93,8 +105,39 @@ const writing = [
   { title: "The Security Layer for Solana's Agent Economy (Bento Guard)", href: "https://x.com/dukedotsol/status/2058928188869251544" },
   { title: "Prediction Markets Are Not Gambling", href: "https://x.com/dukedotsol/status/2056394239076888885" },
   { title: "The Precision Gap (Trepa)", href: "https://x.com/dukedotsol/status/2053380243105153478" },
-  { title: "Building on Bayse", href: "https://x.com/dukedotsol/status/2041825264334753812" },
-  { title: "solweekly, weekly Solana ecosystem reports", href: "https://solweekly.xyz" },
+];
+
+const devContent = [
+  {
+    title: "Building on Bayse: a practical walkthrough of the Bayse Markets API",
+    kind: "API tutorial",
+    href: "https://x.com/dukedotsol/status/2041825264334753812",
+  },
+  {
+    title: "Building a trading analytics dashboard for Deriverse",
+    kind: "Build walkthrough, decoding Solana transaction history",
+    href: "https://dukesol.substack.com/p/building-a-trading-analytics-dashboard",
+  },
+  {
+    title: "Gloam MCP server and agent plugins",
+    kind: "Developer tooling for Claude Code, Codex, Cursor",
+    href: "https://github.com/cryptoduke01/gloam-plugins",
+  },
+  {
+    title: "Kensho security playbook",
+    kind: "Open audit methodology",
+    href: "https://github.com/cryptoduke01/kensho",
+  },
+  {
+    title: "Percolator TypeScript SDK",
+    kind: "npm package with instruction builders and decoders",
+    href: "https://www.npmjs.com/package/@percolatortool/sdk",
+  },
+  {
+    title: "SagaPad agent skills",
+    kind: "Hackathon launch and founder brand playbooks",
+    href: "https://github.com/cryptoduke01/hackathon-social-playbook-skill",
+  },
 ];
 
 const media = [
@@ -238,10 +281,11 @@ export default function CVPage() {
             <section className="mb-9">
               <SectionLabel>Profile</SectionLabel>
               <p className="text-sm leading-relaxed text-[#b0b0b0]">
-                I ship consumer and infrastructure products across Solana and Circle&apos;s Arc, and I
-                lead security as Head of Audits at SMC Audits. Most recently I founded and led Siren, a
-                prediction market trading terminal that integrated Kalshi and Polymarket, Privy embedded
-                wallets, and real-time PnL over live USDC and SOL balances. My security work spans EVM and Solana, including an
+                I ship consumer and infrastructure products across Solana and Circle&apos;s Arc. I&apos;m
+                building Gloam, a privacy layer for onchain finance, and I lead security as Head of Audits
+                at SMC Audits. Before that I founded and led Siren, a prediction market trading terminal
+                that integrated Kalshi and Polymarket, Privy embedded wallets, and real-time PnL over live
+                USDC and SOL balances. My security work spans EVM and Solana, including an
                 independent Phase 1 audit of Toly&apos;s Percolator that was quoted and verified by
                 Anatoly Yakovenko, and I write the threads, articles, and weekly reports that make the
                 work useful to others. Solana builder since 2023 and Core Member at Superteam Nigeria.
@@ -269,6 +313,28 @@ export default function CVPage() {
                   </div>
                 ))}
               </div>
+            </section>
+
+            <section className="mb-9 break-inside-avoid">
+              <SectionLabel>Tutorials and Developer Content</SectionLabel>
+              <ul className="space-y-1.5">
+                {devContent.map((d) => (
+                  <li key={d.title} className="flex gap-2 text-sm leading-relaxed text-[#999]">
+                    <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#00FFD1]" />
+                    <span>
+                      <a
+                        href={d.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-[#00FFD1]"
+                      >
+                        {d.title}
+                      </a>
+                      <span className="text-[#666]"> · {d.kind}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </section>
 
             <section className="mb-9 break-inside-avoid">
