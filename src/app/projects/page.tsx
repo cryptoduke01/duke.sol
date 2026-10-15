@@ -27,29 +27,6 @@ const formatDate = (dateString: string): string => {
 const projects = [
   // Featured flagship work
   {
-    id: 104,
-    featured: true,
-    title: "Siren",
-    description: "Prediction market trading terminal on Solana that aggregated Kalshi (via DFlow) and Polymarket into one feed, with adaptive YES and NO execution, live PnL tracking, a natural language trading agent, and a risk layer. Founder and lead developer.",
-    longDescription: "I was the founder and lead developer of Siren, a prediction market trading terminal built on Solana that processed over $2,000 in trading volume. It aggregated live markets from Kalshi (via DFlow) and Polymarket into a single feed spanning politics, sports, crypto, finance, and entertainment, plus crypto price bracket markets for BTC, ETH, SOL, and more.\n\nTraders could buy and sell YES and NO positions with adaptive execution and partial fill fallback, track live positions, PnL, and execution history, and trade in plain English through the Siren Agent, for example 'Buy $20 YES on Bitcoin above 100k'. A risk intelligence layer flagged correlation across positions, concentration, and thin liquidity.\n\nStack: Next.js frontend, Fastify API, Supabase, DFlow and the Polymarket API for execution, Jupiter for onchain swaps, Helius RPC, and Privy for embedded wallets with real-time USDC and SOL balance reads via Solana web3.js and SPL token accounts.",
-    image: "/site-images/siren.png",
-    github: "", // repo is private and the terminal was taken down when Siren wound down
-    demo: "",
-    tags: ["Solana", "Prediction Markets", "Helius", "Supabase", "Privy"],
-    date: "2025",
-    status: "founder",
-    caseStudy: {
-      problem:
-        "Prediction market liquidity was fragmented across Kalshi and Polymarket, with no single place to trade YES/NO positions, manage risk, and track PnL.",
-      built:
-        "As founder and lead developer, I built a trading terminal aggregating Kalshi (via DFlow) and Polymarket, with adaptive execution, live position and PnL tracking, a natural language trading agent, and a risk layer for correlation and concentration alerts.",
-      stack:
-        "Next.js, Fastify, Supabase Realtime, DFlow, Polymarket API, Jupiter, Helius RPC, and Privy embedded wallets with real-time USDC/SOL balances via Solana web3.js and SPL token accounts.",
-      outcome:
-        "Shipped end to end and processed over $2,000 in trading volume. Wound down with the startup; the terminal is offline and the code is private.",
-    },
-  },
-  {
     id: 112,
     featured: true,
     title: "Gloam",
@@ -181,6 +158,7 @@ const projects = [
   },
   {
     id: 113,
+    featured: true,
     title: "Onca",
     description: "A manipulation-resistant DePIN oracle for prediction markets, built as Solana tools for ZeroClaw agents. The tools read the chain or build a request a person signs, never a key that can spend.",
     longDescription: "Onca is a set of Solana tools for the ZeroClaw agent runtime, shipped as wasm32-wasip2 WIT components in Rust. Its headline use case is a DePIN oracle for prediction markets: several nodes report, the median settles the market, and a node that signs an outlier is rejected and frozen on reputation, so corrupting a minority does not move the answer. Tools cover the oracle, attestation, x402 payments, risk, and chain watching.",
@@ -262,8 +240,8 @@ const projects = [
   {
     id: 120,
     title: "SagaPad agent skills",
-    description: "Two agent skills for the SagaPad marketplace: one turns a hackathon project into a 30 day X launch plan, the other turns a founder profile into a 30 day personal brand system.",
-    longDescription: "Built for the Colosseum side track on the SagaPad Skill Marketplace. The hackathon skill picks a narrative wedge, scores it honestly on novelty, clarity, credibility, and virality, and rewrites until every axis clears 7, then outputs a four week content plan. The founder skill finds a point of view that only that founder can hold and builds a 30 day brand system around it.",
+    description: "My winning SagaPad side-track entry at Colosseum: two agent skills, one turns a hackathon project into a 30 day X launch plan, the other turns a founder profile into a 30 day personal brand system.",
+    longDescription: "Won the Colosseum side track on the SagaPad Skill Marketplace. The hackathon skill picks a narrative wedge, scores it honestly on novelty, clarity, credibility, and virality, and rewrites until every axis clears 7, then outputs a four week content plan. The founder skill finds a point of view that only that founder can hold and builds a 30 day brand system around it.",
     image: "/site-images/sagapad-skills.png",
     github: "https://github.com/cryptoduke01/hackathon-social-playbook-skill",
     demo: "https://sagapad.com/skills",
@@ -276,7 +254,7 @@ const projects = [
       built:
         "Two production agent skills with scored narratives and ready-to-post 30 day plans: hackathon-social-playbook and founder-personal-brand-playbook.",
       stack: "Agent skill format, SagaPad marketplace.",
-      outcome: "Submitted to the SagaPad side track at Colosseum.",
+      outcome: "Won the SagaPad side track at Colosseum, one of my three side-track wins.",
     },
   },
   {
@@ -357,6 +335,28 @@ const projects = [
         "Analytics that decode raw Solana wallet transaction history into structured trades, PnL, drawdown, and session analysis.",
       stack: "Next.js, Helius (enhanced transactions, RPC), analytics pipeline.",
       outcome: "Shipped as a live dashboard, with a full write-up on Substack.",
+    },
+  },
+  {
+    id: 104,
+    title: "Siren",
+    description: "Prediction market trading terminal on Solana that aggregated Kalshi (via DFlow) and Polymarket into one feed, with adaptive YES and NO execution, live PnL tracking, a natural language trading agent, and a risk layer. Founder and lead developer.",
+    longDescription: "I was the founder and lead developer of Siren, a prediction market trading terminal built on Solana that processed over $2,000 in trading volume. It aggregated live markets from Kalshi (via DFlow) and Polymarket into a single feed spanning politics, sports, crypto, finance, and entertainment, plus crypto price bracket markets for BTC, ETH, SOL, and more.\n\nTraders could buy and sell YES and NO positions with adaptive execution and partial fill fallback, track live positions, PnL, and execution history, and trade in plain English through the Siren Agent, for example 'Buy $20 YES on Bitcoin above 100k'. A risk intelligence layer flagged correlation across positions, concentration, and thin liquidity.\n\nStack: Next.js frontend, Fastify API, Supabase, DFlow and the Polymarket API for execution, Jupiter for onchain swaps, Helius RPC, and Privy for embedded wallets with real-time USDC and SOL balance reads via Solana web3.js and SPL token accounts.",
+    image: "/site-images/siren.png",
+    github: "", // repo is private and the terminal was taken down when Siren wound down
+    demo: "",
+    tags: ["Solana", "Prediction Markets", "Helius", "Supabase", "Privy"],
+    date: "2025",
+    status: "founder",
+    caseStudy: {
+      problem:
+        "Prediction market liquidity was fragmented across Kalshi and Polymarket, with no single place to trade YES/NO positions, manage risk, and track PnL.",
+      built:
+        "As founder and lead developer, I built a trading terminal aggregating Kalshi (via DFlow) and Polymarket, with adaptive execution, live position and PnL tracking, a natural language trading agent, and a risk layer for correlation and concentration alerts.",
+      stack:
+        "Next.js, Fastify, Supabase Realtime, DFlow, Polymarket API, Jupiter, Helius RPC, and Privy embedded wallets with real-time USDC/SOL balances via Solana web3.js and SPL token accounts.",
+      outcome:
+        "Shipped end to end and processed over $2,000 in trading volume. Wound down with the startup; the terminal is offline and the code is private.",
     },
   },
   {

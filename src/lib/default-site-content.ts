@@ -71,21 +71,6 @@ export const defaultSiteContent: SiteContent = {
   ],
   projects: [
     {
-      id: 1,
-      title: "Siren",
-      role: "Founder and Lead Developer",
-      description:
-        "Prediction market trading terminal aggregating Kalshi and Polymarket, with adaptive execution, real-time PnL, and a risk layer. Processed over $2,000 in volume.",
-      longDescription:
-        "A prediction market trading terminal on Solana that aggregated Kalshi (via DFlow) and Polymarket, with Privy embedded wallets and real-time PnL over live balances.",
-      image: "/site-images/siren.png",
-      github: "",
-      demo: "",
-      tags: ["Solana", "Prediction Markets", "Helius"],
-      date: "2025",
-      status: "founder",
-    },
-    {
       id: 2,
       title: "Gloam",
       role: "Founder",
@@ -112,6 +97,21 @@ export const defaultSiteContent: SiteContent = {
       github: "https://github.com/cryptoduke01/hanko",
       demo: "https://hankolabs.xyz",
       tags: ["Solana", "Tokenized Stocks", "Pyth"],
+      date: "2026",
+      status: "live",
+    },
+    {
+      id: 7,
+      title: "Onca",
+      role: "Builder",
+      description:
+        "A manipulation-resistant DePIN oracle for prediction markets, built as Solana tools for ZeroClaw agents that never hold a key that can spend.",
+      longDescription:
+        "Reputation-weighted mesh oracle, attestation gate, and x402 payment loop as Rust/WASM tools, proven on Solana devnet.",
+      image: "/site-images/onca.png",
+      github: "https://github.com/cryptoduke01/onca",
+      demo: "https://onca.run",
+      tags: ["Solana", "Rust", "Oracle"],
       date: "2026",
       status: "live",
     },

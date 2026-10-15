@@ -92,7 +92,7 @@ const experience = [
   {
     role: "Security Researcher, Graduate",
     org: "Rektoff",
-    period: "2025",
+    period: "Jan - Mar 2025",
     points: [
       "Graduated from Rektoff's security researcher program, covering EVM and Solana vulnerability classes, auditing methodology, and responsible disclosure.",
       "Carried the methodology into live protocol audits, proving findings with fork and proof-of-concept exploits.",
@@ -135,7 +135,7 @@ const devContent = [
   },
   {
     title: "SagaPad agent skills",
-    kind: "Hackathon launch and founder brand playbooks",
+    kind: "Winning SagaPad side-track entry at Colosseum",
     href: "https://github.com/cryptoduke01/hackathon-social-playbook-skill",
   },
 ];
