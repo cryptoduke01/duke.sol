@@ -44,7 +44,7 @@ const projects = [
       built:
         "As founder and lead developer, I built a trading terminal aggregating Kalshi (via DFlow) and Polymarket, with adaptive execution, live position and PnL tracking, a natural language trading agent, and a risk layer for correlation and concentration alerts.",
       stack:
-        "Next.js, Fastify, Supabase, DFlow, Polymarket API, Jupiter, and Privy embedded wallets with real-time USDC/SOL balances via Solana web3.js and SPL token accounts.",
+        "Next.js, Fastify, Supabase, DFlow, Polymarket API, Jupiter, Helius RPC, and Privy embedded wallets with real-time USDC/SOL balances via Solana web3.js and SPL token accounts.",
       outcome:
         "Shipped end to end and processed over $2,000 in trading volume. Archived after the startup wound down; the code and live terminal stay verifiable.",
     },
@@ -114,6 +114,26 @@ const projects = [
     },
   },
   // Standard projects
+  {
+    id: 115,
+    title: "Aumo",
+    description: "Autonomous treasury for stablecoins. An AI agent that puts idle USDT0 to work in the best risk-adjusted yield on X Layer, inside limits written into the contract.",
+    longDescription: "Aumo is an autonomous RWA-yield agent on X Layer. It allocates idle stablecoins into risk-adjusted yield with real AI reasoning, on-chain guardrails that cap what the agent can do, and a trust layer over the venues it uses.",
+    image: "/site-images/aumo.png",
+    github: "https://github.com/cryptoduke01/aumo",
+    demo: "https://aumo.finance",
+    tags: ["AI Agent", "RWA", "Stablecoins", "X Layer"],
+    date: "2026",
+    status: "live",
+    caseStudy: {
+      problem:
+        "Stablecoins sit idle earning nothing, and letting an agent chase yield is dangerous without hard limits on what it can do.",
+      built:
+        "An autonomous agent that allocates idle USDT0 into risk-adjusted yield, with sizing and venue limits written into the contract and a trust layer over the venues.",
+      stack: "AI reasoning agent, Solidity, X Layer, on-chain guardrails.",
+      outcome: "Live at aumo.finance with a working app.",
+    },
+  },
   {
     id: 112,
     title: "Gloam",
@@ -222,27 +242,27 @@ const projects = [
     image: "/site-images/bulldropper.png",
     github: "https://github.com/cryptoduke01/bulldropper",
     demo: "https://bulldropper.xyz",
-    tags: ["Solana", "SPL", "Airdrop", "Privy"],
+    tags: ["Solana", "SPL", "Airdrop", "Helius"],
     date: "2026",
     status: "shipped",
     caseStudy: {
       problem:
         "Rewarding the people who make a token loud meant manual wallet hunting and custodial airdrop tooling.",
       built:
-        "A tool that scans X for viral posts on a cashtag or mint, surfaces author wallets, and runs batched custody-free airdrops with Token-2022 support, ATA creation, and Jito bundles.",
-      stack: "Solana, SPL / Token-2022, Jito bundles, Privy.",
+        "A tool that scans X for viral posts on a cashtag or mint, surfaces author wallets via the Helius DAS API, and runs batched custody-free airdrops with Token-2022 support, ATA creation, and Jito bundles.",
+      stack: "Solana, Helius (DAS API, RPC), SPL / Token-2022, Jito bundles, Privy.",
       outcome: "Shipped and live at bulldropper.xyz.",
     },
   },
   {
     id: 111,
     title: "Deriverse Dashboard",
-    description: "Trading analytics that decodes raw Solana wallet transaction history into structured trades, PnL, drawdown, and session analysis.",
-    longDescription: "Trading analytics that decodes raw Solana wallet transaction history into structured trades, PnL, drawdown, and session analysis.",
+    description: "Trading analytics that decodes raw Solana wallet transaction history, via Helius, into structured trades, PnL, drawdown, and session analysis.",
+    longDescription: "Trading analytics that decodes raw Solana wallet transaction history, via the Helius enhanced transactions and RPC APIs, into structured trades, PnL, drawdown, and session analysis.",
     image: "/site-images/deriverse.png",
     github: "https://github.com/cryptoduke01/deriverse-dashboard",
     demo: "https://deriverseboard.vercel.app/",
-    tags: ["Next.js", "Solana", "Analytics"],
+    tags: ["Next.js", "Solana", "Helius", "Analytics"],
     date: "2025",
     status: "shipped",
     caseStudy: {
@@ -250,7 +270,7 @@ const projects = [
         "Traders on Deriverse had no view of their real PnL, win rate, drawdown, or session performance.",
       built:
         "Analytics that decode raw Solana wallet transaction history into structured trades, PnL, drawdown, and session analysis.",
-      stack: "Next.js, Solana RPC decoding, analytics pipeline.",
+      stack: "Next.js, Helius (enhanced transactions, RPC), analytics pipeline.",
       outcome: "Shipped as a live dashboard, with a full write-up on Substack.",
     },
   },

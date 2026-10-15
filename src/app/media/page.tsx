@@ -6,6 +6,15 @@ import Navigation from "@/components/Navigation";
 
 const items = [
   {
+    title: "Privacy in onchain finance",
+    outlet: "Superteam Startup Village",
+    kind: "Talk",
+    date: "2026",
+    blurb:
+      "Spoke on privacy in onchain finance at Superteam Startup Village: why transparent ledgers leak positions, and what a practical privacy layer for payments looks like.",
+    href: undefined,
+  },
+  {
     title: "Founders Corner Ep. 01: building Gloam",
     outlet: "3rd Variation",
     kind: "Video interview",
@@ -53,32 +62,51 @@ export default function MediaPage() {
         </motion.div>
 
         <div className="grid gap-4 md:grid-cols-2">
-          {items.map((item, i) => (
-            <motion.a
-              key={item.title}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 + i * 0.05 }}
-              className="group relative block border border-[#1a1a1a] p-6 hover:border-[#00FFD1]/50 transition-colors"
-            >
-              <div className="flex items-center gap-3 mb-3 text-xs text-[#666]">
-                <span className="text-[#00FFD1]">{item.kind}</span>
-                <span>{item.date}</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white group-hover:text-[#00FFD1] transition-colors mb-1">
-                {item.title}
-              </h3>
-              <p className="text-sm text-[#00FFD1] mb-3">{item.outlet}</p>
-              <p className="text-sm text-[#777] leading-relaxed">{item.blurb}</p>
-              <ArrowUpRight
-                size={16}
-                className="absolute top-6 right-6 text-[#666] group-hover:text-[#00FFD1] transition-colors"
-              />
-            </motion.a>
-          ))}
+          {items.map((item, i) => {
+            const inner = (
+              <>
+                <div className="flex items-center gap-3 mb-3 text-xs text-[#666]">
+                  <span className="text-[#00FFD1]">{item.kind}</span>
+                  <span>{item.date}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white group-hover:text-[#00FFD1] transition-colors mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#00FFD1] mb-3">{item.outlet}</p>
+                <p className="text-sm text-[#777] leading-relaxed">{item.blurb}</p>
+                {item.href && (
+                  <ArrowUpRight
+                    size={16}
+                    className="absolute top-6 right-6 text-[#666] group-hover:text-[#00FFD1] transition-colors"
+                  />
+                )}
+              </>
+            );
+            const className =
+              "group relative block border border-[#1a1a1a] p-6 transition-colors" +
+              (item.href ? " hover:border-[#00FFD1]/50" : "");
+            const motionProps = {
+              initial: { opacity: 0, y: 20 },
+              animate: { opacity: 1, y: 0 },
+              transition: { duration: 0.4, delay: 0.1 + i * 0.05 },
+            };
+            return item.href ? (
+              <motion.a
+                key={item.title}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={className}
+                {...motionProps}
+              >
+                {inner}
+              </motion.a>
+            ) : (
+              <motion.div key={item.title} className={className} {...motionProps}>
+                {inner}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </main>

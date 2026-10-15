@@ -77,6 +77,15 @@ const experience = [
       "Delivered brand identity and a production e-commerce site for KD Essence, plus landing pages and dashboards that improved performance and engagement.",
     ],
   },
+  {
+    role: "Security Researcher, Graduate",
+    org: "Rektoff",
+    period: "2025",
+    points: [
+      "Graduated from Rektoff's security researcher program, covering EVM and Solana vulnerability classes, auditing methodology, and responsible disclosure.",
+      "Carried the methodology into live protocol audits, proving findings with fork and proof-of-concept exploits.",
+    ],
+  },
 ];
 
 const writing = [
@@ -90,6 +99,11 @@ const writing = [
 
 const media = [
   {
+    title: "Privacy in onchain finance",
+    outlet: "Superteam Startup Village talk",
+    href: undefined,
+  },
+  {
     title: "Founders Corner Ep. 01: building Gloam",
     outlet: "3rd Variation interview",
     href: "https://x.com/3rdvariation/status/2107817012017668444",
@@ -98,8 +112,10 @@ const media = [
 
 const achievements = [
   "Head of Audits at SMC Audits, leading EVM and Solana security reviews",
+  "300k+ impressions across threads and articles",
+  "14x Superteam Earn bounty winner ($5,000+ earned)",
   "3x hackathon winner: Superteam Earn sidetracks (Torque Protocol, Sagapad, Jupiter)",
-  "14x Superteam Earn bounty winner",
+  "Run a private developer community, weekly sessions with 45 attendees",
   "Percolator Phase 1 audit quoted by Anatoly Yakovenko (Toly)",
 ];
 
@@ -108,6 +124,7 @@ const skills = [
   { group: "Frontend", items: "React, Next.js, Tailwind CSS, Framer Motion" },
   { group: "Backend and Infra", items: "Fastify, REST / GraphQL, Supabase (Postgres, Auth, Storage, Realtime), WebSockets, webhooks" },
   { group: "Solana and Web3", items: "web3.js, Anchor, Wallet Adapter, SPL / Token-2022, Jito, x402, USDC, Privy, Jupiter, DFlow" },
+  { group: "Helius", items: "RPC, webhooks, and DAS API across all Solana projects" },
   { group: "Security", items: "Smart contract auditing (EVM and Solana), responsible disclosure, fork and local PoC exploits" },
   { group: "Practice", items: "Data pipelines, technical writing, Git" },
 ];
@@ -280,14 +297,18 @@ export default function CVPage() {
                   <li key={m.title} className="flex gap-2 text-sm leading-relaxed text-[#999]">
                     <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#00FFD1]" />
                     <span>
-                      <a
-                        href={m.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-colors hover:text-[#00FFD1]"
-                      >
-                        {m.title}
-                      </a>
+                      {m.href ? (
+                        <a
+                          href={m.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-colors hover:text-[#00FFD1]"
+                        >
+                          {m.title}
+                        </a>
+                      ) : (
+                        <span className="text-[#ccc]">{m.title}</span>
+                      )}
                       <span className="text-[#666]"> · {m.outlet}</span>
                     </span>
                   </li>
